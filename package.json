@@ -1,0 +1,23 @@
+{
+  "name": "periospot-new",
+  "version": "1.0.0",
+  "description": "Periospot - Advanced Periodontal Assessment Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "cd frontend/periospot-vite && npm run dev",
+    "build": "cd frontend/periospot-vite && npm run build",
+    "preview": "cd frontend/periospot-vite && npm run preview",
+    "lint": "cd frontend/periospot-vite && npm run lint"
+  },
+  "keywords": [
+    "periodontal",
+    "assessment",
+    "dental",
+    "health"
+  ],
+  "author": "Periospot Team",
+  "license": "MIT",
+  "workspaces": [
+    "frontend/periospot-vite"
+  ]
+}
