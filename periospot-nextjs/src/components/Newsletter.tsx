@@ -64,7 +64,7 @@ const Newsletter = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="gradient-warm text-primary-foreground px-8 py-4 rounded-full font-medium flex items-center justify-center gap-2 shadow-soft hover:shadow-elevated transition-shadow"
+              className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium flex items-center justify-center gap-2 shadow-soft hover:shadow-elevated transition-shadow"
             >
               Subscribe
               <Send size={18} />

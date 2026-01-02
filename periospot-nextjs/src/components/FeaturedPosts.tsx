@@ -19,48 +19,47 @@ interface Post {
 const posts: Post[] = [
   {
     id: 1,
-    category: "Implantology",
-    title: "Socket Shield Technique: A Complete Guide",
+    category: "Lifestyle",
+    title: "The Art of Mindful Living in a Fast-Paced World",
     excerpt:
-      "Discover how to preserve the buccal plate and achieve optimal aesthetics with the socket shield technique.",
-    readTime: "8 min read",
+      "Discover how small daily practices can transform your relationship with time and presence.",
+    readTime: "5 min read",
     image:
-      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     featured: true,
-    slug: "socket-shield-technique-complete-guide",
+    slug: "mindful-living-fast-paced-world",
   },
   {
     id: 2,
-    category: "Periodontics",
-    title: "Understanding Bone Dynamics After Extraction",
+    category: "Technology",
+    title: "Designing for Human Connection",
     excerpt:
-      "How bone remodeling affects implant planning and timing decisions.",
-    readTime: "6 min read",
+      "How thoughtful design can bridge the gap between digital and human experiences.",
+    readTime: "4 min read",
     image:
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80",
-    slug: "tooth-extraction-healing-bone-dynamics",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    slug: "designing-human-connection",
   },
   {
     id: 3,
-    category: "Aesthetics",
-    title: "Achieving Natural Emergence Profiles",
+    category: "Culture",
+    title: "The Renaissance of Slow Travel",
     excerpt:
-      "Master the art of creating harmonious soft tissue contours around implants.",
-    readTime: "5 min read",
+      "Why more people are choosing depth over distance in their journeys.",
+    readTime: "6 min read",
     image:
-      "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80",
-    slug: "natural-emergence-profiles",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+    slug: "renaissance-slow-travel",
   },
   {
     id: 4,
-    category: "Digital Dentistry",
-    title: "CAD/CAM Workflow Optimization",
-    excerpt:
-      "Streamline your digital workflow for better efficiency and precision.",
-    readTime: "7 min read",
+    category: "Wellness",
+    title: "Finding Balance in Creative Work",
+    excerpt: "Strategies for maintaining inspiration without burning out.",
+    readTime: "3 min read",
     image:
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80",
-    slug: "cad-cam-workflow-optimization",
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+    slug: "balance-creative-work",
   },
 ]
 
@@ -115,11 +114,11 @@ const FeaturedPosts = () => {
           viewport={{ once: true, margin: "-50px" }}
           className="grid lg:grid-cols-2 gap-8 mb-8"
         >
-          {/* Featured Post - Large */}
+          {/* Featured Post - Large with image background */}
           {featuredPost && (
             <motion.article
               variants={itemVariants}
-              className="group lg:row-span-2 relative overflow-hidden rounded-2xl bg-card shadow-soft hover:shadow-elevated transition-shadow duration-500"
+              className="group lg:row-span-2 relative overflow-hidden rounded-2xl shadow-soft hover:shadow-elevated transition-shadow duration-500"
             >
               <Link href={`/blog/${featuredPost.slug}`} className="block h-full">
                 <div className="absolute inset-0">
