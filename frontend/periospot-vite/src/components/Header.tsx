@@ -165,7 +165,7 @@ const Header = () => {
           </div>
 
           {/* Action Icons */}
-          <div className="hidden md:flex items-center gap-1 ml-2">
+          <div className="hidden md:flex items-center gap-2 ml-2">
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -181,8 +181,8 @@ const Header = () => {
               transition={{ delay: 0.55, duration: 0.5 }}
             >
               <Link to="/shop">
-                <Button className="gap-2 rounded-full">
-                  GO SHOP
+                <Button variant="secondary" className="gap-2 rounded-full">
+                  Shop
                   <ShoppingCart size={16} />
                 </Button>
               </Link>
@@ -190,7 +190,19 @@ const Header = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              transition={{ delay: 0.58, duration: 0.5 }}
+            >
+              <Link to="/auth/signin">
+                <Button className="gap-2 rounded-full">
+                  Log in
+                  <User size={16} />
+                </Button>
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.62, duration: 0.5 }}
             >
               <Link
                 to="/cart"
@@ -288,21 +300,31 @@ const Header = () => {
               </div>
             ))}
 
-            <div className="flex items-center gap-2 mt-4 pt-4 border-t border-border/50">
+            <div className="mt-4 pt-4 border-t border-border/50 space-y-2">
+              <Link
+                to="/auth/signin"
+                onClick={() => setIsMenuOpen(false)}
+                className="block"
+              >
+                <Button className="w-full gap-2">
+                  Log in
+                  <User size={18} />
+                </Button>
+              </Link>
               <Link
                 to="/shop"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex-1"
+                className="block"
               >
-                <Button className="w-full gap-2">
-                  GO SHOP
+                <Button variant="secondary" className="w-full gap-2">
+                  Shop
                   <ShoppingCart size={18} />
                 </Button>
               </Link>
               <Link
                 to="/cart"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-2 py-2.5 px-4 text-muted-foreground hover:text-foreground border border-border rounded-full transition-colors"
+                className="flex items-center justify-center gap-2 rounded-full border border-border py-2.5 px-4 text-muted-foreground transition-colors hover:text-foreground"
               >
                 <ShoppingCart size={18} />
                 <span className="text-sm">0</span>
