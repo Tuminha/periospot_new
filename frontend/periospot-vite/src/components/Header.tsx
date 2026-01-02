@@ -39,9 +39,9 @@ const Header = () => {
 
   const navItems: NavItem[] = [
     {
-      label: "Articles",
+      label: "Blog",
       children: [
-        { label: "English", path: "/articles", flagCode: "GB,US" },
+        { label: "English", path: "/blog", flagCode: "GB,US" },
         { label: "Español", path: "/articles/spanish", flagCode: "ES" },
         { label: "Português", path: "/articles/portuguese", flagCode: "PT,BR" },
         { label: "中文", path: "/articles/chinese", flagCode: "CN" },
