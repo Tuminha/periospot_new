@@ -1,0 +1,138 @@
+[
+  {
+    "id": "1",
+    "login": "manager-periospot",
+    "email": "j.gandia@haltercomunicacion.es",
+    "display_name": "manager-periospot",
+    "first_name": "Prueba",
+    "last_name": "Jorge"
+  },
+  {
+    "id": "3",
+    "login": "Francisco",
+    "email": "cisco@periospot.com",
+    "display_name": "Cisco",
+    "first_name": "Teixeira",
+    "last_name": "Barbosa"
+  },
+  {
+    "id": "12",
+    "login": "Vitorbras",
+    "email": "vitorbras@periospot.com",
+    "display_name": "Vitor Brás",
+    "first_name": "Vitor",
+    "last_name": "Brás"
+  },
+  {
+    "id": "4",
+    "login": "Emilio",
+    "email": "emilioesmidentista@gmail.com",
+    "display_name": "Emilio Rodriguez Fernandez",
+    "first_name": "Emilio",
+    "last_name": "Rodriguez Fernandez"
+  },
+  {
+    "id": "5",
+    "login": "Borja",
+    "email": "trastoso@gmail.com",
+    "display_name": "Borja Risco",
+    "first_name": "Borja",
+    "last_name": "Risco"
+  },
+  {
+    "id": "6",
+    "login": "Daniel Rodrigo",
+    "email": "danielperiocentrum@icloud.com",
+    "display_name": "Daniel Rodrigo",
+    "first_name": "Daniel",
+    "last_name": "Rodrigo"
+  },
+  {
+    "id": "7",
+    "login": "DL Oral Surgery",
+    "email": "info@dlcirugiaoral.com",
+    "display_name": "Juan y Pepo",
+    "first_name": "Juan y Pepo",
+    "last_name": ""
+  },
+  {
+    "id": "8",
+    "login": "Primitivo Roig",
+    "email": "roig@dentaldoctors.es",
+    "display_name": "Primitivo Roig",
+    "first_name": "Primitivo",
+    "last_name": "Roig"
+  },
+  {
+    "id": "9",
+    "login": "Daniel Robles",
+    "email": "drobles@clinica.uemc.es",
+    "display_name": "Daniel Robles",
+    "first_name": "Daniel",
+    "last_name": "Robles"
+  },
+  {
+    "id": "10",
+    "login": "Tomas",
+    "email": "linktomo@gmail.com",
+    "display_name": "Tomas Linkevicius",
+    "first_name": "Tomas",
+    "last_name": "Linkevicius"
+  },
+  {
+    "id": "11",
+    "login": "nicolashenner",
+    "email": "nicoh1323@hotmail.fr",
+    "display_name": "Nicolas Henner",
+    "first_name": "Nicolas",
+    "last_name": "Henner"
+  },
+  {
+    "id": "14",
+    "login": "RosMegias",
+    "email": "ros@brandandhealth.com",
+    "display_name": "Ros Megías",
+    "first_name": "Ros",
+    "last_name": "Megías"
+  },
+  {
+    "id": "13",
+    "login": "JorgeAlania",
+    "email": "jorge.alania@upch.pe",
+    "display_name": "Jorge Alania",
+    "first_name": "Jorge",
+    "last_name": "Alania"
+  },
+  {
+    "id": "15",
+    "login": "manthandesai",
+    "email": "manthandesai.md@gmail.com",
+    "display_name": "Manthan Desai MDS",
+    "first_name": "Manthan",
+    "last_name": "Desai MDS"
+  },
+  {
+    "id": "18",
+    "login": "Ricardo",
+    "email": "ricdanllem@gmail.com",
+    "display_name": "Ricardo López Lemus",
+    "first_name": "Ricardo",
+    "last_name": "López Lemus"
+  },
+  {
+    "id": "21",
+    "login": "Juanma Vadillo",
+    "email": "jumava@uax.es",
+    "display_name": "Juanma Vadillo",
+    "first_name": "Juanma",
+    "last_name": "Vadillo"
+  },
+  {
+    "id": "22",
+    "login": "Erik",
+    "email": "erik@ortizvigon.com",
+    "display_name": "Erik Regidor",
+    "first_name": "Erik",
+    "last_name": "Regidor"
+  }
+]

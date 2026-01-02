@@ -1,0 +1,86 @@
+[
+  {
+    "id": "10",
+    "name": "Aesthetics",
+    "nicename": "aesthetics",
+    "description": ""
+  },
+  {
+    "id": "4",
+    "name": "Blog English",
+    "nicename": "blog-english",
+    "description": ""
+  },
+  {
+    "id": "48",
+    "name": "Blog español",
+    "nicename": "blog-espanol",
+    "description": ""
+  },
+  {
+    "id": "114",
+    "name": "Blog in Chinese",
+    "nicename": "blog-in-chinese",
+    "description": ""
+  },
+  {
+    "id": "94",
+    "name": "Blog português",
+    "nicename": "blog-portugues",
+    "description": ""
+  },
+  {
+    "id": "69",
+    "name": "Endodontics",
+    "nicename": "endodontics",
+    "description": ""
+  },
+  {
+    "id": "8",
+    "name": "Implantology",
+    "nicename": "implantology",
+    "description": "<img class=\"aligncenter wp-image-2586\" src=\"https://periospot.com/wp-content/uploads/2020/02/Implantology.svg\" alt=\"\" width=\"200\" />"
+  },
+  {
+    "id": "6",
+    "name": "Periodontics",
+    "nicename": "periodontics",
+    "description": ""
+  },
+  {
+    "id": "95",
+    "name": "Periospot Bookshelf",
+    "nicename": "periospot-bookshelf",
+    "description": ""
+  },
+  {
+    "id": "1596",
+    "name": "Periospot for Patients",
+    "nicename": "periospot-for-patients",
+    "description": ""
+  },
+  {
+    "id": "62",
+    "name": "Periospot Hacks",
+    "nicename": "periospot-hacks",
+    "description": ""
+  },
+  {
+    "id": "116",
+    "name": "Periospot Patron",
+    "nicename": "periospot-patron",
+    "description": ""
+  },
+  {
+    "id": "1",
+    "name": "Uncategorized",
+    "nicename": "uncategorized",
+    "description": ""
+  },
+  {
+    "id": "113",
+    "name": "中文",
+    "nicename": "%e4%b8%ad%e6%96%87",
+    "description": ""
+  }
+]
