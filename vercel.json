@@ -1,6 +1,8 @@
 {
+  "version": 2,
+  "framework": "nextjs",
   "buildCommand": "npm run build",
-  "outputDirectory": "frontend/periospot-vite/dist",
+  "outputDirectory": ".next",
   "installCommand": "npm install",
-  "framework": "vite"
+  "rootDirectory": "periospot-nextjs"
 }
