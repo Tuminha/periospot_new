@@ -2,6 +2,19 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
+const resolveErrorMessage = (err: unknown, fallback: string) => {
+  if (err instanceof Error && err.message) {
+    return err.message;
+  }
+  if (typeof err === "object" && err && "message" in err) {
+    const message = (err as { message?: unknown }).message;
+    if (typeof message === "string" && message.length > 0) {
+      return message;
+    }
+  }
+  return fallback;
+};
+
 export const SignupForm = () => {
   const { signUp, signInWithGoogle, error } = useAuth();
   const navigate = useNavigate();
@@ -53,8 +66,8 @@ export const SignupForm = () => {
       setTimeout(() => {
         navigate("/auth/check-email", { state: { email } });
       }, 2000);
-    } catch (err: any) {
-      setLocalError(err.message || "Failed to sign up");
+    } catch (err: unknown) {
+      setLocalError(resolveErrorMessage(err, "Failed to sign up"));
     } finally {
       setLoading(false);
     }
@@ -66,8 +79,8 @@ export const SignupForm = () => {
 
     try {
       await signInWithGoogle();
-    } catch (err: any) {
-      setLocalError(err.message || "Failed to sign up with Google");
+    } catch (err: unknown) {
+      setLocalError(resolveErrorMessage(err, "Failed to sign up with Google"));
     } finally {
       setLoading(false);
     }

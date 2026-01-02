@@ -4,6 +4,19 @@ import { useAuth } from "@/components/Auth/AuthContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const resolveErrorMessage = (err: unknown, fallback: string) => {
+  if (err instanceof Error && err.message) {
+    return err.message;
+  }
+  if (typeof err === "object" && err && "message" in err) {
+    const message = (err as { message?: unknown }).message;
+    if (typeof message === "string" && message.length > 0) {
+      return message;
+    }
+  }
+  return fallback;
+};
+
 const ForgotPassword = () => {
   const { resetPassword, error } = useAuth();
   const [email, setEmail] = useState("");
@@ -25,8 +38,8 @@ const ForgotPassword = () => {
     try {
       await resetPassword(email);
       setSuccess(true);
-    } catch (err: any) {
-      setLocalError(err.message || "Unable to send reset email");
+    } catch (err: unknown) {
+      setLocalError(resolveErrorMessage(err, "Unable to send reset email"));
     } finally {
       setLoading(false);
     }

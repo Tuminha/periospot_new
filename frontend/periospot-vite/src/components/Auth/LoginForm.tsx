@@ -2,6 +2,19 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
+const resolveErrorMessage = (err: unknown, fallback: string) => {
+  if (err instanceof Error && err.message) {
+    return err.message;
+  }
+  if (typeof err === "object" && err && "message" in err) {
+    const message = (err as { message?: unknown }).message;
+    if (typeof message === "string" && message.length > 0) {
+      return message;
+    }
+  }
+  return fallback;
+};
+
 export const LoginForm = () => {
   const { signIn, signInWithGoogle, error } = useAuth();
   const navigate = useNavigate();
@@ -30,8 +43,8 @@ export const LoginForm = () => {
     try {
       await signIn(email, password);
       navigate("/account");
-    } catch (err: any) {
-      setLocalError(err.message || "Failed to sign in");
+    } catch (err: unknown) {
+      setLocalError(resolveErrorMessage(err, "Failed to sign in"));
     } finally {
       setLoading(false);
     }
@@ -43,8 +56,8 @@ export const LoginForm = () => {
 
     try {
       await signInWithGoogle();
-    } catch (err: any) {
-      setLocalError(err.message || "Failed to sign in with Google");
+    } catch (err: unknown) {
+      setLocalError(resolveErrorMessage(err, "Failed to sign in with Google"));
     } finally {
       setLoading(false);
     }

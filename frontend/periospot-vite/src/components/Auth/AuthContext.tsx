@@ -20,6 +20,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const resolveErrorMessage = (err: unknown, fallback: string) => {
+    if (err instanceof Error && err.message) {
+      return err.message;
+    }
+    if (typeof err === "object" && err && "message" in err) {
+      const message = (err as { message?: unknown }).message;
+      if (typeof message === "string" && message.length > 0) {
+        return message;
+      }
+    }
+    return fallback;
+  };
+
   useEffect(() => {
     let isMounted = true;
 
@@ -66,8 +79,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (signUpError) {
         throw signUpError;
       }
-    } catch (err: any) {
-      setError(err.message || "Error signing up");
+    } catch (err: unknown) {
+      setError(resolveErrorMessage(err, "Error signing up"));
       throw err;
     }
   };
@@ -82,8 +95,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (signInError) {
         throw signInError;
       }
-    } catch (err: any) {
-      setError(err.message || "Error signing in");
+    } catch (err: unknown) {
+      setError(resolveErrorMessage(err, "Error signing in"));
       throw err;
     }
   };
@@ -100,8 +113,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (oauthError) {
         throw oauthError;
       }
-    } catch (err: any) {
-      setError(err.message || "Error signing in with Google");
+    } catch (err: unknown) {
+      setError(resolveErrorMessage(err, "Error signing in with Google"));
       throw err;
     }
   };
@@ -114,8 +127,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         throw signOutError;
       }
       setUser(null);
-    } catch (err: any) {
-      setError(err.message || "Error signing out");
+    } catch (err: unknown) {
+      setError(resolveErrorMessage(err, "Error signing out"));
       throw err;
     }
   };
@@ -129,8 +142,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (resetError) {
         throw resetError;
       }
-    } catch (err: any) {
-      setError(err.message || "Error resetting password");
+    } catch (err: unknown) {
+      setError(resolveErrorMessage(err, "Error resetting password"));
       throw err;
     }
   };

@@ -4,6 +4,19 @@ import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const resolveErrorMessage = (err: unknown, fallback: string) => {
+  if (err instanceof Error && err.message) {
+    return err.message;
+  }
+  if (typeof err === "object" && err && "message" in err) {
+    const message = (err as { message?: unknown }).message;
+    if (typeof message === "string" && message.length > 0) {
+      return message;
+    }
+  }
+  return fallback;
+};
+
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -34,8 +47,8 @@ const ResetPassword = () => {
         throw updateError;
       }
       setSuccess(true);
-    } catch (err: any) {
-      setError(err.message || "Unable to update password");
+    } catch (err: unknown) {
+      setError(resolveErrorMessage(err, "Unable to update password"));
     } finally {
       setLoading(false);
     }

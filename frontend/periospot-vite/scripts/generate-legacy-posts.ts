@@ -94,7 +94,7 @@ const posts = items
   })
   .filter((post) => post.slug);
 
-const output = `export type LegacyPost = {\n  slug: string;\n  title: string;\n  date: string;\n  categories: string[];\n  excerpt: string;\n  language: \"en\" | \"es\" | \"pt\" | \"zh\";\n};\n\nexport const legacyPosts: LegacyPost[] = ${JSON.stringify(
+const output = `export type LegacyPost = {\n  slug: string;\n  title: string;\n  date: string;\n  categories: string[];\n  excerpt: string;\n  language: "en" | "es" | "pt" | "zh";\n};\n\nexport const legacyPosts: LegacyPost[] = ${JSON.stringify(
   posts,
   null,
   2
