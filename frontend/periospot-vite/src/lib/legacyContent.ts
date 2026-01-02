@@ -1,9 +1,9 @@
-import { legacyPosts } from "@/data/legacyPosts";
+import { legacyPosts, LegacyPost } from "@/data/legacyPosts";
 
 export type Language = "en" | "es" | "pt" | "zh";
 
 export type PostSummary = {
-  id: number;
+  id: number | string;
   slug: string;
   title: string;
   date: string;
@@ -43,8 +43,8 @@ const categoryImages: Record<string, string> = {
   "Periospot for Patients": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=1200&q=80",
 };
 
-const author = "Periospot Team";
-const authorAvatar = "PT";
+const defaultAuthorName = "Periospot Team";
+const defaultAuthorAvatar = "PT";
 
 const getPrimaryCategory = (categories: string[]) => {
   if (!categories || categories.length === 0) {
@@ -55,19 +55,92 @@ const getPrimaryCategory = (categories: string[]) => {
   return nonEmpty || "General";
 };
 
-const estimateReadTime = (excerpt: string) => {
-  const words = excerpt.split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(6, Math.round(words / 28));
-  return minutes;
+const stripHtml = (value: string) =>
+  value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const buildExcerpt = (excerpt: string, content: string) => {
+  const clean = stripHtml(excerpt || content || "");
+  if (!clean) {
+    return "Full article content is being migrated.";
+  }
+  if (clean.length <= 220) {
+    return clean;
+  }
+  return `${clean.slice(0, 217).trim()}...`;
+};
+
+const estimateReadTime = (content: string, excerpt: string) => {
+  const words = stripHtml(content || excerpt || "").split(/\s+/).filter(Boolean).length;
+  if (!words) {
+    return 6;
+  }
+  return Math.max(4, Math.round(words / 200));
+};
+
+const getAuthorAvatar = (name: string) => {
+  if (!name) {
+    return defaultAuthorAvatar;
+  }
+
+  const initials = name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+
+  return initials || defaultAuthorAvatar;
+};
+
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+const addHeadingAnchors = (content: string) => {
+  let index = 0;
+  const toc: { id: string; title: string }[] = [];
+
+  const updated = content.replace(/<h2([^>]*)>(.*?)<\/h2>/gis, (match, attrs, inner) => {
+    const title = stripHtml(inner || "");
+    if (!title) {
+      return match;
+    }
+
+    const existingIdMatch = String(attrs).match(/\sid=["']([^"']+)["']/i);
+    const id = existingIdMatch?.[1] || slugify(title) || `section-${index + 1}`;
+
+    toc.push({ id, title });
+    index += 1;
+
+    if (existingIdMatch) {
+      return match;
+    }
+
+    const normalizedAttrs = String(attrs).trim();
+    const attrString = normalizedAttrs ? ` ${normalizedAttrs}` : "";
+    return `<h2 id="${id}"${attrString}>${inner}</h2>`;
+  });
+
+  return { content: updated, tableOfContents: toc };
 };
 
 export const postSummaries: PostSummary[] = legacyPosts.map((post, index) => {
   const category = getPrimaryCategory(post.categories);
-  const image = categoryImages[category] || fallbackImages[index % fallbackImages.length];
-  const excerpt = post.excerpt || "Full article content is being migrated.";
+  const image = post.featured_image || categoryImages[category] || fallbackImages[index % fallbackImages.length];
+  const author = post.author || defaultAuthorName;
+  const excerpt = buildExcerpt(post.excerpt, post.content);
 
   return {
-    id: index + 1,
+    id: post.id ?? index + 1,
     slug: post.slug,
     title: post.title || "Untitled article",
     date: post.date,
@@ -76,12 +149,15 @@ export const postSummaries: PostSummary[] = legacyPosts.map((post, index) => {
     excerpt,
     language: post.language,
     author,
-    authorAvatar,
-    readTimeMinutes: estimateReadTime(excerpt),
+    authorAvatar: getAuthorAvatar(author),
+    readTimeMinutes: estimateReadTime(post.content, post.excerpt),
     image,
     views: Math.max(120, 1600 - index * 9),
   };
 });
+
+const summaryBySlug = new Map(postSummaries.map((post) => [post.slug, post]));
+const postsBySlug = new Map(legacyPosts.map((post) => [post.slug, post]));
 
 export const getPostsByLanguage = (language: Language) =>
   postSummaries.filter((post) => post.language === language);
@@ -155,20 +231,43 @@ const contentOverrides: Record<string, Partial<PostDetail>> = {};
 const defaultAuthorBio =
   "Clinical education team focused on periodontics, implantology, and evidence-based workflows.";
 
+const resolveContent = (rawContent: string, title: string) => {
+  if (!rawContent) {
+    return { content: buildFallbackContent(title), tableOfContents: defaultTableOfContents };
+  }
+
+  const { content, tableOfContents } = addHeadingAnchors(rawContent);
+  return {
+    content,
+    tableOfContents: tableOfContents.length ? tableOfContents : [],
+  };
+};
+
+const findFallbackSummary = (language: Language) =>
+  postSummaries.find((post) => post.language === language) || postSummaries[0];
+
+const findPost = (slug: string | undefined, language: Language) => {
+  if (slug && summaryBySlug.has(slug)) {
+    return summaryBySlug.get(slug) || null;
+  }
+  return findFallbackSummary(language) || null;
+};
+
 export const getPostDetail = (slug: string | undefined, language: Language) => {
-  const fallback = postSummaries.find((post) => post.language === language) || postSummaries[0];
-  const summary = (slug && postSummaries.find((post) => post.slug === slug)) || fallback;
+  const summary = findPost(slug, language);
 
   if (!summary) {
     return null;
   }
 
+  const rawPost = postsBySlug.get(summary.slug);
   const override = contentOverrides[summary.slug] || {};
+  const resolved = resolveContent(override.content || rawPost?.content || "", summary.title);
 
   return {
     ...summary,
     authorBio: override.authorBio || defaultAuthorBio,
-    content: override.content || buildFallbackContent(summary.title),
-    tableOfContents: override.tableOfContents || defaultTableOfContents,
+    content: resolved.content,
+    tableOfContents: override.tableOfContents || resolved.tableOfContents,
   };
 };

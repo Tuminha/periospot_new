@@ -61,6 +61,29 @@ const BlogPost = () => {
     return `/blog/${postSlug}`;
   };
 
+  // Handle scroll for TOC highlighting
+  useEffect(() => {
+    if (!post || post.tableOfContents.length === 0) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const sections = post.tableOfContents.map((item) => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 200;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(post.tableOfContents[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [post]);
+
   if (!post) {
     return (
       <div className="min-h-screen bg-background">
@@ -82,25 +105,6 @@ const BlogPost = () => {
       </div>
     );
   }
-
-  // Handle scroll for TOC highlighting
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = post.tableOfContents.map((item) => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 200;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(post.tableOfContents[i].id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [post.tableOfContents]);
 
   const handleShare = (platform: string) => {
     const url = window.location.href;
@@ -221,31 +225,33 @@ const BlogPost = () => {
               </motion.div>
 
               {/* Table of Contents - Below Hero */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.25 }}
-                className="bg-card border border-border rounded-xl p-5 mb-10"
-              >
-                <h3 className="font-display text-base font-semibold text-foreground mb-3">
-                  Table of Contents
-                </h3>
-                <nav className="flex flex-wrap gap-2">
-                  {post.tableOfContents.map((item) => (
-                    <a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      className={`text-sm py-1.5 px-3 rounded-lg transition-colors ${
-                        activeSection === item.id
-                          ? "bg-primary/10 text-primary font-medium"
-                          : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                      }`}
-                    >
-                      {item.title}
-                    </a>
-                  ))}
-                </nav>
-              </motion.div>
+              {post.tableOfContents.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.25 }}
+                  className="bg-card border border-border rounded-xl p-5 mb-10"
+                >
+                  <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                    Table of Contents
+                  </h3>
+                  <nav className="flex flex-wrap gap-2">
+                    {post.tableOfContents.map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className={`text-sm py-1.5 px-3 rounded-lg transition-colors ${
+                          activeSection === item.id
+                            ? "bg-primary/10 text-primary font-medium"
+                            : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                        }`}
+                      >
+                        {item.title}
+                      </a>
+                    ))}
+                  </nav>
+                </motion.div>
+              )}
 
               {/* Article Content */}
               <motion.div
