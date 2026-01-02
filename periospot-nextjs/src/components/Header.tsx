@@ -18,24 +18,32 @@ const Header = () => {
 
   const navItems: NavItem[] = [
     {
-      label: "Blog",
+      label: "Articles",
       children: [
-        { label: "All Articles", path: "/blog" },
-        { label: "Implantology", path: "/blog/category/implantology" },
-        { label: "Periodontics", path: "/blog/category/periodontics" },
-        { label: "Aesthetics", path: "/blog/category/aesthetics" },
+        { label: "English", path: "/blog" },
+        { label: "Español", path: "/blog/es" },
+        { label: "Português", path: "/blog/pt" },
       ],
     },
     {
-      label: "Learn",
+      label: "Library",
       children: [
-        { label: "Library", path: "/library" },
-        { label: "Assessments", path: "/assessments" },
-        { label: "Resources", path: "/resources" },
+        { label: "English", path: "/library" },
+        { label: "Español", path: "/library/es" },
+        { label: "Português", path: "/library/pt" },
       ],
     },
-    { label: "Shop", path: "/tienda" },
-    { label: "Team", path: "/team" },
+    {
+      label: "Resources Center",
+      children: [
+        { label: "Cisco's Workstation", path: "/resources/workstation" },
+        { label: "Apps & Software", path: "/resources/apps" },
+        { label: "Periospot Patrons", path: "/resources/patrons" },
+        { label: "Webinars Toolkit", path: "/resources/webinars-toolkit" },
+      ],
+    },
+    { label: "Online Learning", path: "/assessments" },
+    { label: "Team & Contact", path: "/team" },
   ]
 
   const handleMouseEnter = (label: string) => {
@@ -149,8 +157,8 @@ const Header = () => {
               transition={{ delay: 0.55, duration: 0.5 }}
             >
               <Link href="/tienda">
-                <Button variant="secondary" className="gap-2 rounded-full">
-                  Shop
+                <Button className="gap-2 rounded-full gradient-warm text-white border-0">
+                  GO SHOP
                   <ShoppingCart size={16} />
                 </Button>
               </Link>
@@ -160,11 +168,15 @@ const Header = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.58, duration: 0.5 }}
             >
-              <Link href="/login">
-                <Button className="gap-2 rounded-full">
-                  Log in
-                  <User size={16} />
-                </Button>
+              <Link
+                href="/cart"
+                className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors relative inline-flex"
+                aria-label="Cart"
+              >
+                <ShoppingCart size={18} />
+                <span className="absolute -top-0.5 -right-0.5 bg-primary text-primary-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  0
+                </span>
               </Link>
             </motion.div>
           </div>
