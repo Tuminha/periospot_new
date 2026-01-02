@@ -1,0 +1,1 @@
+-- Placeholder migration. See database/schema.sql for current schema.

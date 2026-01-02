@@ -10,26 +10,26 @@ This document contains all the API credentials and configuration needed for the 
 ### Project Details
 - **Project Name:** periospot
 - **Project ID:** ajueupqlrodkhfgkegnx
-- **Project URL:** https://ajueupqlrodkhfgkegnx.supabase.co
+- **Project URL:** https://your-project.supabase.co
 
 ### API Keys
-- **Publishable Key (Anon Key):** `sb_publishable_4Ap1JxjMNb7CwMZIaNzKfQ_2DGTIiPk`
+- **Publishable Key (Anon Key):** `your_anon_key_here`
   - Use in browser/frontend code
   - Safe to expose publicly (with Row Level Security enabled)
   
-- **Secret Key (Service Role):** `sb_secret_mgKpp5PgldT4PJ59mAlqHA_woDXSMWV`
+- **Secret Key (Service Role):** `your_service_role_key_here`
   - Use only on backend/server
   - Keep this secret!
 
 ### Environment Variables for Frontend
 ```env
-VITE_SUPABASE_URL=https://ajueupqlrodkhfgkegnx.supabase.co
-VITE_SUPABASE_ANON_KEY=sb_publishable_4Ap1JxjMNb7CwMZIaNzKfQ_2DGTIiPk
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_anon_key_here
 ```
 
 ### Environment Variables for Backend/Server
 ```env
-SUPABASE_SERVICE_ROLE_KEY=sb_secret_mgKpp5PgldT4PJ59mAlqHA_woDXSMWV
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
 ```
 
 ### Database Tables Created
@@ -56,13 +56,13 @@ SUPABASE_SERVICE_ROLE_KEY=sb_secret_mgKpp5PgldT4PJ59mAlqHA_woDXSMWV
 - **Account Email:** cisco@periospot.com
 
 ### API Key
-- **API Key:** `re_Q4No8V9b_KY03Yfw2Adb7KbSUMoLrTtR`
+- **API Key:** `your_resend_api_key_here`
   - Full access permissions
   - All domains enabled
 
 ### Environment Variable
 ```env
-VITE_RESEND_API_KEY=re_Q4No8V9b_KY03Yfw2Adb7KbSUMoLrTtR
+VITE_RESEND_API_KEY=your_resend_api_key_here
 ```
 
 ### Usage
@@ -91,10 +91,10 @@ Use this API key to send emails via Resend:
 2. Add the following variables for **All Environments**:
 
 ```
-VITE_SUPABASE_URL=https://ajueupqlrodkhfgkegnx.supabase.co
-VITE_SUPABASE_ANON_KEY=sb_publishable_4Ap1JxjMNb7CwMZIaNzKfQ_2DGTIiPk
-SUPABASE_SERVICE_ROLE_KEY=sb_secret_mgKpp5PgldT4PJ59mAlqHA_woDXSMWV
-VITE_RESEND_API_KEY=re_Q4No8V9b_KY03Yfw2Adb7KbSUMoLrTtR
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
+VITE_RESEND_API_KEY=your_resend_api_key_here
 VITE_APP_URL=https://periospot-new.vercel.app
 VITE_API_URL=https://periospot-new.vercel.app/api
 ```
