@@ -26,6 +26,10 @@ import OnlineLearning from "./pages/OnlineLearning";
 import Team from "./pages/Team";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
+import AuthCallback from "./pages/auth/AuthCallback";
+import CheckEmail from "./pages/auth/CheckEmail";
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import ResetPassword from "./pages/auth/ResetPassword";
 import NotFound from "./pages/NotFound";
 import LegacyPage from "@/components/LegacyPage";
 import LegacyCategoryPage from "@/pages/LegacyCategoryPage";
@@ -72,6 +76,12 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/auth/signin" element={<SignIn />} />
           <Route path="/auth/signup" element={<SignUp />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
+          <Route path="/auth/check-email" element={<CheckEmail />} />
+          <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+          <Route path="/auth/reset-password" element={<ResetPassword />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/home" element={<Index />} />
           <Route path="/homepage" element={<Index />} />
           <Route path="/blog-espanol" element={<ArticlesSpanish />} />
