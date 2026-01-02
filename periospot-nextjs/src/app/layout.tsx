@@ -1,21 +1,7 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Poppins } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Header } from "@/components/layout/header"
-import { Footer } from "@/components/layout/footer"
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-})
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://periospot.com"),
@@ -90,17 +76,13 @@ export const metadata: Metadata = {
       "pt-BR": "https://periospot.com/pt",
     },
   },
-  verification: {
-    // Add your verification codes here
-    // google: "your-google-verification-code",
-  },
   category: "education",
 }
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#faf8f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#121212" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -167,17 +149,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
+          <div className="relative min-h-screen">
+            {children}
           </div>
           <Toaster />
         </ThemeProvider>
