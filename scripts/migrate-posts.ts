@@ -1,1 +1,1 @@
-// Placeholder script. Implement migration logic here.
+// Deprecated: use scripts/migrate-posts.js instead.

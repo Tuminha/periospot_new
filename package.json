@@ -9,7 +9,8 @@
     "preview": "cd frontend/periospot-vite && npm run preview",
     "lint": "cd frontend/periospot-vite && npm run lint",
     "validate:exports": "node scripts/validate-exports.js",
-    "generate:posts:xml": "python3 scripts/generate-posts-from-xml.py"
+    "generate:posts:xml": "python3 scripts/generate-posts-from-xml.py",
+    "migrate:posts": "node scripts/migrate-posts.js"
   },
   "keywords": [
     "periodontal",

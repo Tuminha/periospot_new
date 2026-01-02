@@ -100,7 +100,7 @@
 #### ⚠️ TASK 2.2: Posts Migration Script (Claude)
 **Status:** ⚠️ **PLACEHOLDER ONLY**
 
-- ✅ File exists: `scripts/migrate-posts.ts`
+- ✅ File exists: `scripts/migrate-posts.js`
 - ❌ Implementation: Only placeholder comment
 - **Action Needed:** Full implementation required
 
@@ -243,7 +243,7 @@
 ## 🎯 PRIORITY NEXT STEPS
 
 1. **Complete Migration Scripts** (Phase 2)
-   - Implement `migrate-posts.ts`
+   - Implement `migrate-posts.js`
    - Implement `migrate-products.ts`
    - Implement `migrate-media.ts`
    - Implement `create-redirects.ts`
