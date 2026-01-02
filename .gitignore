@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.*.local
+.env.vercel
 
 # Dependencies
 node_modules/
@@ -16,7 +17,8 @@ build/
 
 # Local data and exports
 periospot-assets/
-typeform/
+typeform/forms/
+typeform/responses/
 periospot/
 legacy-wordpress/media/
 legacy-wordpress/export.xml
