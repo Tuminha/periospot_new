@@ -157,7 +157,7 @@ const Header = () => {
               transition={{ delay: 0.55, duration: 0.5 }}
             >
               <Link href="/tienda">
-                <Button className="gap-2 rounded-full gradient-warm text-white border-0">
+                <Button className="gap-2 rounded-full">
                   GO SHOP
                   <ShoppingCart size={16} />
                 </Button>
