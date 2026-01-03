@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server';
+import { handleMCPMessage } from '@/lib/mcp/protocol';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -87,13 +88,57 @@ export async function GET(request: NextRequest) {
   });
 }
 
+// Handle POST for Streamable HTTP transport
+// mcp-remote tries HTTP-first transport which POSTs to the SSE endpoint
+export async function POST(request: NextRequest) {
+  try {
+    const message = await request.json();
+    console.log('[MCP SSE] POST message:', JSON.stringify(message));
+
+    const response = await handleMCPMessage(message);
+
+    if (response === null) {
+      return new Response(null, {
+        status: 202,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+      });
+    }
+
+    return new Response(JSON.stringify(response), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
+  } catch (error) {
+    console.error('[MCP SSE] POST error:', error);
+    return new Response(
+      JSON.stringify({
+        jsonrpc: '2.0',
+        id: null,
+        error: { code: -32700, message: 'Parse error' },
+      }),
+      {
+        status: 400,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+      }
+    );
+  }
+}
+
 // Handle OPTIONS for CORS
 export async function OPTIONS() {
   return new Response(null, {
     status: 204,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     },
   });
