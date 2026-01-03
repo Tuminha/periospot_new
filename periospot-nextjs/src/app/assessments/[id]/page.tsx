@@ -24,6 +24,17 @@ const assessmentsData: Record<
     typeformUrl: string
   }
 > = {
+  ycAW7N: {
+    id: "ycAW7N",
+    title: "Periospot Implant Assessment",
+    description:
+      "Our most popular assessment with over 1,400 completions. Comprehensive evaluation of implant dentistry knowledge covering planning, placement, and restoration.",
+    category: "Implantology",
+    duration: "20-25 min",
+    questions: 30,
+    difficulty: "Intermediate",
+    typeformUrl: "https://form.typeform.com/to/ycAW7N",
+  },
   YgRY7KRD: {
     id: "YgRY7KRD",
     title: "Immediate Loading Survey",
@@ -34,6 +45,72 @@ const assessmentsData: Record<
     questions: 25,
     difficulty: "Intermediate",
     typeformUrl: "https://form.typeform.com/to/YgRY7KRD",
+  },
+  FxLnZWEP: {
+    id: "FxLnZWEP",
+    title: "Socket Shield Quiz",
+    description:
+      "Test your knowledge on the Socket Shield technique. Covers indications, contraindications, surgical protocol, and evidence-based outcomes.",
+    category: "Implantology",
+    duration: "10-15 min",
+    questions: 20,
+    difficulty: "Advanced",
+    typeformUrl: "https://form.typeform.com/to/FxLnZWEP",
+  },
+  JpT21I50: {
+    id: "JpT21I50",
+    title: "Root Coverage Procedures",
+    description:
+      "8 Golden Rules on Esthetic Plastic Periodontal Surgery. Test your knowledge on mucogingival surgery and root coverage techniques.",
+    category: "Periodontics",
+    duration: "10-15 min",
+    questions: 18,
+    difficulty: "Intermediate",
+    typeformUrl: "https://form.typeform.com/to/JpT21I50",
+  },
+  mfoKYLTm: {
+    id: "mfoKYLTm",
+    title: "Platform Switching Quiz",
+    description:
+      "Explore the story behind platform switching. Learn about the biological concept and its implications in implant dentistry.",
+    category: "Implantology",
+    duration: "10-15 min",
+    questions: 15,
+    difficulty: "Intermediate",
+    typeformUrl: "https://form.typeform.com/to/mfoKYLTm",
+  },
+  nceFR3vl: {
+    id: "nceFR3vl",
+    title: "PRF Questionnaire",
+    description:
+      "Assess your knowledge on Platelet-Rich Fibrin (PRF) protocols and applications in dental surgery and regeneration.",
+    category: "Regenerative",
+    duration: "10-15 min",
+    questions: 15,
+    difficulty: "Intermediate",
+    typeformUrl: "https://form.typeform.com/to/nceFR3vl",
+  },
+  jXXbEUed: {
+    id: "jXXbEUed",
+    title: "Cuestionario Periospot (Español)",
+    description:
+      "Evaluación completa de conocimientos en implantología y periodoncia. Assessment en español para profesionales hispanohablantes.",
+    category: "Implantology",
+    duration: "15-20 min",
+    questions: 25,
+    difficulty: "Intermediate",
+    typeformUrl: "https://form.typeform.com/to/jXXbEUed",
+  },
+  oWV6Ci5H: {
+    id: "oWV6Ci5H",
+    title: "Teste Inicial Periospot (Português)",
+    description:
+      "Avaliação abrangente de conhecimentos em implantodontia e periodontia. Assessment em português para profissionais lusófonos.",
+    category: "Implantology",
+    duration: "15-20 min",
+    questions: 25,
+    difficulty: "Intermediate",
+    typeformUrl: "https://form.typeform.com/to/oWV6Ci5H",
   },
   mcuv9YyU: {
     id: "mcuv9YyU",

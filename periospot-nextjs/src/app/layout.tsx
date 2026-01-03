@@ -94,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning data-theme="dark">
       <head>
         {/* Google Fonts - Poppins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -117,10 +117,12 @@ export default function RootLayout({
                 "Educational platform for dental professionals. Learn implantology, periodontics, and aesthetic dentistry.",
               sameAs: [
                 "https://facebook.com/periospot",
-                "https://twitter.com/periospot",
+                "https://x.com/periospot",
                 "https://instagram.com/periospot",
                 "https://linkedin.com/company/periospot",
-                "https://youtube.com/user/tuminha21",
+                "https://youtube.com/@tuminha21",
+                "https://github.com/Tuminha",
+                "https://threads.net/@periospot",
               ],
               contactPoint: {
                 "@type": "ContactPoint",
@@ -156,11 +158,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased dark">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <div className="relative min-h-screen">

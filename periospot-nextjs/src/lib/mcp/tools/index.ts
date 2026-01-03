@@ -4,6 +4,7 @@ import { postTools, postToolManifests } from './posts';
 import { imageTools, imageToolManifests } from './images';
 import { categoryTools, categoryToolManifests } from './categories';
 import { subscriberTools, subscriberToolManifests } from './subscribers';
+import { pageTools, pageToolManifests } from './pages';
 import type { MCPToolHandler, MCPToolManifest } from '@/lib/types/mcp';
 
 // =============================================================================
@@ -26,6 +27,11 @@ export const tools: Record<string, MCPToolHandler> = {
   update_image: imageTools.update_image,
   delete_image: imageTools.delete_image,
 
+  // AI Image Generation tools
+  generate_dental_image: imageTools.generate_dental_image,
+  generate_blog_hero_image: imageTools.generate_blog_hero_image,
+  generate_og_image: imageTools.generate_og_image,
+
   // Category tools
   list_categories: categoryTools.list_categories,
   create_category: categoryTools.create_category,
@@ -38,6 +44,14 @@ export const tools: Record<string, MCPToolHandler> = {
   update_subscriber: subscriberTools.update_subscriber,
   unsubscribe: subscriberTools.unsubscribe,
   get_subscriber_stats: subscriberTools.get_subscriber_stats,
+
+  // Page Analysis tools
+  analyze_page: pageTools.analyze_page,
+  check_page_seo: pageTools.check_page_seo,
+  get_page_images: pageTools.get_page_images,
+  get_page_links: pageTools.get_page_links,
+  get_site_structure: pageTools.get_site_structure,
+  compare_post_versions: pageTools.compare_post_versions,
 };
 
 // =============================================================================
@@ -49,6 +63,7 @@ export const toolManifests: MCPToolManifest[] = [
   ...imageToolManifests,
   ...categoryToolManifests,
   ...subscriberToolManifests,
+  ...pageToolManifests,
 ];
 
 // =============================================================================

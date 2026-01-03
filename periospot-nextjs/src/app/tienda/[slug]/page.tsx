@@ -13,6 +13,31 @@ interface ProductPageProps {
   params: Promise<{ slug: string }>
 }
 
+const stripHtml = (value: string) => value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+
+const resolveYoastTemplate = (template: string, product: { title: string }, descriptionText: string) => {
+  const replacements: Record<string, string> = {
+    "%%title%%": product.title,
+    "%%sitename%%": "Periospot",
+    "%%excerpt%%": descriptionText,
+    "%%sep%%": "-",
+    "%%page%%": "",
+    "%%currentyear%%": String(new Date().getFullYear()),
+  }
+
+  return template
+    .replace(/%%[^%]+%%/g, (token) => replacements[token] ?? "")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+const resolveUrl = (value?: string) => {
+  if (!value) return ""
+  if (value.startsWith("http://") || value.startsWith("https://")) return value
+  if (value.startsWith("/")) return `https://periospot.com${value}`
+  return value
+}
+
 // Generate static params for all products
 export async function generateStaticParams() {
   const products = await getAllProducts()
@@ -34,9 +59,54 @@ export async function generateMetadata({
     }
   }
 
+  const descriptionText = stripHtml(product.description || "")
+  const fallbackDescription = descriptionText.slice(0, 160)
+  const seoTitleRaw = product.seo?.title || ""
+  const seoDescriptionRaw = product.seo?.description || ""
+  const seoTitle = seoTitleRaw
+    ? resolveYoastTemplate(seoTitleRaw, product, fallbackDescription)
+    : `${product.title} | Periospot Tienda`
+  const seoDescription = seoDescriptionRaw
+    ? resolveYoastTemplate(seoDescriptionRaw, product, fallbackDescription)
+    : fallbackDescription
+  const ogTitleRaw = product.seo?.og_title || ""
+  const ogDescriptionRaw = product.seo?.og_description || ""
+  const ogTitle = ogTitleRaw ? resolveYoastTemplate(ogTitleRaw, product, fallbackDescription) : seoTitle
+  const ogDescription = ogDescriptionRaw
+    ? resolveYoastTemplate(ogDescriptionRaw, product, fallbackDescription)
+    : seoDescription
+  const twitterTitleRaw = product.seo?.twitter_title || ""
+  const twitterDescriptionRaw = product.seo?.twitter_description || ""
+  const twitterTitle = twitterTitleRaw
+    ? resolveYoastTemplate(twitterTitleRaw, product, fallbackDescription)
+    : ogTitle
+  const twitterDescription = twitterDescriptionRaw
+    ? resolveYoastTemplate(twitterDescriptionRaw, product, fallbackDescription)
+    : ogDescription
+  const ogImage = resolveUrl(product.seo?.og_image || product.featured_image_url)
+  const twitterImage = resolveUrl(product.seo?.twitter_image || ogImage)
+  const canonicalUrl = resolveUrl(product.seo?.canonical || `https://periospot.com/tienda/${product.slug}`)
+  const robotsValue = [
+    product.seo?.meta_robots,
+    product.seo?.meta_robots_noindex,
+    product.seo?.meta_robots_nofollow,
+    product.seo?.meta_robots_adv,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase()
+  const noindex =
+    robotsValue.includes("noindex") ||
+    product.seo?.meta_robots_noindex === "1" ||
+    product.seo?.meta_robots_noindex === "true"
+  const nofollow =
+    robotsValue.includes("nofollow") ||
+    product.seo?.meta_robots_nofollow === "1" ||
+    product.seo?.meta_robots_nofollow === "true"
+
   return {
-    title: `${product.title} | Periospot Tienda`,
-    description: product.description.slice(0, 160),
+    title: seoTitle,
+    description: seoDescription,
     keywords: [
       product.product_type,
       "dental education",
@@ -44,15 +114,19 @@ export async function generateMetadata({
       "implantology",
       product.brand,
     ].filter(Boolean),
+    robots: {
+      index: !noindex,
+      follow: !nofollow,
+    },
     openGraph: {
-      title: product.title,
-      description: product.description.slice(0, 160),
-      url: `https://periospot.com/tienda/${product.slug}`,
+      title: ogTitle,
+      description: ogDescription,
+      url: canonicalUrl,
       type: "website",
-      images: product.featured_image_url
+      images: ogImage
         ? [
             {
-              url: product.featured_image_url,
+              url: ogImage,
               width: 1200,
               height: 630,
               alt: product.title,
@@ -62,9 +136,12 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: product.title,
-      description: product.description.slice(0, 160),
-      images: product.featured_image_url ? [product.featured_image_url] : [],
+      title: twitterTitle,
+      description: twitterDescription,
+      images: twitterImage ? [twitterImage] : [],
+    },
+    alternates: {
+      canonical: canonicalUrl,
     },
   }
 }

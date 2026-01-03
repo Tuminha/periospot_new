@@ -13,13 +13,49 @@ import {
   addHeadingIds,
   type Post,
 } from "@/lib/content"
+import TableOfContents from "@/components/TableOfContents"
+import AuthorCard from "@/components/AuthorCard"
 
 // Helper to get author name from post
 function getAuthorName(author: Post['author']): string {
   if (typeof author === 'string') return author || 'Periospot'
   return author?.name || 'Periospot'
 }
-import { Separator } from "@/components/ui/separator"
+
+const stripHtml = (value: string) => value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+
+const resolveYoastTemplate = (template: string, post: Post, excerptText: string) => {
+  const formattedDate = post.date
+    ? new Date(post.date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : ""
+  const replacements: Record<string, string> = {
+    "%%title%%": post.title,
+    "%%sitename%%": "Periospot",
+    "%%excerpt%%": excerptText,
+    "%%category%%": post.categories?.[0] || "",
+    "%%primary_category%%": post.categories?.[0] || "",
+    "%%date%%": formattedDate,
+    "%%currentyear%%": String(new Date().getFullYear()),
+    "%%sep%%": "-",
+    "%%page%%": "",
+  }
+
+  return template
+    .replace(/%%[^%]+%%/g, (token) => replacements[token] ?? "")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+const resolveUrl = (value?: string) => {
+  if (!value) return ""
+  if (value.startsWith("http://") || value.startsWith("https://")) return value
+  if (value.startsWith("/")) return `https://periospot.com${value}`
+  return value
+}
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -46,29 +82,74 @@ export async function generateMetadata({
     }
   }
 
-  const excerpt = post.excerpt?.replace(/<[^>]*>/g, "").slice(0, 160) || ""
+  const excerptText = stripHtml(post.excerpt || post.content || "")
+  const fallbackDescription = excerptText.slice(0, 160)
+  const seoTitleRaw = post.seo?.title || ""
+  const seoDescriptionRaw = post.seo?.description || ""
+  const seoTitle = seoTitleRaw ? resolveYoastTemplate(seoTitleRaw, post, fallbackDescription) : post.title
+  const seoDescription = seoDescriptionRaw
+    ? resolveYoastTemplate(seoDescriptionRaw, post, fallbackDescription)
+    : fallbackDescription
+  const ogTitleRaw = post.seo?.og_title || ""
+  const ogDescriptionRaw = post.seo?.og_description || ""
+  const ogTitle = ogTitleRaw ? resolveYoastTemplate(ogTitleRaw, post, fallbackDescription) : seoTitle
+  const ogDescription = ogDescriptionRaw
+    ? resolveYoastTemplate(ogDescriptionRaw, post, fallbackDescription)
+    : seoDescription
+  const twitterTitleRaw = post.seo?.twitter_title || ""
+  const twitterDescriptionRaw = post.seo?.twitter_description || ""
+  const twitterTitle = twitterTitleRaw
+    ? resolveYoastTemplate(twitterTitleRaw, post, fallbackDescription)
+    : ogTitle
+  const twitterDescription = twitterDescriptionRaw
+    ? resolveYoastTemplate(twitterDescriptionRaw, post, fallbackDescription)
+    : ogDescription
+  const ogImage = resolveUrl(post.seo?.og_image || post.featuredImage)
+  const twitterImage = resolveUrl(post.seo?.twitter_image || ogImage)
+  const canonicalUrl = resolveUrl(post.seo?.canonical || `https://periospot.com/blog/${post.slug}`)
+  const robotsValue = [
+    post.seo?.meta_robots,
+    post.seo?.meta_robots_noindex,
+    post.seo?.meta_robots_nofollow,
+    post.seo?.meta_robots_adv,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase()
+  const noindex =
+    robotsValue.includes("noindex") ||
+    post.seo?.meta_robots_noindex === "1" ||
+    post.seo?.meta_robots_noindex === "true"
+  const nofollow =
+    robotsValue.includes("nofollow") ||
+    post.seo?.meta_robots_nofollow === "1" ||
+    post.seo?.meta_robots_nofollow === "true"
 
   return {
-    title: post.title,
-    description: excerpt,
+    title: seoTitle,
+    description: seoDescription,
     authors: [{ name: getAuthorName(post.author) }],
+    robots: {
+      index: !noindex,
+      follow: !nofollow,
+    },
     openGraph: {
-      title: post.title,
-      description: excerpt,
+      title: ogTitle,
+      description: ogDescription,
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.modified,
       authors: [getAuthorName(post.author)],
-      images: post.featuredImage ? [post.featuredImage] : [],
+      images: ogImage ? [ogImage] : [],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: excerpt,
-      images: post.featuredImage ? [post.featuredImage] : [],
+      title: twitterTitle,
+      description: twitterDescription,
+      images: twitterImage ? [twitterImage] : [],
     },
     alternates: {
-      canonical: `https://periospot.com/blog/${post.slug}`,
+      canonical: canonicalUrl,
     },
   }
 }
@@ -115,8 +196,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             "@context": "https://schema.org",
             "@type": "Article",
             headline: post.title,
-            description: post.excerpt?.replace(/<[^>]*>/g, "").slice(0, 160),
-            image: post.featuredImage,
+            description: stripHtml(post.seo?.description || post.excerpt || post.content || "").slice(0, 160),
+            image: post.seo?.og_image || post.featuredImage,
             author: {
               "@type": "Person",
               name: authorName,
@@ -233,25 +314,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               )}
 
-              {/* Table of Contents */}
-              {tableOfContents.length > 0 && (
-                <div className="bg-card border border-border rounded-xl p-5 mb-10">
-                  <h3 className="font-display text-base font-semibold text-foreground mb-3">
-                    Table of Contents
-                  </h3>
-                  <nav className="flex flex-wrap gap-2">
-                    {tableOfContents.map((item) => (
-                      <a
-                        key={item.id}
-                        href={`#${item.id}`}
-                        className="text-sm py-1.5 px-3 rounded-lg transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                      >
-                        {item.title}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-              )}
+              {/* Table of Contents - Interactive with scroll tracking */}
+              <TableOfContents items={tableOfContents} />
 
               {/* Article Content */}
               <div className="prose max-w-none mb-12">
@@ -302,24 +366,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               </div>
 
-              {/* Author Box */}
-              <div className="bg-card border border-border rounded-2xl p-6 mb-10">
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                    <span className="text-foreground font-semibold text-lg">
-                      {authorInitials}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-1">
-                      {authorName}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      Expert in periodontics and implantology with extensive clinical experience.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              {/* Author Card with profile pic and social links */}
+              <AuthorCard authorName={authorName} />
 
               {/* Prev/Next Navigation */}
               <div className="grid grid-cols-2 gap-4 mb-16">

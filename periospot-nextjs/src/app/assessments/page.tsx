@@ -29,6 +29,18 @@ export const metadata: Metadata = {
 // Featured assessments data
 const assessments = [
   {
+    id: "ycAW7N",
+    title: "Periospot Implant Assessment",
+    description:
+      "Our most popular assessment with over 1,400 completions. Comprehensive evaluation of implant dentistry knowledge covering planning, placement, and restoration.",
+    category: "Implantology",
+    duration: "20-25 min",
+    questions: 30,
+    difficulty: "Intermediate",
+    responses: 1403,
+    featured: true,
+  },
+  {
     id: "YgRY7KRD",
     title: "Immediate Loading Survey",
     description:
@@ -41,16 +53,76 @@ const assessments = [
     featured: true,
   },
   {
-    id: "mcuv9YyU",
-    title: "IMPLANZ Validation Questionnaire",
+    id: "FxLnZWEP",
+    title: "Socket Shield Quiz",
     description:
-      "Comprehensive validation questionnaire for implant treatment planning. Test your knowledge on implant selection, positioning, and prosthetic considerations.",
+      "Test your knowledge on the Socket Shield technique. Covers indications, contraindications, surgical protocol, and evidence-based outcomes.",
     category: "Implantology",
     duration: "10-15 min",
     questions: 20,
     difficulty: "Advanced",
-    responses: 6,
+    responses: 205,
     featured: true,
+  },
+  {
+    id: "jXXbEUed",
+    title: "Cuestionario Periospot (Español)",
+    description:
+      "Evaluación completa de conocimientos en implantología y periodoncia. Assessment en español para profesionales hispanohablantes.",
+    category: "Implantology",
+    duration: "15-20 min",
+    questions: 25,
+    difficulty: "Intermediate",
+    responses: 390,
+    featured: true,
+  },
+  {
+    id: "JpT21I50",
+    title: "Root Coverage Procedures",
+    description:
+      "8 Golden Rules on Esthetic Plastic Periodontal Surgery. Test your knowledge on mucogingival surgery and root coverage techniques.",
+    category: "Periodontics",
+    duration: "10-15 min",
+    questions: 18,
+    difficulty: "Intermediate",
+    responses: 75,
+    featured: false,
+  },
+  {
+    id: "oWV6Ci5H",
+    title: "Teste Inicial Periospot (Português)",
+    description:
+      "Avaliação abrangente de conhecimentos em implantodontia e periodontia. Assessment em português para profissionais lusófonos.",
+    category: "Implantology",
+    duration: "15-20 min",
+    questions: 25,
+    difficulty: "Intermediate",
+    responses: 80,
+    featured: false,
+  },
+  {
+    id: "mfoKYLTm",
+    title: "Platform Switching Quiz",
+    description:
+      "Explore the story behind platform switching. Learn about the biological concept and its implications in implant dentistry.",
+    category: "Implantology",
+    duration: "10-15 min",
+    questions: 15,
+    difficulty: "Intermediate",
+    responses: 70,
+    featured: false,
+  },
+  {
+    id: "nceFR3vl",
+    title: "PRF Questionnaire",
+    description:
+      "Assess your knowledge on Platelet-Rich Fibrin (PRF) protocols and applications in dental surgery and regeneration.",
+    category: "Regenerative",
+    duration: "10-15 min",
+    questions: 15,
+    difficulty: "Intermediate",
+    responses: 54,
+    featured: false,
   },
   {
     id: "qRFkPiwt",
@@ -62,6 +134,18 @@ const assessments = [
     questions: 15,
     difficulty: "Beginner",
     responses: 13,
+    featured: false,
+  },
+  {
+    id: "mcuv9YyU",
+    title: "IMPLANZ Validation Questionnaire",
+    description:
+      "Comprehensive validation questionnaire for implant treatment planning. Test your knowledge on implant selection, positioning, and prosthetic considerations.",
+    category: "Implantology",
+    duration: "10-15 min",
+    questions: 20,
+    difficulty: "Advanced",
+    responses: 6,
     featured: false,
   },
   {
@@ -254,7 +338,7 @@ export default function AssessmentsPage() {
               organization&apos;s learning objectives and curriculum.
             </p>
             <Button asChild className="mt-6">
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/team">Contact Us</Link>
             </Button>
           </div>
         </div>

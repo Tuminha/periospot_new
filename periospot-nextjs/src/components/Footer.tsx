@@ -17,7 +17,6 @@ const Footer = () => {
     company: [
       { label: "About", href: "/about" },
       { label: "Team", href: "/team" },
-      { label: "Contact", href: "/contact" },
       { label: "Shop", href: "/tienda" },
     ],
     legal: [
@@ -28,10 +27,10 @@ const Footer = () => {
   }
 
   const socials = [
-    { icon: Twitter, href: "https://twitter.com/periospot" },
+    { icon: Twitter, href: "https://x.com/periospot" },
     { icon: Instagram, href: "https://instagram.com/periospot" },
-    { icon: Youtube, href: "https://youtube.com/periospot" },
-    { icon: Github, href: "https://github.com/periospot" },
+    { icon: Youtube, href: "https://youtube.com/@tuminha21" },
+    { icon: Github, href: "https://github.com/Tuminha" },
   ]
 
   return (

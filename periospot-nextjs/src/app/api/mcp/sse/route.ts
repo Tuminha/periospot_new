@@ -1,94 +1,74 @@
-// MCP SSE Endpoint for Claude Desktop
-// Establishes Server-Sent Events connection and provides message endpoint URL
-
 import { NextRequest } from 'next/server';
 
-// Store active sessions (in production, consider using Redis)
-const sessions = new Map<
-  string,
-  {
-    messageEndpoint: string;
-    createdAt: number;
-  }
->();
-
-// Clean up old sessions periodically
-function cleanupSessions() {
-  const oneHourAgo = Date.now() - 60 * 60 * 1000;
-  for (const [id, session] of sessions) {
-    if (session.createdAt < oneHourAgo) {
-      sessions.delete(id);
-    }
-  }
-}
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const maxDuration = 300; // 5 minutes max (Vercel Pro), adjust as needed
 
 export async function GET(request: NextRequest) {
-  // Generate unique session ID
-  const sessionId = crypto.randomUUID();
+  const encoder = new TextEncoder();
 
-  // Get the base URL for the message endpoint
+  const sessionId = crypto.randomUUID();
   const url = new URL(request.url);
   const baseUrl = `${url.protocol}//${url.host}`;
   const messageEndpoint = `${baseUrl}/api/mcp/message?sessionId=${sessionId}`;
 
-  // Store session
-  sessions.set(sessionId, {
-    messageEndpoint,
-    createdAt: Date.now(),
-  });
-
-  // Clean up old sessions
-  cleanupSessions();
-
-  // Create SSE stream
-  const encoder = new TextEncoder();
+  let isConnected = true;
 
   const stream = new ReadableStream({
     start(controller) {
-      // Send the endpoint event immediately
-      // This tells Claude Desktop where to send JSON-RPC messages
+      console.log(`[MCP SSE] Connection opened: ${sessionId}`);
+
+      // Send endpoint event immediately
       const endpointEvent = `event: endpoint\ndata: ${messageEndpoint}\n\n`;
       controller.enqueue(encoder.encode(endpointEvent));
 
-      // Keep connection alive with periodic pings (every 30 seconds)
+      // Send keepalive every 10 seconds (more frequent)
       const pingInterval = setInterval(() => {
-        try {
-          const ping = `: ping ${Date.now()}\n\n`;
-          controller.enqueue(encoder.encode(ping));
-        } catch {
-          // Connection closed, clean up
+        if (!isConnected) {
           clearInterval(pingInterval);
-          sessions.delete(sessionId);
+          return;
         }
-      }, 30000);
+        try {
+          controller.enqueue(encoder.encode(`: keepalive ${Date.now()}\n\n`));
+        } catch (e) {
+          console.log(`[MCP SSE] Ping failed, closing: ${sessionId}`);
+          clearInterval(pingInterval);
+          isConnected = false;
+        }
+      }, 10000);
 
       // Handle client disconnect
       request.signal.addEventListener('abort', () => {
+        console.log(`[MCP SSE] Client disconnected: ${sessionId}`);
+        isConnected = false;
         clearInterval(pingInterval);
-        sessions.delete(sessionId);
         try {
           controller.close();
-        } catch {
+        } catch (e) {
           // Already closed
         }
       });
     },
+    cancel() {
+      console.log(`[MCP SSE] Stream cancelled: ${sessionId}`);
+      isConnected = false;
+    }
   });
 
   return new Response(stream, {
+    status: 200,
     headers: {
       'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache, no-transform',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
       'Connection': 'keep-alive',
-      'X-Accel-Buffering': 'no', // Disable nginx buffering
+      'Keep-Alive': 'timeout=300',
+      'X-Accel-Buffering': 'no',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
     },
   });
 }
 
-// Handle CORS preflight
+// Handle OPTIONS for CORS
 export async function OPTIONS() {
   return new Response(null, {
     status: 204,
@@ -99,10 +79,3 @@ export async function OPTIONS() {
     },
   });
 }
-
-// Export sessions for validation in message endpoint
-export { sessions };
-
-// Use Node.js runtime for streaming support
-export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';

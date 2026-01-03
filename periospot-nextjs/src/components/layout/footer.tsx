@@ -16,9 +16,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About", href: "/about" },
-    { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" },
-    { name: "Collaborate", href: "/collaborate" },
+    { name: "Team & Contact", href: "/team" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
@@ -29,10 +27,10 @@ const footerLinks = {
 
 const socialLinks = [
   { name: "Facebook", href: "https://facebook.com/periospot", icon: Facebook },
-  { name: "Twitter", href: "https://twitter.com/periospot", icon: Twitter },
+  { name: "X", href: "https://x.com/periospot", icon: Twitter },
   { name: "Instagram", href: "https://instagram.com/periospot", icon: Instagram },
   { name: "LinkedIn", href: "https://linkedin.com/company/periospot", icon: Linkedin },
-  { name: "YouTube", href: "https://youtube.com/user/tuminha21", icon: Youtube },
+  { name: "YouTube", href: "https://youtube.com/@tuminha21", icon: Youtube },
 ]
 
 export function Footer() {

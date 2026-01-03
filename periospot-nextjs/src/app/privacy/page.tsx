@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p>
               To exercise these rights, please contact us at{" "}
-              <a href="mailto:privacy@periospot.com">privacy@periospot.com</a>.
+              <a href="mailto:periospot@periospot.com">periospot@periospot.com</a>.
             </p>
 
             <h2>7. Cookies</h2>
@@ -145,7 +145,7 @@ export default function PrivacyPolicyPage() {
               If you have questions about this Privacy Policy, please contact us at:
             </p>
             <ul>
-              <li>Email: <a href="mailto:privacy@periospot.com">privacy@periospot.com</a></li>
+              <li>Email: <a href="mailto:periospot@periospot.com">periospot@periospot.com</a></li>
               <li>Website: <Link href="/team" className="text-primary hover:underline">Contact Form</Link></li>
             </ul>
           </CardContent>

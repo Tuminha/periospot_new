@@ -252,6 +252,7 @@ CREATE TABLE public.posts (
     focus_keyword TEXT,
     canonical_url TEXT,
     og_image_url TEXT,
+    seo JSONB DEFAULT '{}',
     -- Categorization
     categories TEXT[],
     tags TEXT[],
@@ -287,6 +288,7 @@ CREATE TABLE public.pages (
     meta_title TEXT,
     meta_description TEXT,
     og_image_url TEXT,
+    seo JSONB DEFAULT '{}',
     -- Layout
     template TEXT DEFAULT 'default', -- default, landing, about, contact
     show_in_navigation BOOLEAN DEFAULT false,
@@ -330,6 +332,7 @@ CREATE TABLE public.products (
     -- SEO
     meta_title TEXT,
     meta_description TEXT,
+    seo JSONB DEFAULT '{}',
     -- External links
     woocommerce_url TEXT, -- Link to WooCommerce for purchase
     -- Timestamps

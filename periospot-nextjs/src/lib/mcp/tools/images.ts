@@ -3,6 +3,13 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type { MCPToolManifest } from '@/lib/types/mcp';
 import { sanitizeFilename, getMimeType } from '../utils/helpers';
+import {
+  generateDentalImage,
+  validateDentalImage,
+  type ViewType,
+  type DentalRegion,
+  type Procedure,
+} from '../utils/gemini';
 
 // =============================================================================
 // TOOL MANIFESTS
@@ -130,6 +137,114 @@ export const imageToolManifests: MCPToolManifest[] = [
         },
       },
       required: ['image_id'],
+    },
+  },
+  {
+    name: 'generate_dental_image',
+    description: 'Generate a dental illustration using AI (Gemini). Creates professional clinical illustrations, diagrams, and educational images for dental content. Automatically uses PerioSpot brand colors and clinical accuracy guidelines.',
+    parameters: {
+      type: 'object',
+      properties: {
+        prompt: {
+          type: 'string',
+          description: 'Description of the dental image to generate (e.g., "cross-section of dental implant in posterior mandible showing osseointegration")',
+        },
+        filename: {
+          type: 'string',
+          description: 'Filename for the generated image (e.g., "implant-osseointegration.png")',
+        },
+        view_type: {
+          type: 'string',
+          description: 'Type of view for the illustration',
+          enum: ['cross-section', 'panoramic', 'clinical-photo', 'diagram', '3d-render', 'before-after'],
+          default: 'diagram',
+        },
+        region: {
+          type: 'string',
+          description: 'Dental region to focus on',
+          enum: ['anterior', 'posterior', 'maxilla', 'mandible', 'full-arch', 'single-tooth'],
+        },
+        procedure: {
+          type: 'string',
+          description: 'Related dental procedure',
+          enum: ['implant-placement', 'sinus-lift', 'bone-graft', 'soft-tissue', 'extraction', 'crown', 'periodontal', 'general'],
+        },
+        style: {
+          type: 'string',
+          description: 'Visual style of the illustration',
+          enum: ['clinical', 'educational', 'artistic', 'diagram'],
+          default: 'educational',
+        },
+        aspect_ratio: {
+          type: 'string',
+          description: 'Aspect ratio for the image',
+          enum: ['1:1', '16:9', '4:3', '3:2'],
+          default: '16:9',
+        },
+        include_labels: {
+          type: 'boolean',
+          description: 'Whether to include anatomical labels in the image',
+          default: true,
+        },
+        folder: {
+          type: 'string',
+          description: 'Folder to save the image in',
+          enum: ['blog', 'courses', 'general'],
+          default: 'blog',
+        },
+        validate: {
+          type: 'boolean',
+          description: 'Whether to run clinical validation on the generated image',
+          default: false,
+        },
+      },
+      required: ['prompt', 'filename'],
+    },
+  },
+  {
+    name: 'generate_blog_hero_image',
+    description: 'Generate a hero image for a blog post. Optimized for blog headers with 16:9 aspect ratio and educational style.',
+    parameters: {
+      type: 'object',
+      properties: {
+        topic: {
+          type: 'string',
+          description: 'The blog post topic (e.g., "dental implant surgery", "periodontal disease prevention")',
+        },
+        slug: {
+          type: 'string',
+          description: 'The blog post slug (used for filename)',
+        },
+        style: {
+          type: 'string',
+          description: 'Visual style',
+          enum: ['clinical', 'educational', 'artistic', 'diagram'],
+          default: 'educational',
+        },
+      },
+      required: ['topic', 'slug'],
+    },
+  },
+  {
+    name: 'generate_og_image',
+    description: 'Generate an Open Graph (social share) image for a blog post. Optimized for social media with text overlay area.',
+    parameters: {
+      type: 'object',
+      properties: {
+        title: {
+          type: 'string',
+          description: 'The blog post title to feature',
+        },
+        slug: {
+          type: 'string',
+          description: 'The blog post slug',
+        },
+        subtitle: {
+          type: 'string',
+          description: 'Optional subtitle or category',
+        },
+      },
+      required: ['title', 'slug'],
     },
   },
 ];
@@ -412,5 +527,237 @@ export const imageTools = {
       message: 'Image deleted successfully',
       image_id,
     };
+  },
+
+  // =========================================================================
+  // AI IMAGE GENERATION TOOLS
+  // =========================================================================
+
+  async generate_dental_image(
+    params: {
+      prompt: string;
+      filename: string;
+      view_type?: ViewType;
+      region?: DentalRegion;
+      procedure?: Procedure;
+      style?: 'clinical' | 'educational' | 'artistic' | 'diagram';
+      aspect_ratio?: '1:1' | '16:9' | '4:3' | '3:2';
+      include_labels?: boolean;
+      folder?: 'blog' | 'courses' | 'general';
+      validate?: boolean;
+    },
+    supabase: SupabaseClient
+  ): Promise<{
+    success: boolean;
+    message: string;
+    image_id?: string;
+    url: string;
+    filename: string;
+    dimensions: { width: number; height: number };
+    validation?: { isValid: boolean; score: number; feedback: string } | null;
+    prompt_used: string;
+  }> {
+    const {
+      prompt,
+      filename,
+      view_type = 'diagram',
+      region,
+      procedure,
+      style = 'educational',
+      aspect_ratio = '16:9',
+      include_labels = true,
+      folder = 'blog',
+      validate = false,
+    } = params;
+
+    console.log(`[MCP] Generating dental image: ${prompt.substring(0, 50)}...`);
+
+    // Generate image with Gemini
+    const { imageBase64, mimeType, prompt: usedPrompt } = await generateDentalImage({
+      prompt,
+      viewType: view_type,
+      region,
+      procedure,
+      style,
+      aspectRatio: aspect_ratio,
+      includeLabels: include_labels,
+    });
+
+    // Optional validation
+    let validation = null;
+    if (validate) {
+      validation = await validateDentalImage(imageBase64, prompt);
+      if (!validation.isValid) {
+        console.log(`[MCP] Image validation warning: ${validation.feedback}`);
+      }
+    }
+
+    // Process image buffer
+    const imageBuffer = Buffer.from(imageBase64, 'base64');
+
+    // Determine dimensions based on aspect ratio
+    const dimensions: Record<string, { width: number; height: number }> = {
+      '1:1': { width: 1024, height: 1024 },
+      '16:9': { width: 1920, height: 1080 },
+      '4:3': { width: 1600, height: 1200 },
+      '3:2': { width: 1800, height: 1200 },
+    };
+
+    const { width, height } = dimensions[aspect_ratio] || dimensions['16:9'];
+
+    // Try to process with Sharp if available
+    let processedBuffer: Buffer = imageBuffer;
+    try {
+      const sharp = (await import('sharp')).default;
+      processedBuffer = await sharp(imageBuffer)
+        .resize(width, height, { fit: 'cover' })
+        .png({ quality: 90 })
+        .toBuffer();
+    } catch (e) {
+      console.log('[MCP] Sharp processing skipped, using original image');
+    }
+
+    // Upload to Supabase Storage
+    const timestamp = Date.now();
+    const cleanFilename = filename.endsWith('.png') ? filename : `${filename}.png`;
+    const safeFilename = sanitizeFilename(cleanFilename);
+    const storagePath = `${folder}/${timestamp}-${safeFilename}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('images')
+      .upload(storagePath, processedBuffer, {
+        contentType: 'image/png',
+        upsert: false,
+      });
+
+    if (uploadError) {
+      throw new Error(`Upload failed: ${uploadError.message}`);
+    }
+
+    // Get public URL
+    const { data: urlData } = supabase.storage
+      .from('images')
+      .getPublicUrl(storagePath);
+
+    // Save metadata to database
+    const { data: image, error: dbError } = await supabase
+      .from('images')
+      .insert({
+        url: urlData.publicUrl,
+        storage_path: storagePath,
+        filename: safeFilename,
+        alt_text: prompt.substring(0, 200),
+        folder,
+        mime_type: 'image/png',
+        width,
+        height,
+        size_bytes: processedBuffer.length,
+        metadata: {
+          generator: 'gemini-2.0-flash',
+          prompt: usedPrompt,
+          view_type,
+          region,
+          procedure,
+          style,
+          validation,
+        },
+      })
+      .select()
+      .single();
+
+    if (dbError) {
+      console.error('Failed to save image metadata:', dbError);
+    }
+
+    return {
+      success: true,
+      message: 'Dental image generated successfully',
+      image_id: image?.id,
+      url: urlData.publicUrl,
+      filename: safeFilename,
+      dimensions: { width, height },
+      validation,
+      prompt_used: usedPrompt.substring(0, 200) + '...',
+    };
+  },
+
+  async generate_blog_hero_image(
+    params: {
+      topic: string;
+      slug: string;
+      style?: 'clinical' | 'educational' | 'artistic' | 'diagram';
+    },
+    supabase: SupabaseClient
+  ): Promise<{
+    success: boolean;
+    message: string;
+    image_id?: string;
+    url: string;
+    filename: string;
+    dimensions: { width: number; height: number };
+    prompt_used: string;
+  }> {
+    const { topic, slug, style = 'educational' } = params;
+
+    // Build optimized hero image prompt
+    const heroPrompt = `Professional hero image for dental blog post about "${topic}".
+Wide composition suitable for website header.
+Clean, modern design with space for text overlay on the left side.
+Focus on visual impact and educational value.`;
+
+    return await imageTools.generate_dental_image(
+      {
+        prompt: heroPrompt,
+        filename: `${slug}-hero.png`,
+        view_type: 'diagram',
+        style,
+        aspect_ratio: '16:9',
+        include_labels: false,
+        folder: 'blog',
+        validate: false,
+      },
+      supabase
+    );
+  },
+
+  async generate_og_image(
+    params: {
+      title: string;
+      slug: string;
+      subtitle?: string;
+    },
+    supabase: SupabaseClient
+  ): Promise<{
+    success: boolean;
+    message: string;
+    image_id?: string;
+    url: string;
+    filename: string;
+    dimensions: { width: number; height: number };
+    prompt_used: string;
+  }> {
+    const { title, slug, subtitle } = params;
+
+    // OG images need space for text overlay
+    const ogPrompt = `Social media share image for dental article titled "${title}".
+${subtitle ? `Subtitle: ${subtitle}.` : ''}
+Clean background with subtle dental imagery.
+Leave large area (60% of image) with clean background for text overlay.
+Professional, trustworthy appearance.
+PerioSpot brand colors: dark navy background (#0D1B2A), primary blue (#15365A), and copper accent (#C87941).`;
+
+    return await imageTools.generate_dental_image(
+      {
+        prompt: ogPrompt,
+        filename: `${slug}-og.png`,
+        view_type: 'diagram',
+        style: 'educational',
+        aspect_ratio: '16:9',
+        include_labels: false,
+        folder: 'blog',
+        validate: false,
+      },
+      supabase
+    );
   },
 };

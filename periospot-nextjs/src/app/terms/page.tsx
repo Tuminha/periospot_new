@@ -164,7 +164,7 @@ export default function TermsOfServicePage() {
               For questions about these Terms of Service, please contact us at:
             </p>
             <ul>
-              <li>Email: <a href="mailto:legal@periospot.com">legal@periospot.com</a></li>
+              <li>Email: <a href="mailto:periospot@periospot.com">periospot@periospot.com</a></li>
               <li>Website: <Link href="/team" className="text-primary hover:underline">Contact Form</Link></li>
             </ul>
           </CardContent>

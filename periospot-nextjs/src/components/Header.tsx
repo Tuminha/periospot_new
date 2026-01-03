@@ -1,36 +1,108 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Search, ShoppingCart, User, ChevronDown } from "lucide-react"
-import { useState } from "react"
+import { Menu, X, Search, ShoppingCart, ChevronDown, Shield, User, LogOut } from "lucide-react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { createBrowserClient } from "@supabase/ssr"
+import { User as SupabaseUser } from "@supabase/supabase-js"
 import { Button } from "@/components/ui/button"
+import { GB, US, ES, PT, BR, CN } from "country-flag-icons/react/3x2"
+
+const ADMIN_EMAIL = "cisco@periospot.com"
+
+const FlagIcon = ({
+  code,
+  className = "w-5 h-3.5",
+}: {
+  code: string
+  className?: string
+}) => {
+  const flags: Record<string, React.ComponentType<{ className?: string }>> = {
+    GB,
+    US,
+    ES,
+    PT,
+    BR,
+    CN,
+  }
+
+  if (code.includes(",")) {
+    const codes = code.split(",")
+    return (
+      <span className="flex items-center gap-0.5">
+        {codes.map((item) => {
+          const Flag = flags[item.trim()]
+          return Flag ? <Flag key={item} className={className} /> : null
+        })}
+      </span>
+    )
+  }
+
+  const Flag = flags[code]
+  return Flag ? <Flag className={className} /> : null
+}
 
 interface NavItem {
   label: string
   path?: string
-  children?: { label: string; path: string }[]
+  children?: { label: string; path: string; flagCode?: string }[]
 }
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [user, setUser] = useState<SupabaseUser | null>(null)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const router = useRouter()
+
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      setUser(user)
+      setIsAdmin(user?.email === ADMIN_EMAIL)
+    }
+    getUser()
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+      setIsAdmin(session?.user?.email === ADMIN_EMAIL)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [supabase.auth])
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut()
+    setUser(null)
+    setIsAdmin(false)
+    router.push("/")
+    router.refresh()
+  }
 
   const navItems: NavItem[] = [
     {
       label: "Articles",
       children: [
-        { label: "English", path: "/blog" },
-        { label: "Español", path: "/blog/es" },
-        { label: "Português", path: "/blog/pt" },
+        { label: "English", path: "/blog", flagCode: "GB,US" },
+        { label: "Español", path: "/blog/es", flagCode: "ES" },
+        { label: "Português", path: "/blog/pt", flagCode: "PT,BR" },
+        { label: "中文", path: "/blog/zh", flagCode: "CN" },
       ],
     },
     {
       label: "Library",
       children: [
-        { label: "English", path: "/library" },
-        { label: "Español", path: "/library/es" },
-        { label: "Português", path: "/library/pt" },
+        { label: "English", path: "/library", flagCode: "GB,US" },
+        { label: "Español", path: "/library/es", flagCode: "ES" },
+        { label: "Português", path: "/library/pt", flagCode: "PT,BR" },
+        { label: "中文", path: "/library/zh", flagCode: "CN" },
       ],
     },
     {
@@ -42,7 +114,7 @@ const Header = () => {
         { label: "Webinars Toolkit", path: "/resources/webinars-toolkit" },
       ],
     },
-    { label: "Online Learning", path: "/assessments" },
+    // Online Learning hidden - no content yet
     { label: "Team & Contact", path: "/team" },
   ]
 
@@ -76,7 +148,7 @@ const Header = () => {
               href="/"
               className="font-display text-lg font-semibold text-foreground px-3 py-1.5"
             >
-              <span className="text-primary">◉</span> periospot
+              <span className="text-primary relative top-[1px]">◉</span> periospot
             </Link>
           </motion.div>
 
@@ -130,6 +202,7 @@ const Header = () => {
                           href={child.path}
                           className="flex items-center gap-2 px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
                         >
+                          {child.flagCode && <FlagIcon code={child.flagCode} />}
                           {child.label}
                         </Link>
                       ))}
@@ -141,28 +214,82 @@ const Header = () => {
           </div>
 
           {/* Action Icons */}
-          <div className="hidden md:flex items-center gap-2 ml-2">
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
-              aria-label="Search"
-            >
-              <Search size={18} />
-            </motion.button>
+          <div className="hidden md:flex items-center gap-1 ml-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.55, duration: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
             >
-              <Link href="/tienda">
-                <Button className="gap-2 rounded-full">
-                  GO SHOP
-                  <ShoppingCart size={16} />
-                </Button>
+              <Link
+                href="/search"
+                className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors inline-flex"
+                aria-label="Search"
+              >
+                <Search size={18} />
               </Link>
             </motion.div>
+
+            {/* Admin Icon - Only for cisco@periospot.com */}
+            {isAdmin && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.52, duration: 0.5 }}
+              >
+                <Link
+                  href="/admin"
+                  className="p-2 text-purple-500 hover:text-purple-600 hover:bg-purple-500/10 rounded-full transition-colors inline-flex"
+                  aria-label="Admin Dashboard"
+                  title="Admin Dashboard"
+                >
+                  <Shield size={18} />
+                </Link>
+              </motion.div>
+            )}
+
+            {user ? (
+              <>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.55, duration: 0.5 }}
+                >
+                  <Link
+                    href="/dashboard"
+                    className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors inline-flex"
+                    aria-label="Dashboard"
+                  >
+                    <User size={18} />
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.57, duration: 0.5 }}
+                >
+                  <button
+                    onClick={handleSignOut}
+                    className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+                    aria-label="Sign Out"
+                  >
+                    <LogOut size={18} />
+                  </button>
+                </motion.div>
+              </>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.55, duration: 0.5 }}
+              >
+                <Link href="/login">
+                  <Button className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
+                    Log In
+                  </Button>
+                </Link>
+              </motion.div>
+            )}
+
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -174,7 +301,7 @@ const Header = () => {
                 aria-label="Cart"
               >
                 <ShoppingCart size={18} />
-                <span className="absolute -top-0.5 -right-0.5 bg-primary text-primary-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute -top-0.5 -right-0.5 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center bg-primary text-primary-foreground">
                   0
                 </span>
               </Link>
@@ -243,6 +370,7 @@ const Header = () => {
                                 onClick={() => setIsMenuOpen(false)}
                                 className="flex items-center gap-2 py-2.5 px-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
                               >
+                                {child.flagCode && <FlagIcon code={child.flagCode} />}
                                 {child.label}
                               </Link>
                             ))}
@@ -263,19 +391,60 @@ const Header = () => {
               </div>
             ))}
 
-            <div className="mt-4 pt-4 border-t border-border/50 space-y-2">
-              <Link href="/login" onClick={() => setIsMenuOpen(false)} className="block">
-                <Button className="w-full gap-2">
-                  Log in
-                  <User size={18} />
-                </Button>
-              </Link>
-              <Link href="/tienda" onClick={() => setIsMenuOpen(false)} className="block">
-                <Button variant="secondary" className="w-full gap-2">
-                  Shop
+            <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border/50">
+              {isAdmin && (
+                <Link
+                  href="/admin"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 py-2.5 px-4 bg-purple-500/10 text-purple-600 border border-purple-500/30 rounded-full transition-colors"
+                >
+                  <Shield size={18} />
+                  <span className="text-sm font-medium">Admin Dashboard</span>
+                </Link>
+              )}
+              <div className="flex items-center gap-2">
+                {user ? (
+                  <>
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex-1"
+                    >
+                      <Button variant="outline" className="w-full rounded-full">
+                        <User size={18} className="mr-2" />
+                        Dashboard
+                      </Button>
+                    </Link>
+                    <button
+                      onClick={() => {
+                        handleSignOut()
+                        setIsMenuOpen(false)
+                      }}
+                      className="flex items-center justify-center gap-2 py-2.5 px-4 text-muted-foreground hover:text-foreground border border-border rounded-full transition-colors"
+                    >
+                      <LogOut size={18} />
+                    </button>
+                  </>
+                ) : (
+                  <Link
+                    href="/login"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex-1"
+                  >
+                    <Button className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      Log In
+                    </Button>
+                  </Link>
+                )}
+                <Link
+                  href="/cart"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 py-2.5 px-4 text-muted-foreground hover:text-foreground border border-border rounded-full transition-colors"
+                >
                   <ShoppingCart size={18} />
-                </Button>
-              </Link>
+                  <span className="text-sm">0</span>
+                </Link>
+              </div>
             </div>
           </motion.nav>
         )}

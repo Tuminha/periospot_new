@@ -3,11 +3,9 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+import ContactForm from "@/components/ContactForm"
+import { getPageSeoBySlug } from "@/lib/content"
 import {
-  Mail,
   Linkedin,
   Twitter,
   Instagram,
@@ -21,23 +19,57 @@ import {
   Globe
 } from "lucide-react"
 
-export const metadata: Metadata = {
+const fallbackMeta = {
   title: "Team & Contact | Periospot",
   description:
     "Meet the Periospot team - dental education experts dedicated to providing high-quality content on implantology, periodontics, and aesthetic dentistry. Contact us for collaborations and inquiries.",
-  keywords: [
-    "periospot team",
-    "dental educators",
-    "implant dentistry experts",
-    "periodontics specialists",
-    "contact periospot",
-  ],
-  openGraph: {
-    title: "Team & Contact | Periospot",
-    description: "Meet our team of dental education experts and get in touch.",
-    url: "https://periospot.com/team",
-    type: "website",
-  },
+  url: "https://periospot.com/team",
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getPageSeoBySlug("team-contact")
+  const title = seo?.title || fallbackMeta.title
+  const description = seo?.description || fallbackMeta.description
+  const ogTitle = seo?.og_title || title
+  const ogDescription = seo?.og_description || description
+  const ogImage = seo?.og_image || ""
+  const canonical = seo?.canonical || fallbackMeta.url
+  const robotsValue = [
+    seo?.meta_robots,
+    seo?.meta_robots_noindex,
+    seo?.meta_robots_nofollow,
+    seo?.meta_robots_adv,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase()
+  const noindex =
+    robotsValue.includes("noindex") ||
+    seo?.meta_robots_noindex === "1" ||
+    seo?.meta_robots_noindex === "true"
+  const nofollow =
+    robotsValue.includes("nofollow") ||
+    seo?.meta_robots_nofollow === "1" ||
+    seo?.meta_robots_nofollow === "true"
+
+  return {
+    title,
+    description,
+    robots: {
+      index: !noindex,
+      follow: !nofollow,
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: canonical,
+      type: "website",
+      images: ogImage ? [ogImage] : [],
+    },
+    alternates: {
+      canonical,
+    },
+  }
 }
 
 const teamMembers = [
@@ -52,10 +84,10 @@ const teamMembers = [
     specialties: ["Implant Dentistry", "Digital Dentistry", "Regenerative Dentistry"],
     social: {
       linkedin: "https://linkedin.com/in/franciscoteixeirabarbosa",
-      twitter: "https://twitter.com/periospot",
+      twitter: "https://x.com/periospot",
       instagram: "https://instagram.com/periospot",
-      youtube: "https://youtube.com/periospot",
-      github: "https://github.com/tuminha",
+      youtube: "https://youtube.com/@tuminha21",
+      github: "https://github.com/Tuminha",
       facebook: "https://facebook.com/periospot",
     },
   },
@@ -70,10 +102,6 @@ const teamMembers = [
     specialties: ["Periodontics", "Oral Implantology", "Academic Education"],
     social: {
       linkedin: "https://linkedin.com/in/danielroblescantero",
-      twitter: "https://twitter.com/danielrobles",
-      instagram: "https://instagram.com/danielrobles",
-      youtube: "https://youtube.com/danielrobles",
-      facebook: "https://facebook.com/danielrobles",
     },
   },
 ]
@@ -275,51 +303,7 @@ export default function TeamPage() {
               </p>
             </div>
 
-            <Card>
-              <CardContent className="pt-6">
-                <form className="space-y-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input id="name" placeholder="Your name" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="you@example.com" required />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="What's this about?" required />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Your message..."
-                      rows={5}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Send Message
-                  </Button>
-                </form>
-
-                <div className="mt-6 border-t pt-6">
-                  <p className="text-center text-sm text-muted-foreground">
-                    Or email us directly at{" "}
-                    <a
-                      href="mailto:hello@periospot.com"
-                      className="font-medium text-primary hover:underline"
-                    >
-                      hello@periospot.com
-                    </a>
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -339,7 +323,7 @@ export default function TeamPage() {
                 <Link href="/blog">Read Our Articles</Link>
               </Button>
               <Button variant="outline" asChild>
-                <a href="mailto:contribute@periospot.com">Become a Contributor</a>
+                <a href="mailto:periospot@periospot.com">Become a Contributor</a>
               </Button>
             </div>
           </div>

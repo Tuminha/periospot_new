@@ -4,11 +4,14 @@
   "description": "Periospot - Advanced Periodontal Assessment Platform",
   "type": "module",
   "scripts": {
-    "dev": "cd frontend/periospot-vite && npm run dev",
-    "build": "cd frontend/periospot-vite && npm run build",
+    "dev": "cd periospot-nextjs && npm run dev",
+    "build": "cd periospot-nextjs && npm run build",
     "preview": "cd frontend/periospot-vite && npm run preview",
-    "lint": "cd frontend/periospot-vite && npm run lint",
+    "lint": "cd periospot-nextjs && npm run lint",
+    "dev:vite": "cd frontend/periospot-vite && npm run dev",
     "validate:exports": "node scripts/validate-exports.js",
+    "validate:seo": "node scripts/validate-seo.cjs --scope=posts --strict",
+    "validate:seo:all": "node scripts/validate-seo.cjs --scope=all",
     "generate:posts:xml": "python3 scripts/generate-posts-from-xml.py",
     "migrate:posts": "node scripts/migrate-posts.js"
   },
@@ -22,5 +25,8 @@
   "license": "MIT",
   "workspaces": [
     "frontend/periospot-vite"
-  ]
+  ],
+  "dependencies": {
+    "playwright": "^1.57.0"
+  }
 }

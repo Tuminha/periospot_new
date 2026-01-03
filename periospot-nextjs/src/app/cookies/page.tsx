@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { getPageSeoBySlug } from "@/lib/content"
 import {
   Table,
   TableBody,
@@ -11,10 +12,56 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-export const metadata: Metadata = {
+const fallbackMeta = {
   title: "Cookie Policy | Periospot",
   description: "Learn about how Periospot uses cookies and similar technologies.",
-  robots: "noindex, follow",
+  url: "https://periospot.com/cookies",
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getPageSeoBySlug("cookie-policy-eu")
+  const title = seo?.title || fallbackMeta.title
+  const description = seo?.description || fallbackMeta.description
+  const ogTitle = seo?.og_title || title
+  const ogDescription = seo?.og_description || description
+  const ogImage = seo?.og_image || ""
+  const canonical = seo?.canonical || fallbackMeta.url
+  const robotsValue = [
+    seo?.meta_robots,
+    seo?.meta_robots_noindex,
+    seo?.meta_robots_nofollow,
+    seo?.meta_robots_adv,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase()
+  const noindex =
+    robotsValue.includes("noindex") ||
+    seo?.meta_robots_noindex === "1" ||
+    seo?.meta_robots_noindex === "true"
+  const nofollow =
+    robotsValue.includes("nofollow") ||
+    seo?.meta_robots_nofollow === "1" ||
+    seo?.meta_robots_nofollow === "true"
+
+  return {
+    title,
+    description,
+    robots: {
+      index: !noindex,
+      follow: !nofollow,
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: canonical,
+      type: "website",
+      images: ogImage ? [ogImage] : [],
+    },
+    alternates: {
+      canonical,
+    },
+  }
 }
 
 const cookieTypes = [
@@ -210,7 +257,7 @@ export default function CookiePolicyPage() {
               If you have questions about our use of cookies, please contact us at:
             </p>
             <ul>
-              <li>Email: <a href="mailto:privacy@periospot.com">privacy@periospot.com</a></li>
+              <li>Email: <a href="mailto:periospot@periospot.com">periospot@periospot.com</a></li>
               <li>Website: <Link href="/team" className="text-primary hover:underline">Contact Form</Link></li>
             </ul>
           </CardContent>

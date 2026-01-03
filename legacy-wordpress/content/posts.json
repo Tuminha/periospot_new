@@ -49,7 +49,35 @@
       "periodontics"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2015/07/4-connective-tissue-graft-techniques.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "4 connective tissue graft techniques",
+      "description": "Four connective tissue graft techniques that will help you performing implant and plastic periodontal surgery.",
+      "focus_keyword": "connective tissue graft",
+      "focus_keywords": [
+        {
+          "keyword": "connective graft implant",
+          "score": "ok"
+        },
+        {
+          "keyword": "ctg",
+          "score": "ok"
+        },
+        {
+          "keyword": "implant with CTG",
+          "score": "ok"
+        }
+      ],
+      "keyword_synonyms": [
+        "connective tissue graft techniques",
+        "connective graft implant dentistry",
+        "connective tissue graft around implants",
+        "performing implants with simultaneously connective tissue graft"
+      ],
+      "content_score": "30",
+      "linkdex": "78",
+      "estimated_reading_time_minutes": "13"
+    }
   },
   {
     "id": 133,
@@ -68,7 +96,17 @@
       "immediate implants"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2015/07/Immediate-Implant-Molar.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Some tips you should know before performing an immediate implant after a molar extraction. We guide you through a brief review about this topic.",
+      "focus_keyword": "immediate implant molars",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "62",
+      "estimated_reading_time_minutes": "8"
+    }
   },
   {
     "id": 168,
@@ -85,7 +123,38 @@
     ],
     "tags": [],
     "featured_image": "https://periospot.com/wp-content/uploads/2015/08/4-Books-you-can´t-live-without-if-you-love-Oral-Implantology-and-Plastic-Periodontal-Surgery.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Implant Dentistry Books",
+      "description": "4 Implant Dentistry Books that every dentist should read if they want to improve skills and knowledge about perio-implant surgery.",
+      "focus_keyword": "Implant dentistry books",
+      "focus_keywords": [
+        {
+          "keyword": "Plastic periodontal surgery",
+          "score": 48
+        },
+        {
+          "keyword": "bone augmentation in implant dentistry",
+          "score": 44
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        ""
+      ],
+      "content_score": "90",
+      "linkdex": "83",
+      "estimated_reading_time_minutes": "6",
+      "og_title": "4 Books you can´t live without, if you love Oral Implantology and Plastic Periodontal Surgery",
+      "og_description": "4 Books that every dentist should have (and read) if they want to improve their skills and knowledge about perio-implant surgery.",
+      "og_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-libros-1.jpg",
+      "og_image_id": "1406",
+      "twitter_title": "4 Books you can´t live without, if you love Oral Implantology and Plastic Periodontal Surgery",
+      "twitter_description": "4 Books that every dentist should have (and read) if they want to improve their skills and knowledge about Perio-Implant surgery.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-libros-1.jpg",
+      "twitter_image_id": "1406"
+    }
   },
   {
     "id": 207,
@@ -102,7 +171,12 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "In this article we do a review about the literature that mention the best approach for the buccal gap after an immediate implant. Should we fill it?",
+      "focus_keyword": "immediate implant",
+      "linkdex": "71"
+    }
   },
   {
     "id": 212,
@@ -127,7 +201,41 @@
       "implantologia estética"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2015/08/10-Tips-that-Everyone-Should-Know-Before-Performing-an-Implant-Treatment-in-the-aesthetic-zone.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Article​ about ten essential points before performing a treatment plan involving implants in the aesthetic zone.",
+      "focus_keyword": "implants in the aesthetic zone",
+      "focus_keywords": [
+        {
+          "keyword": "aesthetic implants",
+          "score": "ok"
+        },
+        {
+          "keyword": "immediate implants in the aesthetic zone",
+          "score": "ok"
+        },
+        {
+          "keyword": "soft tissue around implants in the aesthetic zone",
+          "score": "bad"
+        }
+      ],
+      "keyword_synonyms": [
+        "aesthetic implant dentistry",
+        "",
+        "",
+        "implants with provisionals"
+      ],
+      "content_score": "30",
+      "linkdex": "75",
+      "estimated_reading_time_minutes": "11",
+      "og_title": "10 Tips that Everyone Should Know Before Performing an Implant Treatment in the aesthetic zone",
+      "og_description": "Article​ about 10 key points you should consider before performing a treatment plan involving implants in the aesthetic zone.",
+      "og_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Socket-Shield-Technique-3.png",
+      "og_image_id": "1106",
+      "twitter_title": "10 Tips that Everyone Should Know Before Performing an Implant Treatment in the aesthetic zone",
+      "twitter_description": "Article​ about 10 key points you should consider before performing a treatment plan involving implants in the aesthetic zone.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Socket-Shield-Technique-1.png"
+    }
   },
   {
     "id": 229,
@@ -147,7 +255,40 @@
       "platform switching"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2015/08/Platform-Switching.-A-Biological-Concept.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Uncover the concept of platform switching implants and the advantages they offer in implant treatments. Learn why bone loss occurs and how it can be minimized.",
+      "focus_keyword": "platform switching implants",
+      "focus_keywords": [
+        {
+          "keyword": "platform switching implant",
+          "score": 67
+        },
+        {
+          "keyword": "platform switch implant",
+          "score": 67
+        },
+        {
+          "keyword": "platform switching dental implants",
+          "score": 40
+        },
+        {
+          "keyword": "implant platform switch",
+          "score": 67
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "67",
+      "estimated_reading_time_minutes": "3",
+      "og_description": "Discover the concept of platform switching in dental implants and the advantages it offers for treatment outcomes."
+    }
   },
   {
     "id": 248,
@@ -164,7 +305,10 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "content_score": "60"
+    }
   },
   {
     "id": 264,
@@ -215,7 +359,19 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "In this article, we share the essential equipment that is useful to document clinical cases in your daily practice.",
+      "content_score": "90",
+      "og_title": "Photography equipment for dentists.",
+      "og_description": "In this article, we share the essential equipment that is useful to document clinical cases in your daily practice.",
+      "og_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Copy-of-libros.jpg",
+      "og_image_id": "1502",
+      "twitter_title": "Photography equipment for dentists.",
+      "twitter_description": "In this article, we share the essential equipment that is useful to document clinical cases in your daily practice.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Copy-of-libros.jpg",
+      "twitter_image_id": "1502"
+    }
   },
   {
     "id": 360,
@@ -238,7 +394,20 @@
       "plastic periodontal surgery"
     ],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Some useful apps that will help you learning plastic periodontal surgery and also other useful apps for dentists.",
+      "focus_keyword": "periodontal surgery",
+      "content_score": "60",
+      "linkdex": "76",
+      "og_title": "How to learn Periodontal Surgery with an App",
+      "og_description": "Some useful apps that will help you learning plastic periodontal surgery and also other useful apps for dentists.",
+      "og_image": "https://periospot.com/wp-content/uploads/2015/08/Marielle-Price-1.png",
+      "og_image_id": "1097",
+      "twitter_title": "How to learn Periodontal Surgery with an App",
+      "twitter_description": "Some useful apps that will help you learning plastic periodontal surgery and also other useful apps for dentists.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Marielle-Price.png"
+    }
   },
   {
     "id": 375,
@@ -255,7 +424,13 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Here we describe with a simple infographic the epidemiology about peri-implantitis. This review is based on the latest systematic reviews.",
+      "focus_keyword": "peri-implantitis",
+      "content_score": "30",
+      "linkdex": "54"
+    }
   },
   {
     "id": 421,
@@ -276,7 +451,17 @@
       "periodontics"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2015/09/Soft-Tissue-Recession-Around-Implants-–-A-common-Complication.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "What procedures can we perform when we have a recession around implants. In this article we write about some tips to solve this problem.",
+      "focus_keyword": "Soft tissue recession around implants",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "75",
+      "estimated_reading_time_minutes": "6"
+    }
   },
   {
     "id": 618,
@@ -305,7 +490,41 @@
       "socket shield technique"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2016/03/Immediate-Implants-in-the-Aesthetic-zone_-Some-tips-and-tricks-that-will-help-you.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Discover the revolutionary approach of immediate implants in the aesthetic zone. Learn about Schulte's groundbreaking contribution and the benefits of this technique.",
+      "focus_keyword": "immediate implants aesthetic zone",
+      "focus_keywords": [
+        {
+          "keyword": "immediate implants",
+          "score": 75
+        },
+        {
+          "keyword": "immediate implants immediately restored",
+          "score": 44
+        },
+        {
+          "keyword": "immediate implants in the aesthetic zone",
+          "score": 54
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "immediate implants with immediate loading",
+        "immediate implants with predictable aesthetic outcome"
+      ],
+      "content_score": "60",
+      "linkdex": "68",
+      "estimated_reading_time_minutes": "11",
+      "og_title": "immediate implants in the aesthetic zone. Tips and advices.",
+      "og_description": "Some important facts about immediate implants in the aesthetic zone. Some concepts about biology and prosthodontics that we should consider before treating a complex case.",
+      "og_image": "https://periospot.com/wp-content/uploads/2016/03/Copy-of-Employee-of-the-Month.jpg",
+      "og_image_id": "1136",
+      "twitter_title": "Immediate implants in the aesthetic zone.Tips and advices.",
+      "twitter_description": "What we should know to perform an immediate implant in a predictable way. Biology and protocols.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2016/03/Copy-of-Employee-of-the-Month-1.jpg"
+    }
   },
   {
     "id": 713,
@@ -328,7 +547,29 @@
       "implant dentistry immediate loading"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2016/04/How-to-perform-a-predictable-immediate-loading.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Explore the concept of immediate loading in dentistry and the latest consensus on this controversial topic.",
+      "focus_keyword": "immediate loading",
+      "focus_keywords": [
+        {
+          "keyword": "immediacy in implant dentistry",
+          "score": 40
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "immediate loading and immediate implants"
+      ],
+      "content_score": "30",
+      "linkdex": "80",
+      "estimated_reading_time_minutes": "13",
+      "og_title": "How to perform a predictable immediate loading",
+      "og_image": "https://periospot.com/wp-content/uploads/2016/04/Screenshot-2016-04-07-14.43.59-1.jpg",
+      "og_image_id": "750",
+      "twitter_title": "How to perform a predictable immediate loading",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2016/04/Screenshot-2016-04-07-14.43.59-1.jpg"
+    }
   },
   {
     "id": 870,
@@ -351,7 +592,42 @@
       "suturing implant"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2016/06/3-Suturing-Techniques-That-you-Can-Start-Using-Tomorrow-.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Suturing techniques in guided bone regeneration",
+      "description": "Master advanced suturing techniques in implant dentistry with this comprehensive guide. Elevate your skills and enhance patient outcomes.",
+      "focus_keyword": "suturing techniques implant dentistry",
+      "focus_keywords": [
+        {
+          "keyword": "types of implant suturing techniques in dentistry",
+          "score": 40
+        },
+        {
+          "keyword": "suturing techniques in guided bone regeneration",
+          "score": 35
+        },
+        {
+          "keyword": "suturing techniques for complicated GBR",
+          "score": 44
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "suturing techniques in guided bone regeneration",
+        "avoid complications in guided bone regeneration with suturing techniques",
+        "guided bone regeneration techniques"
+      ],
+      "content_score": "60",
+      "linkdex": "62",
+      "estimated_reading_time_minutes": "8",
+      "og_title": "3 Suturing techniques in guided bone regeneration",
+      "og_description": "3 suturing techniques that you can start using right now when you perform a guided bone regeneration. Easy and simple to perform and very useful.",
+      "og_image": "https://periospot.com/wp-content/uploads/2016/06/facebook-3.jpg",
+      "og_image_id": "918",
+      "twitter_title": "3 Suturing techniques in guided bone regeneration",
+      "twitter_description": "3 suturing techniques that you can start using right now when you perform a guided bone regeneration. Easy and simple to perform and very useful.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2016/06/facebook-3.jpg"
+    }
   },
   {
     "id": 975,
@@ -377,7 +653,25 @@
       "scientific articles implant dentistry"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2017/05/5-Scientific-Publications-About-Implant-Dentistry-You-Should-Read-With-“Caution”.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "%%title%%",
+      "description": "Some scientific articles about implant dentistry we should read with caution and some update about the scientific literature.",
+      "focus_keyword": "implant dentistry",
+      "keyword_synonyms": [
+        "implant dentistry publications"
+      ],
+      "content_score": "30",
+      "linkdex": "74",
+      "estimated_reading_time_minutes": "11",
+      "og_title": "5 Scientific Publications About Implant Dentistry You Should Read With \"Caution\".",
+      "og_description": "Some scientific articles about implant dentistry we should read with caution and some update about the scientific literature.",
+      "og_image": "https://periospot.com/wp-content/uploads/2017/05/facebook.jpg",
+      "og_image_id": "999",
+      "twitter_title": "5 Scientific Publications About Implant Dentistry You Should Read With \"Caution\".",
+      "twitter_description": "Some scientific articles about implant dentistry we should read with caution and some update about the scientific literature.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2017/05/twitter.jpg"
+    }
   },
   {
     "id": 2932,
@@ -397,7 +691,40 @@
       "socket preservation"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2015/08/How-much-time-I-have-to-wait-after-an-alveolar-ridge-preservation.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "How much time should we wait after an alveolar ridge preservation? In this article we answer some questions about this procedure.",
+      "focus_keyword": "ridge preservation",
+      "focus_keywords": [
+        {
+          "keyword": "alveolar ridge preservation",
+          "score": "ok"
+        },
+        {
+          "keyword": "ridge preservation",
+          "score": "ok"
+        },
+        {
+          "keyword": "biomaterial socket preservation",
+          "score": "bad"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "60",
+      "linkdex": "49",
+      "og_title": "How Much Time I have to Wait After an Alveolar Ridge Preservation",
+      "og_description": "Regarding some doubts about how much time we should wait after. socket preservation, here an infographic with a clear explanation of this topic.",
+      "og_image": "https://periospot.com/wp-content/uploads/2015/08/Employee-of-the-Month.jpg",
+      "og_image_id": "1133",
+      "twitter_title": "How Much Time I have to Wait After an Alveolar Ridge Preservation",
+      "twitter_description": "Regarding some doubts about how much time we should wait after. socket preservation, here an infographic with a clear explanation of this topic.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Employee-of-the-Month-1.jpg"
+    }
   },
   {
     "id": 5138,
@@ -452,7 +779,24 @@
       "socket shield technique"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2017/07/Socket-Shield-Technique.-Report-of-a-case.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "In this article, Darcio explains the rationale behind the socket shield technique and also the step by step.",
+      "focus_keyword": "socket shield",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "73",
+      "estimated_reading_time_minutes": "5",
+      "og_title": "Socket Shield Technique. A report of a case.",
+      "og_description": "In this article, Darcio explains the rationale behind the socket shield technique and also the step by step.",
+      "og_image": "https://periospot.com/wp-content/uploads/2017/07/Socket-Shield-Technique-1.png",
+      "og_image_id": "1071",
+      "twitter_title": "Socket Shield Technique. A report of a case.",
+      "twitter_description": "In this article, Darcio explains the rationale behind the socket shield technique and also the step by step.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2017/07/Socket-Shield-Technique-2.png"
+    }
   },
   {
     "id": 1139,
@@ -473,7 +817,20 @@
       "stranger implants"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2017/12/stranger-implants.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "focus_keyword": "stranger implants",
+      "content_score": "90",
+      "linkdex": "64",
+      "estimated_reading_time_minutes": "6",
+      "og_title": "Stranger Implants: The top 10 stranger implant cases seen on social media.",
+      "og_description": "In this post, we show some of the weirdest, strange and peculiar cases seen on social media during the last years.",
+      "og_image": "https://periospot.com/wp-content/uploads/2017/12/Implant-Digital-Dentistry-3.jpg",
+      "og_image_id": "1166",
+      "twitter_title": "Stranger Implants: The top 10 stranger implant cases seen on social media.",
+      "twitter_description": "In this post, we show some of the weirdest, strange and peculiar cases seen on social media during the last years.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2017/12/Implant-Digital-Dentistry-1.jpg"
+    }
   },
   {
     "id": 1194,
@@ -495,7 +852,25 @@
       "Neodent"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2018/04/Immediate-implant-placement-in-molar-extractions-sockets-using-a-definitive-abutment.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Immediate implant placement in molar extractions sockets using a definitive abutment.",
+      "description": "How to perform an immediate implant after molar extraction using a definitive abutment with the Neodent® Implant System.",
+      "focus_keyword": "Immediate implant",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "74",
+      "estimated_reading_time_minutes": "8",
+      "og_title": "Immediate implant placement in molar extractions sockets using a definitive abutment.",
+      "og_description": "How to perform immediate implants after molar extraction using a definitive abutment with the Neodent® Implant System.",
+      "og_image": "https://periospot.com/wp-content/uploads/2018/04/Copy-of-Copy-of-Implant-Digital-Dentistry.png",
+      "og_image_id": "1199",
+      "twitter_title": "Immediate implant placement in molar extractions sockets using a definitive abutment.",
+      "twitter_description": "How to perform immediate implants after molar extraction using a definitive abutment with the Neodent® Implant System.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2018/04/Copy-of-Copy-of-Implant-Digital-Dentistry-1.png"
+    }
   },
   {
     "id": 1258,
@@ -511,7 +886,10 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "content_score": "30"
+    }
   },
   {
     "id": 1375,
@@ -532,7 +910,47 @@
       "implant dentistry"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2018/12/Two-ways-to-Restore-Edentulous_-Spaces-in-the-Aesthetic-Zone.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Optimize implant placement in the aesthetic zone by focusing on bone preservation and central incisor positioning for predictable outcomes.",
+      "focus_keyword": "implants aesthetic zone",
+      "focus_keywords": [
+        {
+          "keyword": "implants in the aesthetic zone restorative options",
+          "score": 35
+        },
+        {
+          "keyword": "immediate implants aesthetic zone",
+          "score": 40
+        },
+        {
+          "keyword": "immediate implants in the aesthetic zone",
+          "score": 40
+        },
+        {
+          "keyword": "soft tissue around implants in the aesthetic zone",
+          "score": 35
+        }
+      ],
+      "keyword_synonyms": [
+        "immediate implants aesthetic zone",
+        "options to restore esthetic zone with implants",
+        "immediate implants with aesthetic result",
+        "restorative options aesthetic zone with implants",
+        "soft tissue management around implants"
+      ],
+      "content_score": "60",
+      "linkdex": "70",
+      "estimated_reading_time_minutes": "8",
+      "og_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone",
+      "og_description": "In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "og_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.jpg",
+      "og_image_id": "1399",
+      "twitter_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone- In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "twitter_description": "In this article, we cover restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.png",
+      "twitter_image_id": "1808"
+    }
   },
   {
     "id": 1425,
@@ -553,7 +971,42 @@
       "public speaking"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2018/12/presentacion.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo se exponen algunos trucos de utilidad para aquellos que tengan que realizar una presentación en público.",
+      "focus_keyword": "Presentación en publico",
+      "focus_keywords": [
+        {
+          "keyword": "hablar en publico",
+          "score": 40
+        },
+        {
+          "keyword": "presentacion odontologia",
+          "score": 40
+        },
+        {
+          "keyword": "presentaciones en publico",
+          "score": 40
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "53",
+      "estimated_reading_time_minutes": "12",
+      "og_title": "10 trucos efectivos para mejorar una presentación para odontólogos",
+      "og_description": "En este artículo se exponen algunos trucos de utilidad para aquellos que tengan que realizar una presentación en público.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/09/10-trucos-efectivos-para-mejorar-una-presentación-para-odontólogos.png",
+      "og_image_id": "3848",
+      "twitter_title": "10 trucos efectivos para mejorar una presentación para odontólogos",
+      "twitter_description": "En este artículo se exponen algunos trucos de utilidad para aquellos que tengan que realizar una presentación en público.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/09/10-trucos-efectivos-para-mejorar-una-presentación-para-odontólogos.png",
+      "twitter_image_id": "3848"
+    }
   },
   {
     "id": 1507,
@@ -572,7 +1025,22 @@
       "implantology"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/06/How-Deep-is-your-Implant.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "In this article is covered the differnt implant position regarding the apico-coronal situation:Supracrestal, epicrestal and subcrestal.",
+      "focus_keyword": "Implant Position",
+      "content_score": "30",
+      "linkdex": "67",
+      "estimated_reading_time_minutes": "9",
+      "og_title": "How Deep Is Your Implant? Supracrestal, Crestal, and Subcrestal Implant Position Revisited.",
+      "og_description": "In this article, we cover the implant position regarding the apico-coronal situation and it´s biological and biomechanical implications.",
+      "og_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3.jpg",
+      "og_image_id": "1535",
+      "twitter_title": "How Deep Is Your Implant? Supracrestal, Crestal, and Subcrestal Implant Position Revisited.",
+      "twitter_description": "In this article, we cover the implant position regarding the apico-coronal situation and it´s biological and biomechanical implications.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.jpg",
+      "twitter_image_id": "1536"
+    }
   },
   {
     "id": 1601,
@@ -592,7 +1060,22 @@
       "superficies implantes"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2018/12/¿Son-iguales-todas-las-superficies-de-implantes_.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo se realiza un arevisión de las superficies de implantes actuales y las ventajas clínicas que aportan.",
+      "focus_keyword": "superficies de implantes",
+      "content_score": "30",
+      "linkdex": "75",
+      "estimated_reading_time_minutes": "10",
+      "og_title": "Son iguales todas las superficies de implantes?",
+      "og_description": "En este artículo se realiza un arevisión de las superficies de implantes actuales y las ventajas clínicas que aportan.",
+      "og_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3-1.png",
+      "og_image_id": "1624",
+      "twitter_title": "Son iguales todas las superficies de implantes?",
+      "twitter_description": "En este artículo se realiza un arevisión de las superficies de implantes actuales y las ventajas clínicas que aportan.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-5-1.png",
+      "twitter_image_id": "1621"
+    }
   },
   {
     "id": 1812,
@@ -612,7 +1095,25 @@
       "fotografía dental"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/01/12-conceptos-básicos-sobre-edición-de-fotografía-en-odontología.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "Artículo donde se describen 12 conceptos básicos en fotografía dental de utilidad para la práctica clínica diaria.",
+      "focus_keyword": "fotografía dental",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "60",
+      "estimated_reading_time_minutes": "10",
+      "og_title": "12 conceptos básicos sobre edición de fotografía en odontología",
+      "og_description": "Artículo donde se describen 12 conceptos básicos en fotografía dental de utilidad para la práctica clínica diaria.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/01/12-conceptos-básicos-sobre-edición-de-fotografía-en-odontología.png",
+      "og_image_id": "3845",
+      "twitter_title": "12 conceptos básicos sobre edición de fotografía en odontología",
+      "twitter_description": "Artículo donde se describen 12 conceptos básicos en fotografía dental de utilidad para la práctica clínica diaria.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/01/12-conceptos-básicos-sobre-edición-de-fotografía-en-odontología.png",
+      "twitter_image_id": "3845"
+    }
   },
   {
     "id": 1831,
@@ -633,7 +1134,33 @@
       "socket preservation"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/01/How-to-perform-an-Alveolar-Ridge-Preservation_.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "%%title%% %%sitename%%",
+      "description": "This comprehensive article reviews the essential techniques for successful alveolar ridge preservation after extraction with an extra bonus.",
+      "focus_keyword": "alveolar ridge preservation",
+      "focus_keywords": [
+        {
+          "keyword": "socket preservation",
+          "score": 62
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "socket volume preservation after extraction"
+      ],
+      "content_score": "60",
+      "linkdex": "77",
+      "estimated_reading_time_minutes": "13",
+      "og_title": "How to Perform an Alveolar Ridge Preservation",
+      "og_description": "This article provides a description of the most used techniques to perform alveolar ridge preservation.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/01/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2-1.png",
+      "og_image_id": "1845",
+      "twitter_title": "How to Perform an Alveolar Ridge Preservation",
+      "twitter_description": "This article provides a description of the most used techniques to perform alveolar ridge preservation.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/01/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2-1.png",
+      "twitter_image_id": "1845"
+    }
   },
   {
     "id": 1856,
@@ -652,7 +1179,24 @@
       "redes sociales odontología"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/09/Cómo-Usar-las-Redes-Sociales-Para-Potenciar-una-Clínica-Dental.-11-simples-consejos.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo se resumen 11 sencillos consejos para ayudar a promocionar una clínica dental en las redes sociales.",
+      "focus_keyword": "redes sociales clínica dental",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "60",
+      "og_title": "Cómo Usar las Redes Sociales Para Potenciar Una Clínica Dental. 11 Simples Consejos.",
+      "og_description": "En este artículo se resumen 11 sencillos consejos para ayudar a promocionar una clínica dental en las redes sociales.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-6.png",
+      "og_image_id": "1899",
+      "twitter_title": "Cómo Usar las Redes Sociales Para Potenciar Una Clínica Dental. 11 Simples Consejos.",
+      "twitter_description": "En este artículo se resumen 11 sencillos consejos para ayudar a promocionar una clínica dental en las redes sociales.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
+      "twitter_image_id": "1889"
+    }
   },
   {
     "id": 1920,
@@ -674,7 +1218,22 @@
       "periodoncia"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/02/12-curiosidades-acerca-del-Bundle-Bone-del-Gap-y-de-los-Implantes-Inmediatos.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En esta infografía se exponen algunas curiosidades acerca del Bundle Bone, del Gap y de los Implantes inmediatos.",
+      "focus_keyword": "bundle bone gap en implantes inmediatos",
+      "content_score": "90",
+      "linkdex": "39",
+      "estimated_reading_time_minutes": "1",
+      "og_title": "12 curiosidades acerca del bundle bone, del gap y de los implantes inmediatos",
+      "og_description": "En esta infografía se exponen algunas curiosidades acerca del Bundle Bone, del Gap y de los Implantes inmediatos.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-11.png",
+      "og_image_id": "1923",
+      "twitter_title": "12 curiosidades acerca del bundle bone, del gap y de los implantes inmediatos",
+      "twitter_description": "En esta infografía se exponen algunas curiosidades acerca del Bundle Bone, del Gap y de los Implantes inmediatos.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-9.png",
+      "twitter_image_id": "1922"
+    }
   },
   {
     "id": 1935,
@@ -693,7 +1252,25 @@
       "digital dentistry"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/09/How-Dentists-value-immediate-returns-and-their-relationship-to-the-human-brain-and-digital-dentistry.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "The rationale behind why some dentists feel reluctant about going into digital dentistry and the psychological explanation to this phenomenon.",
+      "focus_keyword": "Digital Dentistry",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "67",
+      "estimated_reading_time_minutes": "11",
+      "og_title": "How Dentists Value Immediate Returns And Its Relation With The Human Brain And Digital Dentistry",
+      "og_description": "The rationale behind why some dentists feel reluctant about going into digital dentistry and the psychological explanation to this phenomenon.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-4.png",
+      "og_image_id": "1950",
+      "twitter_title": "How Dentists Value Immediate Returns And Its Relation With The Human Brain And Digital Dentistry",
+      "twitter_description": "The rationale behind why some dentists feel reluctant about going into digital dentistry and the psychological explanation to this phenomenon.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-5.png",
+      "twitter_image_id": "1951"
+    }
   },
   {
     "id": 1954,
@@ -714,7 +1291,38 @@
       "immediate implants"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/09/12-facts-about-the-Bundle-Bone-the-Gap-a_nd-Immediate-Implants.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Bundle bone, Gap and Immediate implants",
+      "description": "In this infographic it is explained the biological rationale behind immediate implants biology and everything related with the bundle bone.",
+      "focus_keyword": "Bundle Bone",
+      "focus_keywords": [
+        {
+          "keyword": "immediate implants",
+          "score": 70
+        },
+        {
+          "keyword": "gap immediate implants",
+          "score": 56
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "immediate implants scientific background",
+        "distance between immediate implant and buccal bone"
+      ],
+      "content_score": "90",
+      "linkdex": "64",
+      "estimated_reading_time_minutes": "2",
+      "og_title": "12 facts about the Bundle Bone, the Gap a​nd Immediate Implants.",
+      "og_description": "In this infographic it is explained the biological rationale behind immediate implants biology and everything related with the bundle bone.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-13.png",
+      "og_image_id": "1955",
+      "twitter_title": "12 facts about the Bundle Bone, the Gap a​nd Immediate Implants.",
+      "twitter_description": "In this infographic it is explained the biological rationale behind immediate implants biology and everything related with the bundle bone.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3.png",
+      "twitter_image_id": "1956"
+    }
   },
   {
     "id": 1961,
@@ -733,7 +1341,22 @@
       "platform switching"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/04/Platform-Switching_-¿Un-concepto-biológico-o-un-producto-de-Marketing_.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo se decribe de forma muy resumida el concepto biológico detrás del Platform Switching que es más que un concepto de marketing.",
+      "focus_keyword": "platform switching",
+      "content_score": "30",
+      "linkdex": "72",
+      "estimated_reading_time_minutes": "7",
+      "og_title": "Platform switching ¿Un concepto biológico o un producto de marketing?",
+      "og_description": "En este artículo se decribe de forma muy resumida el concepto biológico detrás del Platform Switching que es más que un concepto de marketing.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/04/Platform-Switching.png",
+      "og_image_id": "1967",
+      "twitter_title": "Platform switching ¿Un concepto biológico o un producto de marketing?",
+      "twitter_description": "En este artículo se decribe de forma muy resumida el concepto biológico detrás del Platform Switching que es más que un concepto de marketing.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Platform-Switching.png",
+      "twitter_image_id": "1968"
+    }
   },
   {
     "id": 2003,
@@ -754,7 +1377,25 @@
       "marketing digital"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/06/presentaciones.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "Ene este artículo se describe el paso a paso en la creación de animaciones e ilustraciones que son de utilidad para mejorar presentaciones.",
+      "focus_keyword": "ilustraciones y animaciones",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "61",
+      "estimated_reading_time_minutes": "6",
+      "og_title": "Cómo hacer ilustraciones y animaciones para mejorar las presentaciones.",
+      "og_description": "Ene este artículo se describe el paso a paso en la creación de animaciones e ilustraciones que son de utilidad para mejorar presentaciones.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Cómo-hacer-ilustraciones-y-animaciones-para-mejorar-las-presentaciones.png",
+      "og_image_id": "3857",
+      "twitter_title": "Cómo hacer ilustraciones y animaciones para mejorar las presentaciones.",
+      "twitter_description": "Ene este artículo se describe el paso a paso en la creación de animaciones e ilustraciones que son de utilidad para mejorar presentaciones.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Cómo-hacer-ilustraciones-y-animaciones-para-mejorar-las-presentaciones.png",
+      "twitter_image_id": "3857"
+    }
   },
   {
     "id": 2183,
@@ -775,7 +1416,22 @@
       "marketing online"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/06/6-herramientas-de-marketing-digital-.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo explicamos cómo conseguir una mayor presencia online de tu empresa con unas herramientas de marketing sencillas de usar.",
+      "focus_keyword": "herramientas marketing digital",
+      "content_score": "30",
+      "linkdex": "61",
+      "estimated_reading_time_minutes": "20",
+      "og_title": "6 herramientas de marketing digital imprescindibles para aumentar la presencia online con poco presupuesto",
+      "og_description": "En este artículo explicamos cómo conseguir una mayor presencia online de tu empresa con unas herramientas de marketing sencillas de usar.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
+      "og_image_id": "2275",
+      "twitter_title": "6 herramientas de marketing digital imprescindibles para aumentar la presencia online con poco presupuesto",
+      "twitter_description": "En este artículo explicamos cómo conseguir una mayor presencia online de tu empresa con unas herramientas de marketing sencillas de usar.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
+      "twitter_image_id": "2276"
+    }
   },
   {
     "id": 2336,
@@ -797,7 +1453,25 @@
       "illustrator"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/09/How-to-create-Animations-and-Illustrations-to-Improve-your-Presentations.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "This is the workflow we use to create animations and illustrations to use in our website, Periospot, but you can use this tips.",
+      "focus_keyword": "how to create animations and illustrations",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "60",
+      "linkdex": "69",
+      "estimated_reading_time_minutes": "7",
+      "og_title": "How to create animations and illustrations to improve your presentations",
+      "og_description": "This is the workflow that we use on Periospot to create animations and illustrations. You can use the same tips to create your own animations library.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-4-1.png",
+      "og_image_id": "2342",
+      "twitter_title": "How to create animations and illustrations to improve your presentations",
+      "twitter_description": "This is the workflow that we use on Periospot to create animations and illustrations. You can use the same tips to create your own animations library.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-4.png",
+      "twitter_image_id": "2341"
+    }
   },
   {
     "id": 2357,
@@ -815,7 +1489,24 @@
       "libros implantología"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/07/6-Libros-imprescindibles-sobre-implantología-y-cirugía-plástica-periodontal..png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo revisamos los libros más recomendados sobre implantología y cirugía plástica periodontal. Los top 6.",
+      "focus_keyword": "libros implantología",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "60",
+      "linkdex": "62",
+      "og_title": "6 libros imprescindibles sobre implantología y cirugía plástica periodontal",
+      "og_description": "En este artículo revisamos los libros más recomendados sobre implantología y cirugía plástica periodontal. Los top 6.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/07/6-Libros-imprescindibles-sobre-implantología-y-cirugía-plástica-periodontal..png",
+      "og_image_id": "3165",
+      "twitter_title": "6 libros imprescindibles sobre implantología y cirugía plástica periodontal",
+      "twitter_description": "En este artículo revisamos los libros más recomendados sobre implantología y cirugía plástica periodontal. Los top 6.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/07/6-Libros-imprescindibles-sobre-implantología-y-cirugía-plástica-periodontal..png",
+      "twitter_image_id": "3165"
+    }
   },
   {
     "id": 2372,
@@ -834,7 +1525,42 @@
       "implant position"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/07/The-Ideal-3D-position-of-the-implants-in-the-Aesthetic-Zone-1.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "This article describes the rules regarding an optimal position of the implant in the esthetic zone and the biological rationale.",
+      "focus_keyword": "ideal implant position",
+      "focus_keywords": [
+        {
+          "keyword": "ideal implant positioning",
+          "score": 40
+        },
+        {
+          "keyword": "ideal dental implant position",
+          "score": 40
+        },
+        {
+          "keyword": "ideal position anterior implant",
+          "score": 40
+        }
+      ],
+      "keyword_synonyms": [
+        "ideal implant position aesthetic zone",
+        "ideal implant position aesthetic result",
+        "ideal 3D implant position aesthetic zone",
+        "ideal implant position aesthetic outcome"
+      ],
+      "content_score": "30",
+      "linkdex": "71",
+      "estimated_reading_time_minutes": "10",
+      "og_title": "The Ideal Implant Position in the Aesthetic Zone.",
+      "og_description": "This article describes the rules regarding an optimal position of the implant in the esthetic zone.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/07/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.png",
+      "og_image_id": "2391",
+      "twitter_title": "The Ideal Implant Position in the Aesthetic Zone.",
+      "twitter_description": "This article describes the rules regarding an optimal position of the implant in the esthetic zone.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/07/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.png",
+      "twitter_image_id": "2390"
+    }
   },
   {
     "id": 2401,
@@ -851,7 +1577,47 @@
     ],
     "tags": [],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/08/6-Tools-to-Boost-Your-Online_-Dental-Marketing.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "6 useful tools to boost your digital online marketing of your personal brand or company with a low budget.",
+      "focus_keyword": "digital dental marketing",
+      "focus_keywords": [
+        {
+          "keyword": "dental digital marketing",
+          "score": 40
+        },
+        {
+          "keyword": "dental digital marketing agency",
+          "score": 40
+        },
+        {
+          "keyword": "digital dental marketing",
+          "score": 40
+        },
+        {
+          "keyword": "digital marketing for dental",
+          "score": 40
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "60",
+      "linkdex": "62",
+      "estimated_reading_time_minutes": "21",
+      "og_title": "6 Digital Tools to Boost Your Online​ Dental Marketing",
+      "og_description": "6 useful tools to boost your online marketing with a low budget.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-5.png",
+      "og_image_id": "2404",
+      "twitter_title": "6 Tools to Boost Your Online​ Dental Marketing",
+      "twitter_description": "6 useful tools to boost your online marketing with a low budget.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-6.png",
+      "twitter_image_id": "2405"
+    }
   },
   {
     "id": 2424,
@@ -871,7 +1637,37 @@
       "posición ideal implante"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2019/08/La-Posición-Tridimensional-Ideal-de-Implantes-en-el-Sector-Estético.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo se describen las posiciones ideales tridimensionales para la colocación de un implante en el sector estético.",
+      "focus_keyword": "Posición tridimensional implante",
+      "focus_keywords": [
+        {
+          "keyword": "posición ideal de un implante",
+          "score": 35
+        },
+        {
+          "keyword": "posición ideal de un implante en el sector estético",
+          "score": 30
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "posición ideal de un implante en 3 dimensiones",
+        "posición ideal de un implante para un resultado estético"
+      ],
+      "content_score": "30",
+      "linkdex": "61",
+      "estimated_reading_time_minutes": "10",
+      "og_title": "La Posición Tridimensional Ideal de Implantes en el Sector Estético.",
+      "og_description": "En este artículo se describen las posiciones ideales tridimensionales para la colocación de un implante en el sector estético.",
+      "og_image": "https://periospot.com/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3.png",
+      "og_image_id": "2429",
+      "twitter_title": "La Posición Tridimensional Ideal de Implantes en el Sector Estético.",
+      "twitter_description": "En este artículo se describen las posiciones ideales tridimensionales para la colocación de un implante en el sector estético.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3-1-1024x538.png",
+      "twitter_image_id": "4965"
+    }
   },
   {
     "id": 2440,
@@ -893,7 +1689,22 @@
       "sondaje implantes"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/02/El-sondaje-en-implantes-y-los-negacionistas.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "¿Por qué es importante sondar implantes?. En este artículo, Daniel Rodrigo deja claro su importancia y su relevancia clínica.",
+      "focus_keyword": "Periimplantitis",
+      "content_score": "30",
+      "linkdex": "61",
+      "estimated_reading_time_minutes": "10",
+      "og_title": "El sondaje en implantes y los negacionistas- 4 razones por las que es importante sondar implantes",
+      "og_description": "¿Por qué es importante sondar implantes?. En este artículo, Daniel Rodrigo deja claro su importancia y su relevancia clínica.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
+      "og_image_id": "2454",
+      "twitter_title": "El sondaje en implantes y los negacionistas- 4 razones por las que es importante sondar implantes",
+      "twitter_description": "¿Por qué es importante sondar implantes?. En este artículo, Daniel Rodrigo deja claro su importancia y su relevancia clínica.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3.png",
+      "twitter_image_id": "2455"
+    }
   },
   {
     "id": 2482,
@@ -915,7 +1726,38 @@
       "vertical bone augmentation"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/02/Vertical-and-Horizontal-Bone-Augmentation-1.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Vertical Bone Regeneration: Techniques and Challenges %%page%% %%sep%% %%sitename%%",
+      "description": "How to avoid complications after a guided bone regeneration? Take a look at this new tunneling technique for bone augmentation.",
+      "focus_keyword": "vertical bone regeneration",
+      "focus_keywords": [
+        {
+          "keyword": "horizontal and vertical defect guided bone regeneration",
+          "score": 35
+        },
+        {
+          "keyword": "guided bone regeneration",
+          "score": 49
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "GBR"
+      ],
+      "content_score": "60",
+      "linkdex": "66",
+      "estimated_reading_time_minutes": "11",
+      "og_title": "Vertical and Horizontal Bone Augmentation- How to solve complex implant cases with predictable techniques",
+      "og_description": "How to avoid complications after a guided bone regeneration? Take a look at this new tunneling technique for bone augmentation.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/02/Vertical-and-Horizontal-Bone-Augmentation-1-1-1024x576.png",
+      "og_image_id": "4961",
+      "twitter_title": "Vertical and Horizontal Bone Augmentation- How to solve complex implant cases with predictable techniques",
+      "twitter_description": "How to avoid complications after a guided bone regeneration? Take a look at this new tunneling technique for bone augmentation.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/02/Vertical-and-Horizontal-Bone-Augmentation-1-1-1024x576.png",
+      "twitter_image_id": "4961"
+    }
   },
   {
     "id": 2644,
@@ -934,7 +1776,37 @@
       "webinars plataformas"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/03/11-mejores-plataformas-para-realizar-webinars-y-clases-online-3.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo se analiza en profundidad 11 plataformas para realizar webinars y clases online. Ventajas, desventajas y precios.",
+      "focus_keyword": "plataformas webinars",
+      "focus_keywords": [
+        {
+          "keyword": "webinars",
+          "score": 49
+        },
+        {
+          "keyword": "clases online",
+          "score": 49
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "61",
+      "estimated_reading_time_minutes": "26",
+      "og_title": "Webinars en tiempos de cuarentena ¿Qué plataformas son las mejores para hacer webinars?",
+      "og_description": "En este artículo se analiza en profundidad 11 plataformas para realizar webinars y clases online. Ventajas, desventajas y precios.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/03/11-mejores-plataformas-para-realizar-webinars-y-clases-online-3.png",
+      "og_image_id": "3161",
+      "twitter_title": "Webinars en tiempos de cuarentena ¿Qué plataformas son las mejores para hacer webinars?",
+      "twitter_description": "En este artículo se analiza en profundidad 11 plataformas para realizar webinars y clases online. Ventajas, desventajas y precios.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/03/Copy-of-Copy-of-webinars-periospot.png",
+      "twitter_image_id": "2751"
+    }
   },
   {
     "id": 2934,
@@ -954,7 +1826,42 @@
       "gestión odontología"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/03/10-ERRORES-FRECUENTES-EN-LA-GESTIÓN-EN-ODONTOLOGÍA-Y-CÓMO-EVITARLOS.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "Los 10 errores más comunes en gestión en odontología y cómo evitarlos y crecer de forma sostenible y siempre basados en la excelencia.",
+      "focus_keyword": "gestión en odontología",
+      "focus_keywords": [
+        {
+          "keyword": "marketing dental y gestión en odontología",
+          "score": 35
+        },
+        {
+          "keyword": "libros de gestion odontologica en españa",
+          "score": 35
+        },
+        {
+          "keyword": "cursos de gestion odontologica en ingles",
+          "score": 35
+        }
+      ],
+      "keyword_synonyms": [
+        "gestión clínica dental",
+        "marketing en odontología",
+        "libros de gestión y marketing odontología",
+        "gestión en odontología cursos"
+      ],
+      "content_score": "30",
+      "linkdex": "61",
+      "estimated_reading_time_minutes": "10",
+      "og_title": "Los 10 errores más comunes en gestión en odontología y cómo evitarlos",
+      "og_description": "Los 10 errores más comunes en gestión en odontología y cómo evitarlos y crecer de forma sostenible y siempre basados en la excelencia.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/03/Copy-of-Copy-of-Copy-of-Copy-of-4-BOOKS-YOU-CANT-LIVE-WITHOUT-IF-YOU-LOVE-ORAL-IMPLANTOLOGY-AND-PLASTIC-PERIODONTAL-SURGERY.png",
+      "og_image_id": "2601",
+      "twitter_title": "Los 10 errores más comunes en gestión en odontología y cómo evitarlos",
+      "twitter_description": "Los 10 errores más comunes en gestión en odontología y cómo evitarlos y crecer de forma sostenible y siempre basados en la excelencia.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/03/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-4-BOOKS-YOU-CANT-LIVE-WITHOUT-IF-YOU-LOVE-ORAL-IMPLANTOLOGY-AND-PLASTIC-PERIODONTAL-SURGERY.png",
+      "twitter_image_id": "2602"
+    }
   },
   {
     "id": 2935,
@@ -973,7 +1880,22 @@
       "social media dentistry"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/07/How-To-Use-Social-Networks-To-Boost-Your-Dental-Clinic-After-Covid-19-Crisis..png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Nobody knows what is going to happen in the upcoming months, but these recommendations will help you to create an online marketing strategy.",
+      "focus_keyword": "social media dental",
+      "content_score": "90",
+      "linkdex": "58",
+      "estimated_reading_time_minutes": "19",
+      "og_title": "How To Use Social Networks To Boost Your Dental Clinic After Covid-19 Crisis. 11 Simple Recommendations.",
+      "og_description": "Nobody knows what is going to happen in the upcoming months, but these recommendations will help you to create an online marketing strategy.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/07/How-To-Use-Social-Networks-To-Boost-Your-Dental-Clinic-After-Covid-19-Crisis..png",
+      "og_image_id": "3359",
+      "twitter_title": "How To Use Social Networks To Boost Your Dental Clinic After Covid-19 Crisis. 11 Simple Recommendations.",
+      "twitter_description": "Nobody knows what is going to happen in the upcoming months, but these recommendations will help you to create an online marketing strategy.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/07/How-To-Use-Social-Networks-To-Boost-Your-Dental-Clinic-After-Covid-19-Crisis..png",
+      "twitter_image_id": "3359"
+    }
   },
   {
     "id": 2936,
@@ -992,7 +1914,42 @@
       "expansión ósea"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/04/La-Expansión-Ósea-como-Alternativa-en-atrofias-maxilares-Horizontales.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo el Profesor daniel Robles explica el paso a paso de la técnica y cómo realizarla de forma a obtener resultados predecibles.",
+      "focus_keyword": "expansión ósea",
+      "focus_keywords": [
+        {
+          "keyword": "cirugía de expansión ósea",
+          "score": 40
+        },
+        {
+          "keyword": "expansión ósea",
+          "score": 40
+        },
+        {
+          "keyword": "técnicas de expansión ósea",
+          "score": 40
+        }
+      ],
+      "keyword_synonyms": [
+        "expansión alveolar",
+        "regeneración ósea",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "67",
+      "estimated_reading_time_minutes": "14",
+      "og_title": "La Expansión Ósea como Alternativa en atrofias maxilares Horizontales",
+      "og_description": "En este artículo el Profesor daniel Robles explica el paso a paso de la técnica y cómo realizarla de forma a obtener resultados predecibles.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/04/Copy-of-Search-Canva.png",
+      "og_image_id": "3861",
+      "twitter_title": "La Expansión Ósea como Alternativa en atrofias maxilares Horizontales",
+      "twitter_description": "En este artículo el Profesor daniel Robles explica el paso a paso de la técnica y cómo realizarla de forma a obtener resultados predecibles.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/04/Expansion-twitter.png",
+      "twitter_image_id": "2683"
+    }
   },
   {
     "id": 2937,
@@ -1012,7 +1969,48 @@
       "dental practice management"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/09/10-Frequent-Mistakes-in-Dental-Practice-Management-and-How-to-Avoid-Them.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Dental Practice Management: Key Factors for Excellence %%page%% %%sep%% %%sitename%%",
+      "description": "Discover why dental practice management is key to achieving excellence in dentistry. Learn how effective business planning and management strategies can enhance your dental career.",
+      "focus_keyword": "dental practice management",
+      "focus_keywords": [
+        {
+          "keyword": "dental practice management",
+          "score": 49
+        },
+        {
+          "keyword": "dental practice management software",
+          "score": 40
+        },
+        {
+          "keyword": "dental practice management consultants",
+          "score": 40
+        },
+        {
+          "keyword": "best dental practice management software",
+          "score": 40
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "90",
+      "linkdex": "64",
+      "estimated_reading_time_minutes": "9",
+      "og_title": "10 Frequent Mistakes in Dental Practice Management and How to Avoid Them",
+      "og_description": "The 10 most common mistakes in dental practice management and how to avoid them. In this article, we cover this sensitive topic for almost all the dentists.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/04/10-Frequent-Mistakes-in-Dental-Practice-Management-and-How-to-Avoid-Them-1024x576-1.png",
+      "og_image_id": "4943",
+      "twitter_title": "10 Frequent Mistakes in Dental Practice Management and How to Avoid Them",
+      "twitter_description": "The 10 most common mistakes in dental practice management and how to avoid them. In this article, we cover this sensitive topic for almost all the dentists.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/04/10-Frequent-Mistakes-in-Dental-Practice-Management-and-How-to-Avoid-Them-1024x576-1.png",
+      "twitter_image_id": "4943"
+    }
   },
   {
     "id": 2938,
@@ -1030,7 +2028,21 @@
       "business books"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/04/Copy-of-Yellow-Tea-Party-Books-Club-Morning-Facebook-Post.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Every month we recommend books not related with dentistry but that will help you to grow in your professional career and your business.",
+      "focus_keyword": "business books",
+      "content_score": "90",
+      "linkdex": "54",
+      "og_title": "Periospot´s Bookshelf: April 2020",
+      "og_description": "Every month we recommend books not related to dentistry but that will help you to grow in your professional career and your business.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/04/Yellow-Tea-Party-Books-Club-Morning-Facebook-Post-1.png",
+      "og_image_id": "2800",
+      "twitter_title": "Periospot´s Bookshelf: April 2020",
+      "twitter_description": "Every month we recommend books not related to dentistry but that will help you to grow in your professional career and your business.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/04/Yellow-Tea-Party-Books-Club-Morning-Facebook-Post-1.png",
+      "twitter_image_id": "2800"
+    }
   },
   {
     "id": 2939,
@@ -1050,7 +2062,25 @@
       "marginal bone loss"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/05/Copy-of-Zero-bone-loss-concepts©.-A-path-to-crestal-bone-stability.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on the scientific research performed by Prof. Tomas Linkevičius.",
+      "focus_keyword": "bone loss",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "77",
+      "estimated_reading_time_minutes": "11",
+      "og_title": "Zero bone loss conecpts by prof. Tomas Linkevičius. A path to crestal bone stability",
+      "og_description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on the scientific research performed by Prof. Tomas Linkevičius.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/05/Copy-of-Copy-of-Zero-bone-loss-concepts.-A-path-to-crestal-bone-stability-1.png",
+      "og_image_id": "2854",
+      "twitter_title": "Zero bone loss conecpts by prof. Tomas Linkevičius. A path to crestal bone stability",
+      "twitter_description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on the scientific research performed by Prof. Tomas Linkevičius.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/05/Copy-of-Zero-bone-loss-concepts.-A-path-to-crestal-bone-stability.png",
+      "twitter_image_id": "2835"
+    }
   },
   {
     "id": 2940,
@@ -1071,7 +2101,48 @@
       "socket preservation"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/05/4-Techniques-to-Perform-an-Effective-Ridge-Preservation-and-Soft-Tissue-Management.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Alveolar Ridge Preservation: A Comprehensive Guide %%page%% %%sep%% %%sitename%%",
+      "description": "Learn about the importance of alveolar ridge preservation and soft tissue management in implant and periodontal surgery.",
+      "focus_keyword": "alveolar ridge preservation",
+      "focus_keywords": [
+        {
+          "keyword": "implant placement after ridge preservation",
+          "score": 40
+        },
+        {
+          "keyword": "alveolar ridge preservation",
+          "score": 59
+        },
+        {
+          "keyword": "alveolar ridge preservation techniques",
+          "score": 40
+        },
+        {
+          "keyword": "socket grafting and alveolar ridge preservation",
+          "score": 35
+        }
+      ],
+      "keyword_synonyms": [
+        "socket preservation",
+        "soft tissue graft",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "68",
+      "estimated_reading_time_minutes": "8",
+      "og_title": "4 Techniques to Perform an Effective Ridge Preservation and Soft Tissue Management",
+      "og_description": "The most effective techniques to perform alveolar ridge preservation summarized in this article by Nicolas Henner.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/05/Facebook-of-4-Techniques-to-Perform-an-Effective-Ridge-Preservation-and-Soft-Tissue-Management.png",
+      "og_image_id": "2893",
+      "twitter_title": "4 Techniques to Perform an Effective Ridge Preservation and Soft Tissue Management",
+      "twitter_description": "The most effective techniques to perform alveolar ridge preservation summarized in this article by Nicolas Henner.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/05/Copy-of-Facebook-of-4-Techniques-to-Perform-an-Effective-Ridge-Preservation-and-Soft-Tissue-Management.png",
+      "twitter_image_id": "2894"
+    }
   },
   {
     "id": 2976,
@@ -1093,7 +2164,40 @@
       "recording videos dentistry"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/06/How-to-Shoot-an-Overhead-Video-to-Record-Dental-Procedures-1.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Overhead Dental Videos: Low-Budget Quality Recording Guide",
+      "description": "Create low-budget overhead dental videos with our guide: master equipment, camera setup, techniques, and more.",
+      "focus_keyword": "low budget overhead dental video",
+      "focus_keywords": [
+        {
+          "keyword": "Affordable dental videography",
+          "score": 40
+        },
+        {
+          "keyword": "Dental procedure recording",
+          "score": 40
+        },
+        {
+          "keyword": "Overhead camera setup",
+          "score": 49
+        },
+        {
+          "keyword": "Dental video equipment",
+          "score": 49
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "Budget-friendly dental video production",
+        "Dental treatment video",
+        "Top-down camera positioning",
+        "Dental videography gear"
+      ],
+      "content_score": "90",
+      "linkdex": "71",
+      "estimated_reading_time_minutes": "5"
+    }
   },
   {
     "id": 2987,
@@ -1115,7 +2219,23 @@
       "slactive"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/06/Are-All-the-Implant-Surfaces-the-Same-A-review-of-the-different-surfaces.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Understanding the Importance of Implant Surface %%page%% %%sep%% %%sitename%%",
+      "description": "Learn about the latest advances in implant surface technology and how it is transforming the field of dentistry.",
+      "focus_keyword": "implant surface",
+      "content_score": "30",
+      "linkdex": "77",
+      "estimated_reading_time_minutes": "10",
+      "og_title": "Are all the implant surfaces the same? a review of the different surfaces.",
+      "og_description": "Implant surface topic may sound boring, but in this article, we analyze the most relevant information related to implant surfaces and its clinical relevance",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/06/Are-All-the-Implant-Surfaces-the-Same-A-review-of-the-different-surfaces.-2.png",
+      "og_image_id": "3017",
+      "twitter_title": "Are all the implant surfaces the same? a review of the different surfaces.",
+      "twitter_description": "Implant surface topic may sound boring, but in this article, we analyze the most relevant information related to implant surfaces and its clinical relevance",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/06/Copy-of-Copy-of-Are-All-the-Implant-Surfaces-the-Same-A-review-of-the-different-surfaces..png",
+      "twitter_image_id": "3019"
+    }
   },
   {
     "id": 3002,
@@ -1137,7 +2257,21 @@
       "odontología copywriting"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/06/Copywriting_-Cómo-captar-la-atención-de-tus-pacientes-y-que-quieran-visitarte..png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "Cómo captar pacientes mediante el copywriting, una innovadora forma de marketing que deberíamos dominar para mejorar nuestra presencia online.",
+      "focus_keyword": "copywriting pacientes",
+      "content_score": "30",
+      "linkdex": "63",
+      "og_title": "Copywriting: cómo captar la atención de tus pacientes y que quieran visitarte",
+      "og_description": "Cómo captar pacientes mediante el copywriting, una innovadora forma de marketing que deberíamos dominar para mejorar nuestra presencia online.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/06/Copy-of-Copywriting_-Cmo-captar-la-atencin-de-tus-pacientes-y-que-quieran-visitarte..png",
+      "og_image_id": "3023",
+      "twitter_title": "Copywriting: cómo captar la atención de tus pacientes y que quieran visitarte",
+      "twitter_description": "Cómo captar pacientes mediante el copywriting, una innovadora forma de marketing que deberíamos dominar para mejorar nuestra presencia online.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/06/Copy-of-Copy-of-Copywriting_-Cmo-captar-la-atencin-de-tus-pacientes-y-que-quieran-visitarte..png",
+      "twitter_image_id": "3024"
+    }
   },
   {
     "id": 3063,
@@ -1158,7 +2292,19 @@
       "recubrimiento radicular"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/06/Cobertura-Radicular-¡Mi-primera-vez-Las-8-reglas-de-oro-en-Cirugía-Plástica-Periodontal.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo, el Profesor Jorge Alania nos enseña sus experiencias en forma de 8 reglas que deberíamos tener en cuenta en cirugía plástica periodontal.",
+      "focus_keyword": "cirugía plástica periodontal",
+      "content_score": "90",
+      "linkdex": "63",
+      "og_description": "En este artículo, el Profesor Jorge Alania nos enseña sus experiencias en forma de 8 reglas que deberíamos tener en cuenta en cirugía plástica periodontal.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/06/Facebook-Cobertura-Radicular-Mi-primera-vez-Las-8-reglas-de-oro-en-Ciruga-Plstica-Periodontal.png",
+      "og_image_id": "3097",
+      "twitter_description": "En este artículo, el Profesor Jorge Alania nos enseña sus experiencias en forma de 8 reglas que deberíamos tener en cuenta en cirugía plástica periodontal.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/06/twitter-Cobertura-Radicular-Mi-primera-vez-Las-8-reglas-de-oro-en-Ciruga-Plstica-Periodontal.png",
+      "twitter_image_id": "3096"
+    }
   },
   {
     "id": 3112,
@@ -1179,7 +2325,25 @@
       "platform switching"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/06/The-Story-Behind-Platform-Switching-.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "What does platform switching means and what are the benefits that this concept brings from a clinical and patients point of view.",
+      "focus_keyword": "platform switching",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "78",
+      "estimated_reading_time_minutes": "5",
+      "og_title": "The Story Behind Platform Switching",
+      "og_description": "What does platform switching means and what are the benefits that this concept brings from a clinical and patient's point of view.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/06/FacebookThe-Story-Behind-Platform-Switching-.png",
+      "og_image_id": "3119",
+      "twitter_title": "The Story Behind Platform Switching",
+      "twitter_description": "What does platform switching means and what are the benefits that this concept brings from a clinical and patient's point of view.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/06/Twitter-FacebookThe-Story-Behind-Platform-Switching-.png",
+      "twitter_image_id": "3120"
+    }
   },
   {
     "id": 3314,
@@ -1195,7 +2359,10 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "content_score": "90"
+    }
   },
   {
     "id": 3327,
@@ -1214,7 +2381,22 @@
       "implant dentistry"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/07/美学区修复缺失牙的两种方法.png",
-    "language": "zh"
+    "language": "zh",
+    "seo": {
+      "description": "在本文中，我们描述了两种不同的方法来恢复美学区域中的无齿缝隙。生物学和临床意义。",
+      "focus_keyword": "植入物美学区",
+      "content_score": "90",
+      "linkdex": "39",
+      "estimated_reading_time_minutes": "2",
+      "og_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone",
+      "og_description": "In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "og_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.jpg",
+      "og_image_id": "1399",
+      "twitter_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone- In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "twitter_description": "In this article, we cover restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.png",
+      "twitter_image_id": "1808"
+    }
   },
   {
     "id": 3428,
@@ -1233,7 +2415,40 @@
       "alveolar ridge preservation"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/07/Patreon-Post-Alveolar-Ridge-Preservation.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Socket Preservation: The Key to Alveolar Ridge Preservation %%page%% %%sep%% %%sitename%%",
+      "description": "Discover the importance of socket preservation for dental implants. Learn about the impact on marginal bone loss and the benefits of ridge preservation.",
+      "focus_keyword": "socket preservation",
+      "focus_keywords": [
+        {
+          "keyword": "socket preservation",
+          "score": 50
+        },
+        {
+          "keyword": "socket preservation bone graft",
+          "score": 39
+        },
+        {
+          "keyword": "socket preservation after tooth extraction",
+          "score": 39
+        },
+        {
+          "keyword": "socket preservation bone graft healing",
+          "score": 33
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "90",
+      "linkdex": "44",
+      "estimated_reading_time_minutes": "1"
+    }
   },
   {
     "id": 3425,
@@ -1256,7 +2471,21 @@
       "root coverage procedures"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
+      "focus_keyword": "esthetic plastic periodontal surgery",
+      "content_score": "30",
+      "linkdex": "58",
+      "og_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "og_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
+      "og_image_id": "3480",
+      "twitter_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "twitter_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
+      "twitter_image_id": "3480"
+    }
   },
   {
     "id": 3519,
@@ -1280,7 +2509,34 @@
       "sobredentaduras"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/07/Copy-of-Copy-of-The-Ideal-3D-position-of-the-implants-in-the-Aesthetic-Zone.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "¿Cúal es la mejora opción para rehabilitar un paciente con una sobredentqadura? ¿Cuántos implantes son necesários para realizar una sobredentadura? Decubre las respuestas en este artículo de Ricardo López",
+      "focus_keyword": "sobredentaduras implantes",
+      "focus_keywords": [
+        {
+          "keyword": "sobredentadura implantes",
+          "score": 49
+        },
+        {
+          "keyword": "prótesis removible sobre implantes",
+          "score": 40
+        },
+        {
+          "keyword": "rehabilitación completa sobre implantes",
+          "score": 40
+        }
+      ],
+      "keyword_synonyms": [
+        "sobredentaduras en implantología",
+        "implantes con sobredentadura",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "59",
+      "estimated_reading_time_minutes": "14"
+    }
   },
   {
     "id": 3919,
@@ -1300,7 +2556,39 @@
       "soft tissue"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2020/10/Complications-in-Dental-Implant-Dentistry_-Buccal-Soft-Tissue-Dehisences-Featured.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Buccal Soft Tissue Dehiscence: Causes and Solutions %%page%% %%sep%% %%sitename%%",
+      "description": "Discover how to avoid buccal soft tissue dehiscence around dental implants and improve aesthetic outcomes in the aesthetic zone.",
+      "focus_keyword": "buccal soft tissue dehiscence",
+      "focus_keywords": [
+        {
+          "keyword": "implant dentistry complications",
+          "score": 35
+        },
+        {
+          "keyword": "aesthetic dentistry",
+          "score": 35
+        },
+        {
+          "keyword": "aesthetic implant dentistry complication",
+          "score": 35
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "61",
+      "estimated_reading_time_minutes": "2",
+      "og_title": "Understanding Buccal Soft Tissue Dehiscence: Causes and Solutions",
+      "og_description": "Learn about buccal soft tissue dehiscence and how to prevent it in dental implant procedures. Watch the video and view the infographic for valuable insights.",
+      "twitter_title": "Preventing Buccal Soft Tissue Dehiscence in Implants: A Comprehensive Guide",
+      "twitter_description": "Learn about buccal soft tissue dehiscence around dental implants and how to avoid this common complication."
+    }
   },
   {
     "id": 3991,
@@ -1319,7 +2607,30 @@
       "online training"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/02/Cómo-mejorar-la-formación-online-y-los-webinars-en-4-simples-pasos-1.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo cubrimos de una forma sencilla los principales consejos para que tu próximo webinar o clase online no deprima a tus alumnos",
+      "focus_keyword": "webinar clases online",
+      "focus_keywords": [
+        {
+          "keyword": "zoom",
+          "score": "ok"
+        },
+        {
+          "keyword": "formación online",
+          "score": "ok"
+        }
+      ],
+      "keyword_synonyms": [
+        "clases online",
+        "microsoft teams",
+        "clases zoom"
+      ],
+      "content_score": "30",
+      "linkdex": "51",
+      "og_image": "https://periospot.com/wp-content/uploads/2021/02/Copy-of-Cómo-mejorar-la-formación-online-y-los-webinars-en-4-simples-pasos-2.png",
+      "og_image_id": "4032"
+    }
   },
   {
     "id": 4056,
@@ -1338,7 +2649,28 @@
       "social media"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/02/Copy-of-Copy-of-12-conceptos-básicos-sobre-edición-de-fotografía-en-odontología.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "Cómo mejorar tu presencia en las redes sociales y estar en primera linea cuando un paciente busque un odontólogo por internet. Aprende de la mano de Ros Megías la magía del Copywriting",
+      "focus_keyword": "redes sociales",
+      "focus_keywords": [
+        {
+          "keyword": "copywriting para odontólogos ",
+          "score": "bad"
+        },
+        {
+          "keyword": "redes sociales odontología",
+          "score": "bad"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "redes sociales para odontólogos ",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "67"
+    }
   },
   {
     "id": 4076,
@@ -1358,7 +2690,29 @@
       "guided bone regeneration"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/02/Copy-of-Copy-of-12-conceptos-básicos-sobre-edición-de-fotografía-en-odontología-2.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Guided bone regeneration.The Most common defects",
+      "focus_keyword": "guided bone regeneration",
+      "focus_keywords": [
+        {
+          "keyword": "implant dentistry",
+          "score": "ok"
+        },
+        {
+          "keyword": "gbr",
+          "score": "ok"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "xenograft",
+        "bone regeneration"
+      ],
+      "content_score": "30",
+      "linkdex": "74",
+      "estimated_reading_time_minutes": "10"
+    }
   },
   {
     "id": 4108,
@@ -1378,7 +2732,28 @@
       "webinars"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/How-to-do-a-Webinar-About-Dentistry-.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "How to create a set up and having some rules to create more engagement in webinars and online classes. In this article we share 4 simple tips",
+      "focus_keyword": "online classes",
+      "focus_keywords": [
+        {
+          "keyword": "webinars",
+          "score": "good"
+        },
+        {
+          "keyword": "webinar",
+          "score": "good"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "webinar",
+        "online class"
+      ],
+      "content_score": "60",
+      "linkdex": "52"
+    }
   },
   {
     "id": 4136,
@@ -1394,7 +2769,13 @@
     ],
     "tags": [],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/morning-brew-vo5wS9G6CQ0-unsplash-scaled.jpeg",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "60"
+    }
   },
   {
     "id": 4160,
@@ -1415,7 +2796,28 @@
       "prgf"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/Clinical-Advantages-of-the-Platelet-Rich-Fibrin-in-Dentistry.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "In this article it is described the different types of platlet rich fibrine and how to use it in dentistry and other fields",
+      "focus_keyword": "Platelet Rich Fibrin",
+      "focus_keywords": [
+        {
+          "keyword": "PRF",
+          "score": "ok"
+        },
+        {
+          "keyword": "PRGF",
+          "score": "ok"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "L-PRF",
+        "Plasma Rich in Growing Factors"
+      ],
+      "content_score": "30",
+      "linkdex": "60"
+    }
   },
   {
     "id": 4245,
@@ -1435,7 +2837,23 @@
       "rehabilitación"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/¿Es-la-Conexión-un-Elemento-Protético.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo se explica la importacia de la conexión protética en el éxito a largo plazo de un tratamiento de implantes. Desde sus implicaciones clínicas como biológicas",
+      "focus_keyword": "conexión protética",
+      "focus_keywords": [
+        {
+          "keyword": "prótesis implantes",
+          "score": "ok"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "rehabilitación oral"
+      ],
+      "content_score": "30",
+      "linkdex": "54"
+    }
   },
   {
     "id": 4266,
@@ -1455,7 +2873,38 @@
       "tecido mole"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/Complicações-em-Implantologia-Oral_-Deiscências-do-tecido-mole-vestibular.png",
-    "language": "pt"
+    "language": "pt",
+    "seo": {
+      "description": "Queres saber mais para evitar deiscências de tecido mole em vestibular? Deixamos-te aqui os livros e vídeos para que possas evitar estas complicações.",
+      "focus_keyword": "Complicações em Implantologia Oral",
+      "focus_keywords": [
+        {
+          "keyword": "implant dentistry complications",
+          "score": "ok"
+        },
+        {
+          "keyword": "aesthetic dentistry",
+          "score": "ok"
+        },
+        {
+          "keyword": "aesthetic implant dentistry complication",
+          "score": "ok"
+        },
+        {
+          "keyword": "tecido mole implantologia ",
+          "score": "ok"
+        }
+      ],
+      "keyword_synonyms": [
+        "implantologia, gengiva, perio, ",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "60",
+      "linkdex": "51"
+    }
   },
   {
     "id": 4268,
@@ -1476,7 +2925,24 @@
       "recobrimento radicular"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/Técnicas-de-recobrimento-radicular.png",
-    "language": "pt"
+    "language": "pt",
+    "seo": {
+      "description": "Neste artigo, o professor Jorge Alania explica o que deves saber para fazer as tuas primeiras cirurgias de recobrimento radicular.",
+      "focus_keyword": "Cirurgia Plástica Periodontal",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "64",
+      "og_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "og_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
+      "og_image_id": "3480",
+      "twitter_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "twitter_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
+      "twitter_image_id": "3480"
+    }
   },
   {
     "id": 4286,
@@ -1495,7 +2961,28 @@
       "plastic periodontal surgery"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/La-Reconstrucción-de-un-Maxilar-Atrófico-Mediante-Acceso-Apical.png",
-    "language": "es"
+    "language": "es",
+    "seo": {
+      "description": "En este artículo, el Dr. Regidor nos explica el paso a paso de una técnica novedosa para resolver un caso de fracaso en implantología.",
+      "focus_keyword": "complicaciones implantología",
+      "focus_keywords": [
+        {
+          "keyword": "cirugía plastica periodontal",
+          "score": "bad"
+        },
+        {
+          "keyword": "regeneración ósea",
+          "score": "bad"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "cirugía periodontal",
+        "injerto tejido conectivo"
+      ],
+      "content_score": "30",
+      "linkdex": "52"
+    }
   },
   {
     "id": 4332,
@@ -1515,7 +3002,17 @@
       "torque"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/5-mitos.png",
-    "language": "pt"
+    "language": "pt",
+    "seo": {
+      "description": "O torque de inserção do implante é determinante para o seu sucesso. Mas há alguns mitos e algumas verdades quanto a isto, sabes o quê?",
+      "focus_keyword": "mitos e verdades sobre torque de inserção do implante",
+      "keyword_synonyms": [
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "65",
+      "estimated_reading_time_minutes": "5"
+    }
   },
   {
     "id": 4370,
@@ -1535,7 +3032,34 @@
       "socket shield"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/Socket-Shield-ruined-men.-Few-understand-this..png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Uncover the revolutionary concept of socket shield in implant dentistry. Learn about the impact and potential benefits of this technique.",
+      "focus_keyword": "socket shield",
+      "focus_keywords": [
+        {
+          "keyword": "socket shield technique",
+          "score": 43
+        },
+        {
+          "keyword": "socket shield step-by-step",
+          "score": 35
+        },
+        {
+          "keyword": "socket shield",
+          "score": 52
+        }
+      ],
+      "keyword_synonyms": [
+        "socket shield technique",
+        "socket shield protocol",
+        "how to perform socket shield",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "69",
+      "estimated_reading_time_minutes": "10"
+    }
   },
   {
     "id": 4419,
@@ -1555,7 +3079,24 @@
       "rehabilitación"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/¿Es-la-Conexión-un-Elemento-Protético.png",
-    "language": "pt"
+    "language": "pt",
+    "seo": {
+      "description": "En este artículo se explica la importacia de la conexión protética en el éxito a largo plazo de un tratamiento de implantes. Desde sus implicaciones clínicas como biológicas",
+      "focus_keyword": "conexión protética",
+      "focus_keywords": [
+        {
+          "keyword": "prótesis implantes",
+          "score": "ok"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "rehabilitación oral"
+      ],
+      "content_score": "30",
+      "linkdex": "54",
+      "estimated_reading_time_minutes": "10"
+    }
   },
   {
     "id": 4469,
@@ -1574,7 +3115,14 @@
       "oral health"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2023/03/Tongue-Scrapers-Your-Secret-Weapon-for-Fresh-Breath-and-help-you-have-more-chances-on-Tinder.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Discover the benefits of tongue scrapers for maintaining fresh breath and how they can boost your Tinder game. Find the best tongue scrapers to improve your oral hygiene and dating success.",
+      "focus_keyword": "Tongue scrapers and fresh breath",
+      "content_score": "90",
+      "linkdex": "64",
+      "estimated_reading_time_minutes": "4"
+    }
   },
   {
     "id": 4478,
@@ -1594,7 +3142,25 @@
       "oral hygiene"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2023/03/Top-10-Electric-Toothbrushes-of-2023-The-Ultimate-Guide-for-a-Healthier-Smile.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "%%title%% %%page%% %%sitename%% %",
+      "description": "Explore the best electric toothbrushes of 2023. Our ultimate guide highlights the best overall, affordable, and travel-friendly options.",
+      "focus_keyword": "Best Electric Toothbrushes 2023",
+      "focus_keywords": [
+        {
+          "keyword": "Top electric toothbrush",
+          "score": "good"
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "73",
+      "estimated_reading_time_minutes": "19"
+    }
   },
   {
     "id": 4714,
@@ -1611,7 +3177,35 @@
     ],
     "tags": [],
     "featured_image": "https://periospot.com/wp-content/uploads/2023/04/Mastering-Dental-Photography-A-Comprehensive-Guide.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "%%title%%",
+      "description": "Mastering dental photography: Tips, benefits, and equipment recommendations to improve patient care and communication in dentistry.",
+      "focus_keyword": "Dental Photography",
+      "focus_keywords": [
+        {
+          "keyword": "dental photography equipment",
+          "score": 54
+        },
+        {
+          "keyword": "dental photography techniques",
+          "score": 44
+        },
+        {
+          "keyword": "dental photography tips",
+          "score": 54
+        }
+      ],
+      "keyword_synonyms": [
+        "digital dental photography",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "83",
+      "estimated_reading_time_minutes": "17"
+    }
   },
   {
     "id": 4742,
@@ -1629,7 +3223,40 @@
       "working from home"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2023/04/Stylish-and-Functional-Modern-Home-Office-Ideas-for-Every-Space.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Stylish & Functional Modern Home Office Ideas for Every Space",
+      "description": "Discover stylish and functional modern home office ideas to create an inspiring and productive workspace, whether you have a dedicated room or just a small corner.",
+      "focus_keyword": "modern home office ideas",
+      "focus_keywords": [
+        {
+          "keyword": "Contemporary home office design",
+          "score": "bad"
+        },
+        {
+          "keyword": "Small home office ideas",
+          "score": "ok"
+        },
+        {
+          "keyword": "Home office setup",
+          "score": "ok"
+        },
+        {
+          "keyword": "Home office organization",
+          "score": "bad"
+        }
+      ],
+      "keyword_synonyms": [
+        "Innovative home office designs",
+        "modern office design up-to-date home office ideas, current home office trends",
+        "compact office solutions, space-saving home office, tiny home office inspiration",
+        "home office configuration, home workspace arrangement, setting up a home office",
+        "home office storage solutions, decluttering home office, organizing a home workspace"
+      ],
+      "content_score": "30",
+      "linkdex": "71",
+      "estimated_reading_time_minutes": "16"
+    }
   },
   {
     "id": 4418,
@@ -1648,7 +3275,29 @@
       "socket shield"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/Socket-Shield-ruined-men.-Few-understand-this..png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "In this article you will find the experience of the author after almost 10 years performing socket shield cases. Results, complications and much more.",
+      "focus_keyword": "socket shield",
+      "focus_keywords": [
+        {
+          "keyword": "socket shield complications",
+          "score": 40
+        },
+        {
+          "keyword": "socket shield technique",
+          "score": 48
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        ""
+      ],
+      "content_score": "30",
+      "linkdex": "72",
+      "estimated_reading_time_minutes": "10"
+    }
   },
   {
     "id": 5095,
@@ -1669,6 +3318,37 @@
       "tooth extraction"
     ],
     "featured_image": "https://periospot.com/wp-content/uploads/2024/11/Bone-Remodeling-After-Tooth-Extraction-Understanding-the-Healing-Process-in-Implant-Dentistry.png",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "description": "Uncover the secrets of the tooth extraction healing process. Learn about the changes that occur in the alveolar ridge after a tooth is removed.",
+      "focus_keyword": "Tooth extraction healing process",
+      "focus_keywords": [
+        {
+          "keyword": "tooth extraction healing process",
+          "score": 54
+        },
+        {
+          "keyword": "healing process for extracted tooth",
+          "score": 44
+        },
+        {
+          "keyword": "wound healing process normal socket after tooth extraction",
+          "score": 35
+        }
+      ],
+      "keyword_synonyms": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "content_score": "90",
+      "linkdex": "63",
+      "estimated_reading_time_minutes": "5",
+      "og_title": "Understanding the Tooth Extraction Healing Process",
+      "og_description": "Explore the fascinating healing process after tooth extraction and its importance for successful implant dentistry.",
+      "twitter_title": "The Tooth Extraction Healing Process: What to Expect",
+      "twitter_description": "Discover the fascinating healing process of tooth extraction and its impact on successful implant dentistry."
+    }
   }
 ]

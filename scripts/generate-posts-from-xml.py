@@ -92,6 +92,57 @@ def extract_meta(item: ET.Element) -> dict[str, str]:
     return meta
 
 
+def parse_json_meta(value: str) -> object:
+    value = value.strip()
+    if not value:
+        return ""
+    if value.startswith("{") or value.startswith("["):
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            return value
+    return value
+
+
+def build_seo(meta: dict[str, str]) -> dict[str, object]:
+    seo: dict[str, object] = {}
+
+    def set_if_present(key: str, value: object) -> None:
+        if value not in ("", None, [], {}):
+            seo[key] = value
+
+    set_if_present("title", meta.get("_yoast_wpseo_title", ""))
+    set_if_present("description", meta.get("_yoast_wpseo_metadesc", ""))
+    set_if_present("focus_keyword", meta.get("_yoast_wpseo_focuskw", ""))
+    set_if_present("focus_keywords", parse_json_meta(meta.get("_yoast_wpseo_focuskeywords", "")))
+    set_if_present("keyword_synonyms", parse_json_meta(meta.get("_yoast_wpseo_keywordsynonyms", "")))
+    set_if_present("content_score", meta.get("_yoast_wpseo_content_score", ""))
+    set_if_present("linkdex", meta.get("_yoast_wpseo_linkdex", ""))
+    set_if_present(
+        "estimated_reading_time_minutes",
+        meta.get("_yoast_wpseo_estimated-reading-time-minutes", ""),
+    )
+
+    set_if_present("og_title", meta.get("_yoast_wpseo_opengraph-title", ""))
+    set_if_present("og_description", meta.get("_yoast_wpseo_opengraph-description", ""))
+    set_if_present("og_image", meta.get("_yoast_wpseo_opengraph-image", ""))
+    set_if_present("og_image_id", meta.get("_yoast_wpseo_opengraph-image-id", ""))
+
+    set_if_present("twitter_title", meta.get("_yoast_wpseo_twitter-title", ""))
+    set_if_present("twitter_description", meta.get("_yoast_wpseo_twitter-description", ""))
+    set_if_present("twitter_image", meta.get("_yoast_wpseo_twitter-image", ""))
+    set_if_present("twitter_image_id", meta.get("_yoast_wpseo_twitter-image-id", ""))
+
+    set_if_present("canonical", meta.get("_yoast_wpseo_canonical", ""))
+    set_if_present("redirect", meta.get("_yoast_wpseo_redirect", ""))
+    set_if_present("meta_robots", meta.get("_yoast_wpseo_meta-robots", ""))
+    set_if_present("meta_robots_noindex", meta.get("_yoast_wpseo_meta-robots-noindex", ""))
+    set_if_present("meta_robots_nofollow", meta.get("_yoast_wpseo_meta-robots-nofollow", ""))
+    set_if_present("meta_robots_adv", meta.get("_yoast_wpseo_meta-robots-adv", ""))
+
+    return seo
+
+
 def extract_posts(channel: ET.Element) -> list[dict[str, object]]:
     items = channel.findall("item")
     attachments = build_attachment_index(items)
@@ -113,26 +164,30 @@ def extract_posts(channel: ET.Element) -> list[dict[str, object]]:
 
         categories, tags = extract_categories(item)
         meta = extract_meta(item)
+        seo = build_seo(meta)
         thumbnail_id = meta.get("_thumbnail_id", "")
         featured_image = attachments.get(thumbnail_id, "")
         language = detect_language(categories, tags, slug, title)
 
-        posts.append(
-            {
-                "id": int(wordpress_id) if wordpress_id.isdigit() else wordpress_id,
-                "title": title,
-                "slug": slug,
-                "content": content,
-                "excerpt": excerpt,
-                "author": author,
-                "date": published_at,
-                "status": status,
-                "categories": categories,
-                "tags": tags,
-                "featured_image": featured_image,
-                "language": language,
-            }
-        )
+        post: dict[str, object] = {
+            "id": int(wordpress_id) if wordpress_id.isdigit() else wordpress_id,
+            "title": title,
+            "slug": slug,
+            "content": content,
+            "excerpt": excerpt,
+            "author": author,
+            "date": published_at,
+            "status": status,
+            "categories": categories,
+            "tags": tags,
+            "featured_image": featured_image,
+            "language": language,
+        }
+
+        if seo:
+            post["seo"] = seo
+
+        posts.append(post)
 
     return posts
 

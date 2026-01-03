@@ -104,6 +104,7 @@ const toSupabasePost = (post) => {
   const content = post.content || "";
   const excerpt = post.excerpt || "";
   const slug = post.slug || "";
+  const seo = post.seo && Object.keys(post.seo).length ? post.seo : null;
 
   return {
     wordpress_id: Number.isFinite(post.id) ? post.id : Number.parseInt(post.id, 10) || null,
@@ -111,8 +112,14 @@ const toSupabasePost = (post) => {
     title: post.title || "Untitled",
     excerpt,
     content,
-    featured_image_url: post.featured_image || null,
+    featured_image_url: post.featured_image || post.featured_image_url || null,
     author_name: post.author || null,
+    meta_title: post.seo?.title || null,
+    meta_description: post.seo?.description || null,
+    focus_keyword: post.seo?.focus_keyword || null,
+    canonical_url: post.seo?.canonical || null,
+    og_image_url: post.seo?.og_image || null,
+    seo,
     categories: Array.isArray(post.categories) ? post.categories : [],
     tags: Array.isArray(post.tags) ? post.tags : [],
     language: post.language || detectLanguage(post),
