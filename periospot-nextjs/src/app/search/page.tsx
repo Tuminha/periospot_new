@@ -21,6 +21,7 @@ import {
   User,
   ArrowRight
 } from "lucide-react"
+import { PerioAnalytics } from "@/lib/analytics"
 
 interface SearchResult {
   id: string
@@ -80,6 +81,7 @@ function SearchContent() {
 
     setLoading(true)
     setSearched(true)
+    PerioAnalytics.trackSearch(searchQuery)
 
     try {
       // Fetch posts and products
@@ -257,6 +259,7 @@ function SearchContent() {
                     onClick={() => {
                       setQuery(term)
                       router.push(`/search?q=${encodeURIComponent(term)}`)
+                      PerioAnalytics.trackSearch(term)
                       performSearch(term)
                     }}
                   >

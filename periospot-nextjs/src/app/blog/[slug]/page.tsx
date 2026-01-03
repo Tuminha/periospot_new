@@ -18,6 +18,7 @@ import AuthorCard from "@/components/AuthorCard"
 import CommentsSection from "@/components/CommentsSection"
 import ArticleScrollTracker from "@/components/analytics/ArticleScrollTracker"
 import SocialShare from "@/components/analytics/SocialShare"
+import RelatedPostCard from "@/components/analytics/RelatedPostCard"
 
 // Helper to get author name from post
 function getAuthorName(author: Post['author']): string {
@@ -388,40 +389,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </h2>
                   <div className="grid md:grid-cols-3 gap-6">
                     {relatedPosts.map((relatedPost) => (
-                      <Link
-                        key={relatedPost.id}
-                        href={`/blog/${relatedPost.slug}`}
-                        className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-elevated transition-shadow"
-                      >
-                        {relatedPost.featuredImage ? (
-                          <div className="aspect-video overflow-hidden">
-                            <Image
-                              src={relatedPost.featuredImage}
-                              alt={relatedPost.title}
-                              width={400}
-                              height={225}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                          </div>
-                        ) : (
-                          <div className="aspect-video bg-secondary flex items-center justify-center">
-                            <span className="text-muted-foreground text-sm">No image</span>
-                          </div>
-                        )}
-                        <div className="p-4">
-                          {relatedPost.categories?.[0] && (
-                            <span className="text-xs text-primary font-medium">
-                              {relatedPost.categories[0]}
-                            </span>
-                          )}
-                          <h3 className="font-display text-sm font-semibold text-foreground mt-1 mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                            {relatedPost.title}
-                          </h3>
-                          <span className="text-xs text-muted-foreground">
-                            {Math.ceil((relatedPost.content?.split(/\s+/).length || 0) / 200)} min read
-                          </span>
-                        </div>
-                      </Link>
+                      <RelatedPostCard key={relatedPost.id} post={relatedPost} />
                     ))}
                   </div>
                 </section>

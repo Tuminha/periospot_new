@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next"
 import { GoogleAnalytics } from "@next/third-parties/google"
+import Script from "next/script"
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 import { CartProvider } from "@/lib/woocommerce"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import GaDebug from "@/components/analytics/GaDebug"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -98,6 +100,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+  const enableGaDebug = process.env.NEXT_PUBLIC_ENABLE_GA_DEBUG === "true"
+  const shouldLoadGa = Boolean(gaId) && (process.env.NODE_ENV === "production" || enableGaDebug)
 
   return (
     <html lang="en" className="dark" suppressHydrationWarning data-theme="dark">
@@ -163,6 +167,11 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="pETcH9S5IYzY86i2gBNEdg"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="font-sans antialiased dark">
         <ThemeProvider
@@ -179,9 +188,8 @@ export default function RootLayout({
               <Footer />
             </div>
             <Toaster />
-            {process.env.NODE_ENV === "production" && gaId ? (
-              <GoogleAnalytics gaId={gaId} />
-            ) : null}
+            {shouldLoadGa ? <GoogleAnalytics gaId={gaId!} /> : null}
+            {gaId ? <GaDebug gaId={gaId} /> : null}
           </CartProvider>
         </ThemeProvider>
       </body>

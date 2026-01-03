@@ -57,3 +57,4 @@ yarn-error.log*
 *_subscribers_*.csv
 subscribers.csv
 ebooks/pdfs/*.pdf
+.vercel

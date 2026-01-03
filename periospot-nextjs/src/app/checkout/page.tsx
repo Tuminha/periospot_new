@@ -18,6 +18,7 @@ import {
   Loader2,
   ShoppingBag
 } from "lucide-react"
+import { PerioAnalytics } from "@/lib/analytics"
 
 // Cart item type (in production, this would come from a cart context/store)
 interface CartItem {
@@ -69,7 +70,21 @@ export default function CheckoutPage() {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     setLoading(false)
-    setOrderId(`PS-${Date.now().toString(36).toUpperCase()}`)
+    const nextOrderId = `PS-${Date.now().toString(36).toUpperCase()}`
+    if (cartItems.length > 0) {
+      PerioAnalytics.trackPurchase({
+        transactionId: nextOrderId,
+        value: total,
+        tax,
+        items: cartItems.map((item) => ({
+          item_id: item.id,
+          item_name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+        })),
+      })
+    }
+    setOrderId(nextOrderId)
     setStep("success")
   }
 

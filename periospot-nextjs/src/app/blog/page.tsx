@@ -1,12 +1,9 @@
 import { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 
-import type { Post } from "@/lib/content"
 import { getAllPosts, getAllCategories } from "@/lib/content"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import BlogPostCard from "@/components/analytics/BlogPostCard"
 
 export const metadata: Metadata = {
   title: "Blog - Dental Education Articles",
@@ -63,7 +60,7 @@ export default async function BlogPage() {
       {/* Posts Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {publishedPosts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <BlogPostCard key={post.id} post={post} />
         ))}
       </div>
 
@@ -73,54 +70,5 @@ export default async function BlogPage() {
         </div>
       )}
     </div>
-  )
-}
-
-function PostCard({ post }: { post: Post }) {
-  return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-      {post.featuredImage && (
-        <div className="aspect-video relative bg-muted">
-          <Image
-            src={post.featuredImage}
-            alt={post.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
-      )}
-      <CardHeader className="flex-1">
-        <div className="flex flex-wrap gap-2 mb-2">
-          {post.categories?.slice(0, 2).map((cat: string) => (
-            <Badge key={cat} variant="secondary" className="text-xs">
-              {cat}
-            </Badge>
-          ))}
-        </div>
-        <CardTitle className="line-clamp-2 text-lg">
-          <Link href={`/blog/${post.slug}`} className="hover:text-primary">
-            {post.title}
-          </Link>
-        </CardTitle>
-        <CardDescription className="line-clamp-3">
-          {post.excerpt?.replace(/<[^>]*>/g, "") || ""}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="pt-0">
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>
-            {typeof post.author === "string" ? post.author : post.author?.name || "Periospot"}
-          </span>
-          <time dateTime={post.date}>
-            {new Date(post.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-          </time>
-        </div>
-      </CardContent>
-    </Card>
   )
 }

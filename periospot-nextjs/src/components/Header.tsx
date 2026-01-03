@@ -9,6 +9,7 @@ import { createBrowserClient } from "@supabase/ssr"
 import { User as SupabaseUser } from "@supabase/supabase-js"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/lib/woocommerce"
+import { PerioAnalytics } from "@/lib/analytics"
 import { GB, US, ES, PT, BR, CN } from "country-flag-icons/react/3x2"
 
 const ADMIN_EMAIL = "cisco@periospot.com"
@@ -132,6 +133,20 @@ const Header = () => {
     setOpenDropdown(openDropdown === label ? null : label)
   }
 
+  const getLanguageFromPath = (path: string) => {
+    if (path.includes("/es")) return "es"
+    if (path.includes("/pt")) return "pt"
+    if (path.includes("/zh")) return "zh"
+    return "en"
+  }
+
+  const trackLanguageSwitch = (path: string, contentType: "articles" | "library") => {
+    PerioAnalytics.trackLanguageSwitch({
+      toLanguage: getLanguageFromPath(path),
+      contentType,
+    })
+  }
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -198,16 +213,26 @@ const Header = () => {
                       transition={{ duration: 0.15 }}
                       className="absolute top-full left-0 mt-2 bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-elevated py-2 min-w-[180px]"
                     >
-                      {item.children.map((child) => (
+                      {item.children.map((child) => {
+                        const isLanguageSwitch =
+                          item.label === "Articles" || item.label === "Library"
+                        const contentType = item.label === "Library" ? "library" : "articles"
+                        return (
                         <Link
                           key={child.path}
                           href={child.path}
                           className="flex items-center gap-2 px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+                          onClick={() => {
+                            if (isLanguageSwitch) {
+                              trackLanguageSwitch(child.path, contentType)
+                            }
+                          }}
                         >
                           {child.flagCode && <FlagIcon code={child.flagCode} />}
                           {child.label}
                         </Link>
-                      ))}
+                        )
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -371,7 +396,15 @@ const Header = () => {
                               <Link
                                 key={child.path}
                                 href={child.path}
-                                onClick={() => setIsMenuOpen(false)}
+                                onClick={() => {
+                                  if (item.label === "Articles" || item.label === "Library") {
+                                    trackLanguageSwitch(
+                                      child.path,
+                                      item.label === "Library" ? "library" : "articles"
+                                    )
+                                  }
+                                  setIsMenuOpen(false)
+                                }}
                                 className="flex items-center gap-2 py-2.5 px-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
                               >
                                 {child.flagCode && <FlagIcon code={child.flagCode} />}

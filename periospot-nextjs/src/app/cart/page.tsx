@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,6 +18,7 @@ import {
   CreditCard,
   Lock
 } from "lucide-react"
+import { PerioAnalytics } from "@/lib/analytics"
 
 // Cart item type
 interface CartItem {
@@ -29,6 +31,7 @@ interface CartItem {
 }
 
 export default function CartPage() {
+  const router = useRouter()
   // In a real app, this would come from a cart context/store
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [couponCode, setCouponCode] = useState("")
@@ -60,6 +63,21 @@ export default function CartPage() {
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const discount = couponApplied ? subtotal * 0.1 : 0 // 10% discount example
   const total = subtotal - discount
+
+  const handleProceedToCheckout = () => {
+    if (cartItems.length > 0) {
+      PerioAnalytics.trackBeginCheckout({
+        cartValue: total,
+        items: cartItems.map((item) => ({
+          item_id: item.id,
+          item_name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+        })),
+      })
+    }
+    router.push("/checkout")
+  }
 
   // Empty cart state
   if (cartItems.length === 0) {
@@ -276,7 +294,7 @@ export default function CartPage() {
                 </div>
               </CardContent>
               <CardFooter className="flex-col gap-3">
-                <Button className="w-full" size="lg">
+                <Button className="w-full" size="lg" onClick={handleProceedToCheckout}>
                   <CreditCard className="mr-2 h-4 w-4" />
                   Proceed to Checkout
                   <ArrowRight className="ml-2 h-4 w-4" />

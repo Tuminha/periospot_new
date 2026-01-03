@@ -4,24 +4,29 @@ This folder contains all ebook PDFs for the Periospot library.
 
 ## Current Inventory
 
-### Available PDFs (6 files)
+### Uploaded to Supabase Storage (2 files)
 
-| File | Language | Topic | Pages | Size |
-|------|----------|-------|-------|------|
-| `10-tips-aesthetic-implants-en.pdf` | English | 10 Tips Aesthetic Implantology | 18 | 5.0MB |
-| `10-tips-aesthetic-implants-es.pdf` | Spanish | 10 Consejos Implantología Estética | 18 | 11MB |
-| `10-tips-aesthetic-implants-pt.pdf` | Portuguese | 10 Dicas Implantologia Estética | 17 | 4.9MB |
-| `guided-bone-regeneration-es.pdf` | Spanish | Regeneración Ósea Guiada | 100 | 22MB |
-| `guided-bone-regeneration-pt.pdf` | Portuguese | Regeneração Óssea Guiada | 103 | 165MB |
-| `17-immutable-laws-pt.pdf` | Portuguese | As 17 Leis Imutáveis | 70 | 23MB |
+| File | Language | Topic | Pages | Size | Status |
+|------|----------|-------|-------|------|--------|
+| `10-tips-aesthetic-implants-en.pdf` | English | 10 Tips Aesthetic Implantology | 18 | 5.0MB | ✅ Uploaded |
+| `guided-bone-regeneration-es.pdf` | Spanish | Regeneración Ósea Guiada | 100 | 22MB | ✅ Uploaded |
 
-### Missing PDFs (need to export from iBooks Author)
+### Too Large for Supabase Free Tier (1 file - 50MB limit)
+
+| File | Language | Topic | Pages | Size | Status |
+|------|----------|-------|-------|------|--------|
+| `guided-bone-regeneration-pt.pdf` | Portuguese | Regeneração Óssea Guiada | 103 | 165MB | ⚠️ Exceeds 50MB limit |
+
+### Missing PDFs (Dropbox not synced - 0 bytes)
 
 | Expected File | Language | Status |
 |---------------|----------|--------|
-| `17-immutable-laws-en.pdf` | English | ❌ Empty - needs export |
-| `guided-bone-regeneration-en.pdf` | English | ❌ Empty - needs export |
-| `connective-tissue-grafts-en.pdf` | English | ❌ Empty - needs export |
+| `10-tips-aesthetic-implants-es.pdf` | Spanish | ❌ Dropbox placeholder |
+| `10-tips-aesthetic-implants-pt.pdf` | Portuguese | ❌ Dropbox placeholder |
+| `17-immutable-laws-en.pdf` | English | ❌ Dropbox placeholder |
+| `17-immutable-laws-pt.pdf` | Portuguese | ❌ Dropbox placeholder |
+| `guided-bone-regeneration-en.pdf` | English | ❌ Dropbox placeholder |
+| `connective-tissue-grafts-en.pdf` | English | ❌ Dropbox placeholder |
 
 ## Folder Structure
 

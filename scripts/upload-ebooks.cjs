@@ -72,7 +72,6 @@ async function ensureBucketExists() {
     console.log('Creating ebooks bucket...');
     const { error: createError } = await supabase.storage.createBucket(BUCKET_NAME, {
       public: false, // Private bucket - downloads go through API
-      fileSizeLimit: 209715200, // 200MB max (for large Portuguese GBR at 165MB)
       allowedMimeTypes: ['application/pdf']
     });
 

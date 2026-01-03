@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useReducer, useEffect, useCallback } from "react"
 import type { CartItem, Cart } from "./types"
+import { PerioAnalytics } from "@/lib/analytics"
 
 // Cart Actions
 type CartAction =
@@ -123,6 +124,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const addItem = useCallback((item: Omit<CartItem, "id">) => {
     const id = `${item.productId}-${Date.now()}`
+    const unitPrice = item.salePrice ?? item.price
+    PerioAnalytics.trackAddToCart({
+      productId: String(item.productId),
+      productName: item.name,
+      price: unitPrice,
+      category: item.productType || "product",
+      quantity: item.quantity,
+    })
     dispatch({ type: "ADD_ITEM", payload: { ...item, id } })
   }, [])
 
