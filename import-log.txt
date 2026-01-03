@@ -53,3 +53,6 @@ Importing 7552 contacts to english audience...
   Processed: 3600/7552
   Processed: 3700/7552
   Processed: 3800/7552
+  Processed: 3900/7552
+  Processed: 4000/7552
+  Processed: 4100/7552

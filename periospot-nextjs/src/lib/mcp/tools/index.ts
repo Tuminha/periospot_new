@@ -31,6 +31,12 @@ export const tools = {
   generate_dental_image: imageTools.generate_dental_image,
   generate_blog_hero_image: imageTools.generate_blog_hero_image,
   generate_og_image: imageTools.generate_og_image,
+  generate_general_image: imageTools.generate_general_image,
+
+  // AI Image Analysis tools
+  auto_generate_alt_text: imageTools.auto_generate_alt_text,
+  suggest_image_placements: imageTools.suggest_image_placements,
+  search_stock_images: imageTools.search_stock_images,
 
   // Category tools
   list_categories: categoryTools.list_categories,
