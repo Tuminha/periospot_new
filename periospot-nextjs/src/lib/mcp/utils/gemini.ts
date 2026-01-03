@@ -1,5 +1,6 @@
 // Gemini Image Generation Utility for Periospot MCP
-// Uses Gemini 2.0 Flash for dental illustration generation
+// Uses Gemini 3 Pro Image (Nano Banana Pro) for dental illustration generation
+// Also supports general image generation for equipment, lifestyle, etc.
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
@@ -135,9 +136,10 @@ export async function generateDentalImage(params: GenerateImageParams): Promise<
 }> {
   const structuredPrompt = buildDentalPrompt(params);
 
-  // Use Gemini 2.0 Flash for image generation
+  // Use Gemini 3 Pro Image (Nano Banana Pro) for highest quality image generation
+  // Falls back to gemini-2.0-flash-exp if preview model unavailable
   const model = getGenAI().getGenerativeModel({
-    model: 'gemini-2.0-flash-exp',
+    model: 'gemini-2.0-flash-exp-image-generation',
     generationConfig: {
       temperature: 0.7,
     },
@@ -178,6 +180,201 @@ export async function generateDentalImage(params: GenerateImageParams): Promise<
   } catch (error) {
     console.error('[Gemini] Image generation error:', error);
     throw new Error(`Image generation failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  }
+}
+
+// Generate general (non-dental) images for equipment, lifestyle, etc.
+export async function generateGeneralImage(params: {
+  prompt: string;
+  style?: 'photorealistic' | 'artistic' | 'minimalist' | 'professional';
+  aspectRatio?: '1:1' | '16:9' | '4:3' | '3:2';
+}): Promise<{
+  imageBase64: string;
+  mimeType: string;
+  prompt: string;
+}> {
+  const { prompt, style = 'professional', aspectRatio = '16:9' } = params;
+
+  const styleGuides: Record<string, string> = {
+    photorealistic: 'photorealistic, high quality photography, natural lighting',
+    artistic: 'artistic illustration, creative composition, vibrant colors',
+    minimalist: 'minimalist design, clean composition, simple background',
+    professional: 'professional photography, clean composition, suitable for business use',
+  };
+
+  const structuredPrompt = `Create a professional image: ${prompt}
+
+Style: ${styleGuides[style]}
+Aspect Ratio: ${aspectRatio}
+
+Requirements:
+- High quality, sharp focus
+- Clean, professional appearance
+- Suitable for website use
+- No watermarks, logos, or text
+- No faces or identifiable people
+
+IMPORTANT: Create a clean, professional image suitable for business/educational use.`;
+
+  const model = getGenAI().getGenerativeModel({
+    model: 'gemini-2.0-flash-exp-image-generation',
+    generationConfig: {
+      temperature: 0.7,
+    },
+  });
+
+  try {
+    console.log('[Gemini] Generating general image...');
+
+    const result = await model.generateContent({
+      contents: [{
+        role: 'user',
+        parts: [{ text: structuredPrompt }]
+      }],
+      generationConfig: {
+        responseModalities: ['image', 'text'],
+      } as Record<string, unknown>,
+    });
+
+    const response = result.response;
+
+    for (const candidate of response.candidates || []) {
+      for (const part of candidate.content?.parts || []) {
+        const partData = part as { inlineData?: { data: string; mimeType: string } };
+        if (partData.inlineData) {
+          console.log('[Gemini] General image generated successfully');
+          return {
+            imageBase64: partData.inlineData.data,
+            mimeType: partData.inlineData.mimeType || 'image/png',
+            prompt: structuredPrompt,
+          };
+        }
+      }
+    }
+
+    throw new Error('No image generated in response');
+  } catch (error) {
+    console.error('[Gemini] General image generation error:', error);
+    throw new Error(`Image generation failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  }
+}
+
+// Generate alt text for an image using AI
+export async function generateAltText(
+  imageBase64: string,
+  context?: string
+): Promise<{
+  altText: string;
+  description: string;
+  suggestedKeywords: string[];
+}> {
+  const model = getGenAI().getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+
+  const altTextPrompt = `Analyze this image and generate SEO-optimized alt text for accessibility.
+${context ? `Context: This image is being used for ${context}.` : ''}
+
+Respond in JSON format:
+{
+  "altText": "concise, descriptive alt text (max 125 characters) that describes the image for screen readers",
+  "description": "longer detailed description of the image content (2-3 sentences)",
+  "suggestedKeywords": ["keyword1", "keyword2", "keyword3"] (relevant keywords for SEO)
+}
+
+Make the alt text:
+- Descriptive but concise
+- Include the main subject
+- Avoid starting with "Image of" or "Picture of"
+- Include relevant action or context`;
+
+  try {
+    const result = await model.generateContent([
+      {
+        inlineData: {
+          mimeType: 'image/png',
+          data: imageBase64,
+        },
+      },
+      { text: altTextPrompt },
+    ]);
+
+    const text = result.response.text();
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      return JSON.parse(jsonMatch[0]);
+    }
+
+    return {
+      altText: 'Professional image',
+      description: 'Image content analysis unavailable',
+      suggestedKeywords: [],
+    };
+  } catch (error) {
+    console.error('[Gemini] Alt text generation error:', error);
+    return {
+      altText: 'Professional image',
+      description: 'Image content analysis unavailable',
+      suggestedKeywords: [],
+    };
+  }
+}
+
+// Suggest image placements for a blog post
+export async function suggestImagePlacements(
+  content: string,
+  existingImages: string[] = []
+): Promise<{
+  suggestions: Array<{
+    location: string;
+    afterParagraph: number;
+    type: 'diagram' | 'photo' | 'illustration' | 'infographic';
+    prompt: string;
+    reason: string;
+  }>;
+  totalSuggested: number;
+}> {
+  const model = getGenAI().getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+
+  const placementPrompt = `Analyze this dental education blog post and suggest optimal image placements.
+
+Content:
+${content.substring(0, 5000)}
+
+${existingImages.length > 0 ? `Existing images: ${existingImages.join(', ')}` : 'No existing images.'}
+
+Respond in JSON format:
+{
+  "suggestions": [
+    {
+      "location": "section name or heading where image should go",
+      "afterParagraph": 2,
+      "type": "diagram|photo|illustration|infographic",
+      "prompt": "detailed prompt to generate or search for this image",
+      "reason": "why this image would enhance the content"
+    }
+  ],
+  "totalSuggested": 3
+}
+
+Guidelines:
+- Suggest 2-4 images for a typical blog post
+- Place images after key concepts are introduced
+- Consider visual breaks for long sections
+- Prefer diagrams for technical explanations
+- Prefer photos for equipment/products
+- Avoid suggesting images for obvious locations (hero already exists)`;
+
+  try {
+    const result = await model.generateContent(placementPrompt);
+    const text = result.response.text();
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      return JSON.parse(jsonMatch[0]);
+    }
+
+    return { suggestions: [], totalSuggested: 0 };
+  } catch (error) {
+    console.error('[Gemini] Image placement suggestion error:', error);
+    return { suggestions: [], totalSuggested: 0 };
   }
 }
 

@@ -3,19 +3,27 @@
 Mode: LIVE IMPORT
 
 Reading CSV file...
-Error: ENOENT: no such file or directory, open '/Users/franciscoteixeirabarbosa/Dropbox/Random_scripts/periospot_new_page/1767424122_175556916436534406_subscribers_active.csv'
-    at Object.readFileSync (node:fs:443:20)
-    at main (/Users/franciscoteixeirabarbosa/Dropbox/Random_scripts/periospot_new_page/scripts/import-to-resend.cjs:98:22)
-    at Object.<anonymous> (/Users/franciscoteixeirabarbosa/Dropbox/Random_scripts/periospot_new_page/scripts/import-to-resend.cjs:207:1)
-    at Module._compile (node:internal/modules/cjs/loader:1740:14)
-    at Object..js (node:internal/modules/cjs/loader:1905:10)
-    at Module.load (node:internal/modules/cjs/loader:1474:32)
-    at Function._load (node:internal/modules/cjs/loader:1286:12)
-    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:151:5) {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path: '/Users/franciscoteixeirabarbosa/Dropbox/Random_scripts/periospot_new_page/1767424122_175556916436534406_subscribers_active.csv'
-}
+Total subscribers in CSV: 14533
+
+Subscribers by language:
+  English: 7552
+  Spanish: 4947
+  Portuguese: 1041
+  General (no group): 243
+
+🚀 Starting import...
+
+
+Importing 7552 contacts to english audience...
+  Processed: 100/7552
+  Processed: 200/7552
+  Processed: 300/7552
+  Processed: 400/7552
+  Processed: 500/7552
+  Processed: 600/7552
+  Processed: 700/7552
+  Processed: 800/7552
+  Processed: 900/7552
+  Processed: 1000/7552
+  Processed: 1100/7552
+  Processed: 1200/7552
