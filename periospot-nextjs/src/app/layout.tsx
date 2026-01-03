@@ -176,9 +176,6 @@ export default function RootLayout({
           data-key="pETcH9S5IYzY86i2gBNEdg"
           strategy="afterInteractive"
         />
-        {/* Favicon links for broader browser compatibility */}
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body className="font-sans antialiased dark">
         <ThemeProvider
