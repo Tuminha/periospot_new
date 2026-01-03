@@ -17,6 +17,7 @@ import {
   Database,
   Mail,
 } from "lucide-react"
+import { AdminNav } from "@/components/AdminNav"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { createBrowserClient } from "@supabase/ssr"
@@ -616,6 +617,12 @@ export default function ImportPage() {
             </CardContent>
           </Card>
         </motion.div>
+
+        {/* Quick Navigation */}
+        <div className="mt-8 pt-6 border-t">
+          <h3 className="text-sm font-medium text-muted-foreground mb-4">Quick Navigation</h3>
+          <AdminNav />
+        </div>
       </main>
     </div>
   )

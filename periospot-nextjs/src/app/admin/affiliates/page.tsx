@@ -42,6 +42,7 @@ import {
   Coffee,
   Laptop
 } from "lucide-react"
+import { AdminNav } from "@/components/AdminNav"
 
 // Admin email - only this user can access
 const ADMIN_EMAIL = "cisco@periospot.com"
@@ -574,6 +575,12 @@ export default function AffiliatesDashboard() {
               <span>Export Report</span>
             </div>
           </Button>
+        </div>
+
+        {/* Quick Navigation */}
+        <div className="mt-8 pt-6 border-t">
+          <h3 className="text-sm font-medium text-muted-foreground mb-4">Quick Navigation</h3>
+          <AdminNav />
         </div>
       </div>
     </main>
