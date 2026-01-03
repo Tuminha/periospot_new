@@ -2,7 +2,9 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-export const maxDuration = 300; // 5 minutes max (Vercel Pro), adjust as needed
+// Vercel Pro: 300s max, Hobby: 10s max
+// Set to 60s as a safe default that works on most plans
+export const maxDuration = 60;
 
 export async function GET(request: NextRequest) {
   const encoder = new TextEncoder();
@@ -13,6 +15,7 @@ export async function GET(request: NextRequest) {
   const messageEndpoint = `${baseUrl}/api/mcp/message?sessionId=${sessionId}`;
 
   let isConnected = true;
+  const startTime = Date.now();
 
   const stream = new ReadableStream({
     start(controller) {
@@ -22,12 +25,29 @@ export async function GET(request: NextRequest) {
       const endpointEvent = `event: endpoint\ndata: ${messageEndpoint}\n\n`;
       controller.enqueue(encoder.encode(endpointEvent));
 
-      // Send keepalive every 10 seconds (more frequent)
+      // Send keepalive every 5 seconds (more frequent for stability)
       const pingInterval = setInterval(() => {
         if (!isConnected) {
           clearInterval(pingInterval);
           return;
         }
+
+        // Check if approaching timeout (close gracefully before Vercel kills us)
+        const elapsed = Date.now() - startTime;
+        if (elapsed > 55000) { // 55 seconds - close before 60s timeout
+          console.log(`[MCP SSE] Approaching timeout, closing gracefully: ${sessionId}`);
+          clearInterval(pingInterval);
+          isConnected = false;
+          try {
+            // Send a reconnect hint before closing
+            controller.enqueue(encoder.encode(`event: reconnect\ndata: ${messageEndpoint}\n\n`));
+            controller.close();
+          } catch (e) {
+            // Already closed
+          }
+          return;
+        }
+
         try {
           controller.enqueue(encoder.encode(`: keepalive ${Date.now()}\n\n`));
         } catch (e) {
@@ -35,7 +55,7 @@ export async function GET(request: NextRequest) {
           clearInterval(pingInterval);
           isConnected = false;
         }
-      }, 10000);
+      }, 5000);
 
       // Handle client disconnect
       request.signal.addEventListener('abort', () => {
@@ -61,7 +81,7 @@ export async function GET(request: NextRequest) {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       'Connection': 'keep-alive',
-      'Keep-Alive': 'timeout=300',
+      'Keep-Alive': 'timeout=60',
       'X-Accel-Buffering': 'no',
       'Access-Control-Allow-Origin': '*',
     },

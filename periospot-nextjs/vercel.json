@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "src/app/api/mcp/sse/route.ts": {
+      "maxDuration": 300
+    },
+    "src/app/api/mcp/message/route.ts": {
+      "maxDuration": 60
+    }
+  }
+}
