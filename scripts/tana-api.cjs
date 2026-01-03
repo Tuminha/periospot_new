@@ -16,8 +16,11 @@ const TANA_CONFIG = {
   token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmaWxlSWQiOiJVNzJ6MEt6SWtPejUiLCJjcmVhdGVkIjoxNzY3MDExNDg2OTg4LCJ0b2tlbklkIjoiR1Q4N0dpZFl3Q1ZWIn0.lAxxAR9Lnkw1j7qK0TLP-ZmAiQM3XHnujEdkD6MrN8Y',
   endpoint: 'europe-west1-tagr-prod.cloudfunctions.net',
   path: '/addToNodeV2',
-  // You need to get this ID by running "Show API schema" on your #affiliate-links supertag in Tana
-  affiliateLinksSupertagId: null // Set this after getting the ID from Tana
+  // Supertag and field IDs for #affiliate-links (found via supertag-cli schema-registry)
+  affiliateLinksSupertagId: '2WvcG7UvKJe0',
+  linkFieldId: 'dipkbak3pjhm',      // Link field (url type)
+  websiteFieldId: 'Zh12dzjCe81Z',   // Website field (text type)
+  assetsFieldId: 'vbpGBK7NAgLG'     // Assets field (text type)
 };
 
 /**
@@ -57,7 +60,7 @@ function apiRequest(data) {
 }
 
 /**
- * Create affiliate link node in Tana
+ * Create affiliate link node in Tana with proper supertag and fields
  *
  * @param {object} linkData - The affiliate link data
  * @param {string} linkData.name - Product/link name
@@ -70,33 +73,37 @@ function apiRequest(data) {
 async function createAffiliateLink(linkData) {
   const node = {
     name: linkData.name,
-    description: linkData.url,
+    supertags: [{ id: TANA_CONFIG.affiliateLinksSupertagId }],
     children: [
-      { name: `Platform: ${linkData.platform || 'amazon'}` },
-      { name: `Category: ${linkData.category || 'general'}` },
-      { name: `URL: ${linkData.url}` }
+      // Link field (url type) - the affiliate URL
+      {
+        type: 'field',
+        attributeId: TANA_CONFIG.linkFieldId,
+        children: [{ name: linkData.url }]
+      },
+      // Website field - platform info
+      {
+        type: 'field',
+        attributeId: TANA_CONFIG.websiteFieldId,
+        children: [{ name: linkData.platform || 'amazon' }]
+      }
     ]
   };
 
-  // Add supertag if configured
-  if (TANA_CONFIG.affiliateLinksSupertagId) {
-    node.supertags = [{ id: TANA_CONFIG.affiliateLinksSupertagId }];
+  // Add notes/category as child nodes (not fields)
+  if (linkData.category) {
+    node.children.push({ name: `Category: ${linkData.category}` });
   }
-
-  // Add notes if provided
   if (linkData.notes) {
     node.children.push({ name: `Notes: ${linkData.notes}` });
   }
-
-  // Add creation date
-  node.children.push({ name: `Added: ${new Date().toISOString().split('T')[0]}` });
 
   const result = await apiRequest({ nodes: [node] });
   return result;
 }
 
 /**
- * Create multiple affiliate links at once
+ * Create multiple affiliate links at once with proper supertag and fields
  *
  * @param {object[]} links - Array of link data objects
  * @returns {Promise<object>} - The result
@@ -104,16 +111,23 @@ async function createAffiliateLink(linkData) {
 async function bulkCreateAffiliateLinks(links) {
   const nodes = links.map(linkData => ({
     name: linkData.name,
-    description: linkData.url,
+    supertags: [{ id: TANA_CONFIG.affiliateLinksSupertagId }],
     children: [
-      { name: `Platform: ${linkData.platform || 'amazon'}` },
-      { name: `Category: ${linkData.category || 'general'}` },
-      { name: `URL: ${linkData.url}` },
-      { name: `Added: ${new Date().toISOString().split('T')[0]}` }
-    ],
-    ...(TANA_CONFIG.affiliateLinksSupertagId && {
-      supertags: [{ id: TANA_CONFIG.affiliateLinksSupertagId }]
-    })
+      // Link field (url type)
+      {
+        type: 'field',
+        attributeId: TANA_CONFIG.linkFieldId,
+        children: [{ name: linkData.url }]
+      },
+      // Website field
+      {
+        type: 'field',
+        attributeId: TANA_CONFIG.websiteFieldId,
+        children: [{ name: linkData.platform || 'amazon' }]
+      },
+      // Category as child node
+      { name: `Category: ${linkData.category || 'general'}` }
+    ]
   }));
 
   return apiRequest({ nodes });

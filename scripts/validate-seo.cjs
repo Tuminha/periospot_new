@@ -76,7 +76,7 @@ const validatePosts = () => {
 const validatePages = () => {
   const pages = loadJson('pages.json') || [];
   const withSeo = pages.map((page) => {
-    const seo = mapYoastMeta(page.meta || {});
+    const seo = page.seo || mapYoastMeta(page.meta || {});
     return {
       id: page.post_name || page.id,
       title: page.title || 'Untitled',

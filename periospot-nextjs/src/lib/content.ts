@@ -135,6 +135,7 @@ type RawPage = {
   post_name?: string
   content?: string
   excerpt?: string
+  seo?: PostSeo
   meta?: Record<string, string>
 }
 
@@ -295,7 +296,8 @@ export const getPageSeoBySlug = cache(async (slug: string): Promise<PostSeo | nu
     const pages = JSON.parse(raw) as RawPage[]
     const page = pages.find((entry) => entry.post_name === slug)
     if (!page) return null
-    const seo = mapYoastMeta(page.meta || {})
+    const fallbackSeo = mapYoastMeta(page.meta || {})
+    const seo = page.seo || fallbackSeo
     return seo && Object.values(seo).some((value) => value) ? seo : null
   } catch (error) {
     console.error('Error loading pages:', error)

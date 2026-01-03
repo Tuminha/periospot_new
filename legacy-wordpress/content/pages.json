@@ -16,6 +16,15 @@
     "meta": {
       "_wp_page_template": "default",
       "ampforwp-amp-on-off": "default"
+    },
+    "seo": {
+      "title": "Sample Page",
+      "description": "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most peopl",
+      "focus_keyword": "",
+      "og_title": "Sample Page",
+      "og_description": "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most peopl",
+      "twitter_title": "Sample Page",
+      "twitter_description": "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most peopl"
     }
   },
   {
@@ -53,6 +62,15 @@
       "_wpassetcleanup_data": "{\"scripts\":{\"us-core\":{\"attributes\":[\"defer\"]}}}",
       "_yoast_wpseo_estimated-reading-time-minutes": "2",
       "_yoast_indexnow_last_ping": "1730263725"
+    },
+    "seo": {
+      "title": "Home",
+      "description": "[vc_row height=\"auto\" color_scheme=\"primary\" us_bg_show=\"video\" us_bg_video=\"https://periospot.com/wp-content/uploads/2020/07/Video-periospot.mp4\" content_place",
+      "focus_keyword": "",
+      "og_title": "Home",
+      "og_description": "[vc_row height=\"auto\" color_scheme=\"primary\" us_bg_show=\"video\" us_bg_video=\"https://periospot.com/wp-content/uploads/2020/07/Video-periospot.mp4\" content_place",
+      "twitter_title": "Home",
+      "twitter_description": "[vc_row height=\"auto\" color_scheme=\"primary\" us_bg_show=\"video\" us_bg_video=\"https://periospot.com/wp-content/uploads/2020/07/Video-periospot.mp4\" content_place"
     }
   },
   {
@@ -83,6 +101,15 @@
       "us_tile_size": "1x1",
       "us_tile_link": "{\"url\":\"\",\"target\":\"\"}",
       "ampforwp-amp-on-off": "default"
+    },
+    "seo": {
+      "title": "Blog",
+      "description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "focus_keyword": "",
+      "og_title": "Blog",
+      "og_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "twitter_title": "Blog",
+      "twitter_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat"
     }
   },
   {
@@ -114,6 +141,15 @@
       "_dp_original": "2694",
       "_edit_last": "1",
       "ampforwp-amp-on-off": "default"
+    },
+    "seo": {
+      "title": "Blog en Español",
+      "description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "focus_keyword": "",
+      "og_title": "Blog en Español",
+      "og_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "twitter_title": "Blog en Español",
+      "twitter_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat"
     }
   },
   {
@@ -163,6 +199,16 @@
       "_yoast_wpseo_opengraph-image-id": "4863",
       "_yoast_wpseo_twitter-title": "Learn Implant Dentistry: Updated Scientific Literature and Recommendations",
       "_yoast_wpseo_twitter-description": "Discover the latest scientific literature and recommendations on implant dentistry. Download this free resource and start learning today!"
+    },
+    "seo": {
+      "title": "Learn Implant Dentistry: An Updated Guide with Scientific Literature and Recommendations %%page%% %%sep%% %%sitename%%",
+      "description": "A collection of ebooks on implant dentistry and periodontics to enhance your clinical knowledge and best practices.",
+      "focus_keyword": "learn implant dentistry",
+      "og_title": "Unlock the Secrets of Implant Dentistry: Expert Insights and Resources",
+      "og_description": "Discover the latest research and recommendations in Implant Dentistry. Full of illustrations and photos, this free resource is a must-read for dental professionals.",
+      "og_image": "https://periospot.com/wp-content/uploads/2024/10/very-small-10-tips.png",
+      "twitter_title": "Learn Implant Dentistry: Updated Scientific Literature and Recommendations",
+      "twitter_description": "Discover the latest scientific literature and recommendations on implant dentistry. Download this free resource and start learning today!"
     }
   },
   {
@@ -195,6 +241,15 @@
       "patreon-level": "0",
       "patreon-total-patronage-level": "0",
       "_yoast_wpseo_content_score": "90"
+    },
+    "seo": {
+      "title": "En construcción...",
+      "description": "[vc_row][vc_column][vc_column_text css=\"%7B%22default%22%3A%7B%22font-size%22%3A%222rem%22%7D%7D\"] Periospot [/vc_column_text][us_separator size=\"small\"][vc_col",
+      "focus_keyword": "",
+      "og_title": "En construcción...",
+      "og_description": "[vc_row][vc_column][vc_column_text css=\"%7B%22default%22%3A%7B%22font-size%22%3A%222rem%22%7D%7D\"] Periospot [/vc_column_text][us_separator size=\"small\"][vc_col",
+      "twitter_title": "En construcción...",
+      "twitter_description": "[vc_row][vc_column][vc_column_text css=\"%7B%22default%22%3A%7B%22font-size%22%3A%222rem%22%7D%7D\"] Periospot [/vc_column_text][us_separator size=\"small\"][vc_col"
     }
   },
   {
@@ -250,6 +305,17 @@
       "patreon-total-patronage-level": "0",
       "_wpassetcleanup_data": "[]",
       "_yoast_wpseo_estimated-reading-time-minutes": "2"
+    },
+    "seo": {
+      "title": "Team & Contact",
+      "description": "Get to know our team at Periospot.",
+      "focus_keyword": "Periospot Team",
+      "og_title": "Team & Contact",
+      "og_description": "[vc_row][vc_column width=\"1/6\"][/vc_column][vc_column width=\"2/3\"][vc_row_inner][vc_column_inner width=\"1/3\"][us_image image=\"2848\" size=\"full\" align=\"center\" s",
+      "og_image": "https://periospot.com/wp-content/uploads/2020/07/Periospot-Team.png",
+      "twitter_title": "Team & Contact",
+      "twitter_description": "[vc_row][vc_column width=\"1/6\"][/vc_column][vc_column width=\"2/3\"][vc_row_inner][vc_column_inner width=\"1/3\"][us_image image=\"2848\" size=\"full\" align=\"center\" s",
+      "twitter_image": "https://periospot.com/wp-content/uploads/2020/07/Periospot-Team.png"
     }
   },
   {
@@ -289,6 +355,15 @@
       "_wpassetcleanup_data": "[]",
       "_yoast_wpseo_focuskeywords": "[]",
       "_yoast_wpseo_keywordsynonyms": "[\"\"]"
+    },
+    "seo": {
+      "title": "Resources Center",
+      "description": "[vc_row][vc_column width=\"1/6\"][/vc_column][vc_column width=\"2/3\"][us_post_title align=\"center\" tag=\"h1\"][vc_column_text css=\"%7B%22default%22%3A%7B%22text-alig",
+      "focus_keyword": "",
+      "og_title": "Resources Center",
+      "og_description": "[vc_row][vc_column width=\"1/6\"][/vc_column][vc_column width=\"2/3\"][us_post_title align=\"center\" tag=\"h1\"][vc_column_text css=\"%7B%22default%22%3A%7B%22text-alig",
+      "twitter_title": "Resources Center",
+      "twitter_description": "[vc_row][vc_column width=\"1/6\"][/vc_column][vc_column width=\"2/3\"][us_post_title align=\"center\" tag=\"h1\"][vc_column_text css=\"%7B%22default%22%3A%7B%22text-alig"
     }
   },
   {
@@ -330,6 +405,15 @@
       "_yoast_wpseo_focuskw": "Periospot Courses",
       "_yoast_wpseo_metadesc": "On this page, you can find the Periospot course offering. The best online training education program to help you to progress in your professional career.",
       "_yoast_wpseo_linkdex": "59"
+    },
+    "seo": {
+      "title": "Online learning",
+      "description": "On this page, you can find the Periospot course offering. The best online training education program to help you to progress in your professional career.",
+      "focus_keyword": "Periospot Courses",
+      "og_title": "Online learning",
+      "og_description": "[vc_row][vc_column][vc_column_text] Welcome to Periospot Online Learning Hub 🎓 [/vc_column_text][vc_row_inner][vc_column_inner][vc_column_text]On this page you",
+      "twitter_title": "Online learning",
+      "twitter_description": "[vc_row][vc_column][vc_column_text] Welcome to Periospot Online Learning Hub 🎓 [/vc_column_text][vc_row_inner][vc_column_inner][vc_column_text]On this page you"
     }
   },
   {
@@ -361,6 +445,15 @@
       "_dp_original": "2701",
       "_edit_last": "3",
       "ampforwp-amp-on-off": "default"
+    },
+    "seo": {
+      "title": "Artigos em Português",
+      "description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "focus_keyword": "",
+      "og_title": "Artigos em Português",
+      "og_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "twitter_title": "Artigos em Português",
+      "twitter_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat"
     }
   },
   {
@@ -392,6 +485,15 @@
       "_dp_original": "2946",
       "_edit_last": "1",
       "ampforwp-amp-on-off": "default"
+    },
+    "seo": {
+      "title": "Periospot Bookshelf",
+      "description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "focus_keyword": "",
+      "og_title": "Periospot Bookshelf",
+      "og_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "twitter_title": "Periospot Bookshelf",
+      "twitter_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat"
     }
   },
   {
@@ -423,6 +525,15 @@
       "_edit_last": "1",
       "ampforwp-amp-on-off": "default",
       "_wp_suggested_privacy_policy_content": "a:3:{s:11:\"plugin_name\";s:9:\"WordPress\";s:11:\"policy_text\";s:4465:\"<h2 class=\"wp-block-heading\">Who we are</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Our website address is: https://periospot.com.</p><h2 class=\"wp-block-heading\">Comments</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><h2 class=\"wp-block-heading\">Media</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><h2 class=\"wp-block-heading\">Cookies</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><h2 class=\"wp-block-heading\">Embedded content from other websites</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><h2 class=\"wp-block-heading\">Who we share your data with</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p><h2 class=\"wp-block-heading\">How long we retain your data</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><h2 class=\"wp-block-heading\">What rights you have over your data</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><h2 class=\"wp-block-heading\">Where your data is sent</h2><p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p>\";s:7:\"removed\";i:1760169706;}"
+    },
+    "seo": {
+      "title": "Legal",
+      "description": "En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico de España, le informamos que esta página Web es propie",
+      "focus_keyword": "",
+      "og_title": "Legal",
+      "og_description": "En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico de España, le informamos que esta página Web es propie",
+      "twitter_title": "Legal",
+      "twitter_description": "En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico de España, le informamos que esta página Web es propie"
     }
   },
   {
@@ -460,6 +571,15 @@
       "_yoast_wpseo_metadesc": "Discover the impact of different implant positions in implant dentistry. Learn the latest techniques for predictable results in extreme cases.",
       "_yoast_wpseo_linkdex": "57",
       "_yoast_wpseo_estimated-reading-time-minutes": "2"
+    },
+    "seo": {
+      "title": "Congrats 🎉! You are a Periospot Master 👌",
+      "description": "Discover the impact of different implant positions in implant dentistry. Learn the latest techniques for predictable results in extreme cases.",
+      "focus_keyword": "implant dentistry expert",
+      "og_title": "Congrats 🎉! You are a Periospot Master 👌",
+      "og_description": "If you in this page is because you got a 9/9 on the Periospot assessment 🎉👏. This means you are almost a Dental Sensei . Nevertheless, we strongly recommend y",
+      "twitter_title": "Congrats 🎉! You are a Periospot Master 👌",
+      "twitter_description": "If you in this page is because you got a 9/9 on the Periospot assessment 🎉👏. This means you are almost a Dental Sensei . Nevertheless, we strongly recommend y"
     }
   },
   {
@@ -491,6 +611,15 @@
       "_yoast_wpseo_content_score": "30",
       "_dp_original": "3046",
       "_edit_last": "3"
+    },
+    "seo": {
+      "title": "Enhorabuena 🎉! Eres un Periospot Master 👌",
+      "description": "Enhorabuena 🎉! Eres un Periospot Master 👌 Has conseguido una cualificación de 9 sobre 9 🎉👏. Esto significa que eres un Sensei de la Odontología . Aún así, a",
+      "focus_keyword": "",
+      "og_title": "Enhorabuena 🎉! Eres un Periospot Master 👌",
+      "og_description": "Enhorabuena 🎉! Eres un Periospot Master 👌 Has conseguido una cualificación de 9 sobre 9 🎉👏. Esto significa que eres un Sensei de la Odontología . Aún así, a",
+      "twitter_title": "Enhorabuena 🎉! Eres un Periospot Master 👌",
+      "twitter_description": "Enhorabuena 🎉! Eres un Periospot Master 👌 Has conseguido una cualificación de 9 sobre 9 🎉👏. Esto significa que eres un Sensei de la Odontología . Aún así, a"
     }
   },
   {
@@ -531,6 +660,15 @@
       "_yoast_wpseo_estimated-reading-time-minutes": "2",
       "_yoast_wpseo_focuskw": "libros implantología gratuito",
       "_yoast_wpseo_linkdex": "51"
+    },
+    "seo": {
+      "title": "Librería Periospot en Español",
+      "description": "Librería Periospot con los mejores ebooks interactivos sobre implantología disponibles para descarga online.",
+      "focus_keyword": "libros implantología gratuito",
+      "og_title": "Librería Periospot en Español",
+      "og_description": "[vc_row][vc_column][/vc_column][/vc_row][vc_row][vc_column][us_post_title align=\"center\" tag=\"h1\"][us_separator][vc_row_inner][vc_column_inner width=\"1/2\"][us_i",
+      "twitter_title": "Librería Periospot en Español",
+      "twitter_description": "[vc_row][vc_column][/vc_column][/vc_row][vc_row][vc_column][us_post_title align=\"center\" tag=\"h1\"][us_separator][vc_row_inner][vc_column_inner width=\"1/2\"][us_i"
     }
   },
   {
@@ -562,6 +700,15 @@
       "ampforwp-amp-on-off": "default",
       "_dp_original": "3201",
       "_edit_last": "3"
+    },
+    "seo": {
+      "title": "Livraria Periospot em Português",
+      "description": "[vc_row][vc_column][us_post_title align=\"center\" tag=\"h1\"][us_separator][vc_row_inner][vc_column_inner width=\"1/2\"][us_image size=\"full\" align=\"center\"][/vc_col",
+      "focus_keyword": "",
+      "og_title": "Livraria Periospot em Português",
+      "og_description": "[vc_row][vc_column][us_post_title align=\"center\" tag=\"h1\"][us_separator][vc_row_inner][vc_column_inner width=\"1/2\"][us_image size=\"full\" align=\"center\"][/vc_col",
+      "twitter_title": "Livraria Periospot em Português",
+      "twitter_description": "[vc_row][vc_column][us_post_title align=\"center\" tag=\"h1\"][us_separator][vc_row_inner][vc_column_inner width=\"1/2\"][us_image size=\"full\" align=\"center\"][/vc_col"
     }
   },
   {
@@ -594,6 +741,15 @@
       "_dp_original": "3046",
       "_edit_last": "12",
       "_yoast_wpseo_metadesc": "Obtiveste o nível máximo no teste do Periospot! Mesmo assim, recomendamos alguns artigos para elevares ainda mais o teu nível!"
+    },
+    "seo": {
+      "title": "Parabéns 🎉! És um dos Mestres do Periospot 👌",
+      "description": "Obtiveste o nível máximo no teste do Periospot! Mesmo assim, recomendamos alguns artigos para elevares ainda mais o teu nível!",
+      "focus_keyword": "",
+      "og_title": "Parabéns 🎉! És um dos Mestres do Periospot 👌",
+      "og_description": "Se chegaste a esta página é porque obtiveste 9/9 no teste do Periospot 🎉👏. És Samurai Dentário . Mas mesmo assim, recomendamos vivamente alguns artigos e eBoo",
+      "twitter_title": "Parabéns 🎉! És um dos Mestres do Periospot 👌",
+      "twitter_description": "Se chegaste a esta página é porque obtiveste 9/9 no teste do Periospot 🎉👏. És Samurai Dentário . Mas mesmo assim, recomendamos vivamente alguns artigos e eBoo"
     }
   },
   {
@@ -632,6 +788,15 @@
       "_yoast_wpseo_keywordsynonyms": "[\"\"]",
       "_yoast_wpseo_estimated-reading-time-minutes": "7",
       "_yoast_indexnow_last_ping": "1730218512"
+    },
+    "seo": {
+      "title": "Your score was good, but not excellent.",
+      "description": "Your score was good, but not excellent. But we can help you improve your knowledge. if you are in this page is because your score on the assessment was between",
+      "focus_keyword": "",
+      "og_title": "Your score was good, but not excellent.",
+      "og_description": "Your score was good, but not excellent. But we can help you improve your knowledge. if you are in this page is because your score on the assessment was between",
+      "twitter_title": "Your score was good, but not excellent.",
+      "twitter_description": "Your score was good, but not excellent. But we can help you improve your knowledge. if you are in this page is because your score on the assessment was between"
     }
   },
   {
@@ -673,6 +838,15 @@
       "_yoast_wpseo_keywordsynonyms": "[\"\"]",
       "_yoast_wpseo_estimated-reading-time-minutes": "7",
       "_yoast_indexnow_last_ping": "1733290120"
+    },
+    "seo": {
+      "title": "Your score was...lest´s just say \"it was\" 😅",
+      "description": "This page is where beginners should start and embrance content to take them into the next level on Periospot",
+      "focus_keyword": "periospot beginner webpage",
+      "og_title": "Your score was...lest´s just say \"it was\" 😅",
+      "og_description": "Oh, Dear! if you are here is because we have a lot of work to do. if you are in this page is because your score on the assessment was less than 5 😅 Don´t panic",
+      "twitter_title": "Your score was...lest´s just say \"it was\" 😅",
+      "twitter_description": "Oh, Dear! if you are here is because we have a lot of work to do. if you are in this page is because your score on the assessment was less than 5 😅 Don´t panic"
     }
   },
   {
@@ -707,6 +881,15 @@
       "_us_first_grid_post_type": "a:1:{i:0;s:4:\"post\";}",
       "_us_first_grid_selected_taxonomies": "a:1:{s:9:\"tax_query\";a:1:{i:0;a:3:{s:8:\"taxonomy\";s:8:\"category\";s:5:\"field\";s:4:\"slug\";s:5:\"terms\";a:1:{i:0;s:22:\"periospot-for-patients\";}}}}",
       "_yoast_wpseo_estimated-reading-time-minutes": "1"
+    },
+    "seo": {
+      "title": "Periospot for Dental Patients",
+      "description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "focus_keyword": "",
+      "og_title": "Periospot for Dental Patients",
+      "og_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "twitter_title": "Periospot for Dental Patients",
+      "twitter_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat"
     }
   },
   {
@@ -741,6 +924,15 @@
       "hefo_before": "0",
       "hefo_after": "0",
       "_edit_last": "1"
+    },
+    "seo": {
+      "title": "Articles in Chinese",
+      "description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "focus_keyword": "",
+      "og_title": "Articles in Chinese",
+      "og_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "twitter_title": "Articles in Chinese",
+      "twitter_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat"
     }
   },
   {
@@ -777,6 +969,15 @@
       "hefo_before": "0",
       "hefo_after": "0",
       "_yoast_wpseo_linkdex": "59"
+    },
+    "seo": {
+      "title": "Tu resultado ha sido bueno, pero no excelente",
+      "description": "Si estás en esta página es porque has obtenido un resultado entre 4 y 8 en el test de Periospot. Vas por el buen camino auqneu puedes mejorar.",
+      "focus_keyword": "Periospot nivel intermedio",
+      "og_title": "Tu resultado ha sido bueno, pero no excelente",
+      "og_description": "Pero en Periospot te ayudaremos a mejorar tu conocimiento 😊 Si estás en esta página es porque has obtenido un resultado de entre 5 y 8 de un total de 9 👍 Es u",
+      "twitter_title": "Tu resultado ha sido bueno, pero no excelente",
+      "twitter_description": "Pero en Periospot te ayudaremos a mejorar tu conocimiento 😊 Si estás en esta página es porque has obtenido un resultado de entre 5 y 8 de un total de 9 👍 Es u"
     }
   },
   {
@@ -817,6 +1018,15 @@
       "patreon-total-patronage-level": "0",
       "_yoast_wpseo_estimated-reading-time-minutes": "5",
       "_yoast_indexnow_last_ping": "1730719401"
+    },
+    "seo": {
+      "title": "Tu clasificación no ha sido muy buena  😅",
+      "description": "This page is where beginners should start and embrance content to take them into the next level on Periospot",
+      "focus_keyword": "periospot beginner webpage",
+      "og_title": "Tu clasificación no ha sido muy buena  😅",
+      "og_description": "Tenemos trabajo, pero no te preocupes que tenemos el contenido indicado para tí. Si has aterrizado en esta página es porque has obtenido menos de 5 puntos 😅 No",
+      "twitter_title": "Tu clasificación no ha sido muy buena  😅",
+      "twitter_description": "Tenemos trabajo, pero no te preocupes que tenemos el contenido indicado para tí. Si has aterrizado en esta página es porque has obtenido menos de 5 puntos 😅 No"
     }
   },
   {
@@ -852,6 +1062,15 @@
       "_yoast_wpseo_metadesc": "In this page I share with you my set up to work from home. This is my workstation optimized to spend hours of worload and online classes.",
       "_yoast_wpseo_linkdex": "73",
       "_yoast_wpseo_content_score": "90"
+    },
+    "seo": {
+      "title": "Cisco´s Workstation",
+      "description": "In this page I share with you my set up to work from home. This is my workstation optimized to spend hours of worload and online classes.",
+      "focus_keyword": "workstation",
+      "og_title": "Cisco´s Workstation",
+      "og_description": "Cisco´s Workstation In this post I share with you my workstation and what gadgets may also be useful for you. Often, after sharing pics on Instagram of my works",
+      "twitter_title": "Cisco´s Workstation",
+      "twitter_description": "Cisco´s Workstation In this post I share with you my workstation and what gadgets may also be useful for you. Often, after sharing pics on Instagram of my works"
     }
   },
   {
@@ -888,6 +1107,15 @@
       "_yoast_wpseo_metadesc": "In this section you can find different featured content ready to be delivered. Presentations, animations, illustrations and pictures.",
       "_yoast_wpseo_linkdex": "34",
       "_yoast_wpseo_content_score": "90"
+    },
+    "seo": {
+      "title": "Periospot Patron",
+      "description": "In this section you can find different featured content ready to be delivered. Presentations, animations, illustrations and pictures.",
+      "focus_keyword": "Periospot Patron",
+      "og_title": "Periospot Patron",
+      "og_description": "[vc_row][vc_column][vc_column_text] In this section, you can find different featured content ready to be delivered. Presentations, animations, illustrations, an",
+      "twitter_title": "Periospot Patron",
+      "twitter_description": "[vc_row][vc_column][vc_column_text] In this section, you can find different featured content ready to be delivered. Presentations, animations, illustrations, an"
     }
   },
   {
@@ -906,6 +1134,15 @@
     "tags": [],
     "meta": {
       "_edit_last": "1"
+    },
+    "seo": {
+      "title": "Shop",
+      "description": "Learn more about Shop on Periospot.",
+      "focus_keyword": "",
+      "og_title": "Shop",
+      "og_description": "Learn more about Shop on Periospot.",
+      "twitter_title": "Shop",
+      "twitter_description": "Learn more about Shop on Periospot."
     }
   },
   {
@@ -924,6 +1161,15 @@
     "tags": [],
     "meta": {
       "_wpassetcleanup_page_options": "{\"no_css_minify\":1,\"no_css_optimize\":1,\"no_js_minify\":1,\"no_js_optimize\":1}"
+    },
+    "seo": {
+      "title": "Carrito",
+      "description": "[woocommerce_cart]",
+      "focus_keyword": "",
+      "og_title": "Carrito",
+      "og_description": "[woocommerce_cart]",
+      "twitter_title": "Carrito",
+      "twitter_description": "[woocommerce_cart]"
     }
   },
   {
@@ -942,6 +1188,15 @@
     "tags": [],
     "meta": {
       "_wpassetcleanup_page_options": "{\"no_css_minify\":1,\"no_css_optimize\":1,\"no_js_minify\":1,\"no_js_optimize\":1}"
+    },
+    "seo": {
+      "title": "Finalizar compra",
+      "description": "[woocommerce_checkout]",
+      "focus_keyword": "",
+      "og_title": "Finalizar compra",
+      "og_description": "[woocommerce_checkout]",
+      "twitter_title": "Finalizar compra",
+      "twitter_description": "[woocommerce_checkout]"
     }
   },
   {
@@ -958,7 +1213,16 @@
     "featured_media": "",
     "categories": [],
     "tags": [],
-    "meta": {}
+    "meta": {},
+    "seo": {
+      "title": "Mi cuenta",
+      "description": "[woocommerce_my_account]",
+      "focus_keyword": "",
+      "og_title": "Mi cuenta",
+      "og_description": "[woocommerce_my_account]",
+      "twitter_title": "Mi cuenta",
+      "twitter_description": "[woocommerce_my_account]"
+    }
   },
   {
     "id": "3597",
@@ -976,6 +1240,15 @@
     "tags": [],
     "meta": {
       "us_og_image": "https://periospot.com/wp-content/uploads/2020/08/other-small.jpg"
+    },
+    "seo": {
+      "title": "Homepage",
+      "description": "Welcome to the store Write a short welcome message here Go shopping New Products",
+      "focus_keyword": "",
+      "og_title": "Homepage",
+      "og_description": "Welcome to the store Write a short welcome message here Go shopping New Products",
+      "twitter_title": "Homepage",
+      "twitter_description": "Welcome to the store Write a short welcome message here Go shopping New Products"
     }
   },
   {
@@ -1011,6 +1284,15 @@
       "_yoast_wpseo_content_score": "60",
       "_yoast_wpseo_focuskeywords": "[]",
       "_yoast_wpseo_keywordsynonyms": "[\"\"]"
+    },
+    "seo": {
+      "title": "Periospot Accessories Shop",
+      "description": "Here you can find shirts, shoes, caps and more accessories created by Periospot. periospot var spread_shop_config = { shopName: 'periospot', locale: 'us_US', pr",
+      "focus_keyword": "",
+      "og_title": "Periospot Accessories Shop",
+      "og_description": "Here you can find shirts, shoes, caps and more accessories created by Periospot. periospot var spread_shop_config = { shopName: 'periospot', locale: 'us_US', pr",
+      "twitter_title": "Periospot Accessories Shop",
+      "twitter_description": "Here you can find shirts, shoes, caps and more accessories created by Periospot. periospot var spread_shop_config = { shopName: 'periospot', locale: 'us_US', pr"
     }
   },
   {
@@ -1027,7 +1309,16 @@
     "featured_media": "",
     "categories": [],
     "tags": [],
-    "meta": {}
+    "meta": {},
+    "seo": {
+      "title": "Cookie Policy (EU)",
+      "description": "Learn more about Cookie Policy (EU) on Periospot.",
+      "focus_keyword": "",
+      "og_title": "Cookie Policy (EU)",
+      "og_description": "Learn more about Cookie Policy (EU) on Periospot.",
+      "twitter_title": "Cookie Policy (EU)",
+      "twitter_description": "Learn more about Cookie Policy (EU) on Periospot."
+    }
   },
   {
     "id": "4326",
@@ -1066,6 +1357,15 @@
       "_yoast_wpseo_content_score": "60",
       "_yoast_wpseo_focuskeywords": "[]",
       "_yoast_wpseo_keywordsynonyms": "[\"\"]"
+    },
+    "seo": {
+      "title": "Master en Periodoncia e Implantes de Periocentrum",
+      "description": "Formarte en periodoncia e implantología no debería depender de tu capacidad económica, sino de tu esfuerzo y ganas de aprender, por eso te ofrecemos este máste",
+      "focus_keyword": "Master en Periodoncia e Implantes de Periocentrum",
+      "og_title": "Master en Periodoncia e Implantes de Periocentrum",
+      "og_description": "Primera edición completa. Próxima edición en abril de 2021. Puedes realizar tu inscripción prioritaria aquí. Online · A tu ritmo en 16/24 meses · Clases de 15 m",
+      "twitter_title": "Master en Periodoncia e Implantes de Periocentrum",
+      "twitter_description": "Primera edición completa. Próxima edición en abril de 2021. Puedes realizar tu inscripción prioritaria aquí. Online · A tu ritmo en 16/24 meses · Clases de 15 m"
     }
   },
   {
@@ -1082,7 +1382,16 @@
     "featured_media": "",
     "categories": [],
     "tags": [],
-    "meta": {}
+    "meta": {},
+    "seo": {
+      "title": "Log In",
+      "description": "[profilepress-login id=\"1\"]",
+      "focus_keyword": "",
+      "og_title": "Log In",
+      "og_description": "[profilepress-login id=\"1\"]",
+      "twitter_title": "Log In",
+      "twitter_description": "[profilepress-login id=\"1\"]"
+    }
   },
   {
     "id": "4432",
@@ -1098,7 +1407,16 @@
     "featured_media": "",
     "categories": [],
     "tags": [],
-    "meta": {}
+    "meta": {},
+    "seo": {
+      "title": "Sign Up",
+      "description": "[profilepress-registration id=\"1\"]",
+      "focus_keyword": "",
+      "og_title": "Sign Up",
+      "og_description": "[profilepress-registration id=\"1\"]",
+      "twitter_title": "Sign Up",
+      "twitter_description": "[profilepress-registration id=\"1\"]"
+    }
   },
   {
     "id": "4433",
@@ -1114,7 +1432,16 @@
     "featured_media": "",
     "categories": [],
     "tags": [],
-    "meta": {}
+    "meta": {},
+    "seo": {
+      "title": "Reset Password",
+      "description": "[profilepress-password-reset id=\"1\"]",
+      "focus_keyword": "",
+      "og_title": "Reset Password",
+      "og_description": "[profilepress-password-reset id=\"1\"]",
+      "twitter_title": "Reset Password",
+      "twitter_description": "[profilepress-password-reset id=\"1\"]"
+    }
   },
   {
     "id": "4434",
@@ -1132,6 +1459,15 @@
     "tags": [],
     "meta": {
       "us_og_image": "https://periospot.com/wp-content/uploads/2020/06/IMG_0026-2.jpeg"
+    },
+    "seo": {
+      "title": "My Account",
+      "description": "[profilepress-my-account]",
+      "focus_keyword": "",
+      "og_title": "My Account",
+      "og_description": "[profilepress-my-account]",
+      "twitter_title": "My Account",
+      "twitter_description": "[profilepress-my-account]"
     }
   },
   {
@@ -1150,6 +1486,15 @@
     "tags": [],
     "meta": {
       "us_og_image": "[profile-cover-image-url]"
+    },
+    "seo": {
+      "title": "My Profile",
+      "description": "[profilepress-user-profile id=\"1\"]",
+      "focus_keyword": "",
+      "og_title": "My Profile",
+      "og_description": "[profilepress-user-profile id=\"1\"]",
+      "twitter_title": "My Profile",
+      "twitter_description": "[profilepress-user-profile id=\"1\"]"
     }
   },
   {
@@ -1168,6 +1513,15 @@
     "tags": [],
     "meta": {
       "us_og_image": "https://secure.gravatar.com/avatar/6e9cc64577939f736df76947a2da6a01?s=40&d=mm&r=g"
+    },
+    "seo": {
+      "title": "Member Directory",
+      "description": "[profilepress-member-directory id=\"1\"]",
+      "focus_keyword": "",
+      "og_title": "Member Directory",
+      "og_description": "[profilepress-member-directory id=\"1\"]",
+      "twitter_title": "Member Directory",
+      "twitter_description": "[profilepress-member-directory id=\"1\"]"
     }
   },
   {
@@ -1184,7 +1538,16 @@
     "featured_media": "",
     "categories": [],
     "tags": [],
-    "meta": {}
+    "meta": {},
+    "seo": {
+      "title": "Affiliate Disclosure",
+      "description": "[aal_disclosure]",
+      "focus_keyword": "",
+      "og_title": "Affiliate Disclosure",
+      "og_description": "[aal_disclosure]",
+      "twitter_title": "Affiliate Disclosure",
+      "twitter_description": "[aal_disclosure]"
+    }
   },
   {
     "id": "4738",
@@ -1222,6 +1585,15 @@
       "hefo_after": "0",
       "patreon-level": "0",
       "patreon-total-patronage-level": "0"
+    },
+    "seo": {
+      "title": "Periospot Hacks",
+      "description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "focus_keyword": "",
+      "og_title": "Periospot Hacks",
+      "og_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat",
+      "twitter_title": "Periospot Hacks",
+      "twitter_description": "[vc_row height=\"small\"][vc_column][vc_row_inner][vc_column_inner width=\"1/12\"][/vc_column_inner][vc_column_inner width=\"5/6\"][us_post_title tag=\"h1\"][us_separat"
     }
   }
 ]

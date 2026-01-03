@@ -12,8 +12,11 @@
     "validate:exports": "node scripts/validate-exports.js",
     "validate:seo": "node scripts/validate-seo.cjs --scope=posts --strict",
     "validate:seo:all": "node scripts/validate-seo.cjs --scope=all",
+    "generate:seo": "node scripts/generate-seo-gemini.js --scope=posts,pages,products --push",
     "generate:posts:xml": "python3 scripts/generate-posts-from-xml.py",
-    "migrate:posts": "node scripts/migrate-posts.js"
+    "migrate:posts": "node scripts/migrate-posts.js",
+    "migrate:pages": "node scripts/migrate-pages.js",
+    "migrate:products": "node scripts/migrate-products.js"
   },
   "keywords": [
     "periodontal",

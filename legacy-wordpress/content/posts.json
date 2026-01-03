@@ -13,7 +13,16 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Dentistry in the Era of Web 3.0: What It Means for Me and M",
+      "description": "Let me start by saying that the internet never stops changing. Just when I thought I had seen it all, Web 3.0 came along and made me reconsider how it could imp",
+      "og_title": "Dentistry in the Era of Web 3.0: What It Means for Me and My Patients",
+      "og_description": "Let me start by saying that the internet never stops changing. Just when I thought I had seen it all, Web 3.0 came along and made me reconsider how it could imp",
+      "twitter_title": "Dentistry in the Era of Web 3.0: What It Means for Me and My Patients",
+      "twitter_description": "Let me start by saying that the internet never stops changing. Just when I thought I had seen it all, Web 3.0 came along and made me reconsider how it could imp",
+      "focus_keyword": ""
+    }
   },
   {
     "id": 5137,
@@ -29,7 +38,16 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Test Post from Claude Desktop",
+      "description": "This is a test post created via Claude Desktop through n8n MCP integration. If you see this, the integration is working perfectly! 🎉",
+      "og_title": "Test Post from Claude Desktop",
+      "og_description": "This is a test post created via Claude Desktop through n8n MCP integration. If you see this, the integration is working perfectly! 🎉",
+      "twitter_title": "Test Post from Claude Desktop",
+      "twitter_description": "This is a test post created via Claude Desktop through n8n MCP integration. If you see this, the integration is working perfectly! 🎉",
+      "focus_keyword": ""
+    }
   },
   {
     "id": 54,
@@ -105,7 +123,12 @@
       ],
       "content_score": "30",
       "linkdex": "62",
-      "estimated_reading_time_minutes": "8"
+      "estimated_reading_time_minutes": "8",
+      "title": "5 Concepts to Achieve a Successful Immediate Implant Placem",
+      "og_title": "5 Concepts to Achieve a Successful Immediate Implant Placement Into a",
+      "og_description": "The fact that you’re spending your precious time reading these lines right now is mind-blowing. Seriously. And as an act of appreciation we are not going to was",
+      "twitter_title": "5 Concepts to Achieve a Successful Immediate Implant Placement Into a",
+      "twitter_description": "The fact that you’re spending your precious time reading these lines right now is mind-blowing. Seriously. And as an act of appreciation we are not going to was"
     }
   },
   {
@@ -175,7 +198,12 @@
     "seo": {
       "description": "In this article we do a review about the literature that mention the best approach for the buccal gap after an immediate implant. Should we fill it?",
       "focus_keyword": "immediate implant",
-      "linkdex": "71"
+      "linkdex": "71",
+      "title": "Bio-Oss® Collagen in the Buccal Gap after an Inmediate Impl",
+      "og_title": "Bio-Oss® Collagen in the Buccal Gap after an Inmediate Implant",
+      "og_description": "In this article, Araujo &amp; Lindhe conclude that \"the placement of Bio-Oss Collagen\" in the buccal gap between the implant and the buccal-approximal bone wall",
+      "twitter_title": "Bio-Oss® Collagen in the Buccal Gap after an Inmediate Implant",
+      "twitter_description": "In this article, Araujo &amp; Lindhe conclude that \"the placement of Bio-Oss Collagen\" in the buccal gap between the implant and the buccal-approximal bone wall"
     }
   },
   {
@@ -228,13 +256,14 @@
       "content_score": "30",
       "linkdex": "75",
       "estimated_reading_time_minutes": "11",
-      "og_title": "10 Tips that Everyone Should Know Before Performing an Implant Treatment in the aesthetic zone",
+      "og_title": "10 Tips that Everyone Should Know Before Performing an Implant Treatm",
       "og_description": "Article​ about 10 key points you should consider before performing a treatment plan involving implants in the aesthetic zone.",
       "og_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Socket-Shield-Technique-3.png",
       "og_image_id": "1106",
-      "twitter_title": "10 Tips that Everyone Should Know Before Performing an Implant Treatment in the aesthetic zone",
+      "twitter_title": "10 Tips that Everyone Should Know Before Performing an Implant Treatm",
       "twitter_description": "Article​ about 10 key points you should consider before performing a treatment plan involving implants in the aesthetic zone.",
-      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Socket-Shield-Technique-1.png"
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Socket-Shield-Technique-1.png",
+      "title": "10 Tips that Everyone Should Know Before Performing an Impl"
     }
   },
   {
@@ -287,7 +316,11 @@
       "content_score": "30",
       "linkdex": "67",
       "estimated_reading_time_minutes": "3",
-      "og_description": "Discover the concept of platform switching in dental implants and the advantages it offers for treatment outcomes."
+      "og_description": "Discover the concept of platform switching in dental implants and the advantages it offers for treatment outcomes.",
+      "title": "Platform Switching. A Biological Concept",
+      "og_title": "Platform Switching. A Biological Concept",
+      "twitter_title": "Platform Switching. A Biological Concept",
+      "twitter_description": "Introduction There are some questions about what is or what is not platform switching, and of course, what are the advantages of having a platform-switched conc"
     }
   },
   {
@@ -307,7 +340,14 @@
     "featured_image": "",
     "language": "en",
     "seo": {
-      "content_score": "60"
+      "content_score": "60",
+      "title": "What is Papers 3 and how it works",
+      "description": "Papers is an Appel Design Award and Ars Desig Award winning solution for managing research literatura. Now, it´s time for Papers 3 to take your personal library",
+      "og_title": "What is Papers 3 and how it works",
+      "og_description": "Papers is an Appel Design Award and Ars Desig Award winning solution for managing research literatura. Now, it´s time for Papers 3 to take your personal library",
+      "twitter_title": "What is Papers 3 and how it works",
+      "twitter_description": "Papers is an Appel Design Award and Ars Desig Award winning solution for managing research literatura. Now, it´s time for Papers 3 to take your personal library",
+      "focus_keyword": ""
     }
   },
   {
@@ -325,7 +365,16 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "How to Create an Illustration",
+      "description": "After receiving some emails from some followers, I decided to create this tutorial to introduce how I create my illustrations. First of all you should get Illus",
+      "og_title": "How to Create an Illustration",
+      "og_description": "After receiving some emails from some followers, I decided to create this tutorial to introduce how I create my illustrations. First of all you should get Illus",
+      "twitter_title": "How to Create an Illustration",
+      "twitter_description": "After receiving some emails from some followers, I decided to create this tutorial to introduce how I create my illustrations. First of all you should get Illus",
+      "focus_keyword": ""
+    }
   },
   {
     "id": 284,
@@ -342,7 +391,16 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "3 Simple Steps to keep all your Photos Avalaible and Sharea",
+      "description": "Despite existing tons of image / photo softwares out there, sometimes it can be a little confusing which one to choose. When you talk with someone about this to",
+      "og_title": "3 Simple Steps to keep all your Photos Avalaible and Shareable in a D",
+      "og_description": "Despite existing tons of image / photo softwares out there, sometimes it can be a little confusing which one to choose. When you talk with someone about this to",
+      "twitter_title": "3 Simple Steps to keep all your Photos Avalaible and Shareable in a D",
+      "twitter_description": "Despite existing tons of image / photo softwares out there, sometimes it can be a little confusing which one to choose. When you talk with someone about this to",
+      "focus_keyword": ""
+    }
   },
   {
     "id": 325,
@@ -370,7 +428,9 @@
       "twitter_title": "Photography equipment for dentists.",
       "twitter_description": "In this article, we share the essential equipment that is useful to document clinical cases in your daily practice.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Copy-of-Copy-of-libros.jpg",
-      "twitter_image_id": "1502"
+      "twitter_image_id": "1502",
+      "title": "Photography Equipment for a Dentist",
+      "focus_keyword": ""
     }
   },
   {
@@ -406,7 +466,8 @@
       "og_image_id": "1097",
       "twitter_title": "How to learn Periodontal Surgery with an App",
       "twitter_description": "Some useful apps that will help you learning plastic periodontal surgery and also other useful apps for dentists.",
-      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Marielle-Price.png"
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Marielle-Price.png",
+      "title": "How to learn Periodontal Surgery with an App"
     }
   },
   {
@@ -429,7 +490,12 @@
       "description": "Here we describe with a simple infographic the epidemiology about peri-implantitis. This review is based on the latest systematic reviews.",
       "focus_keyword": "peri-implantitis",
       "content_score": "30",
-      "linkdex": "54"
+      "linkdex": "54",
+      "title": "Peri-implantitis. A Silent Problem",
+      "og_title": "Peri-implantitis. A Silent Problem",
+      "og_description": "",
+      "twitter_title": "Peri-implantitis. A Silent Problem",
+      "twitter_description": ""
     }
   },
   {
@@ -460,7 +526,12 @@
       ],
       "content_score": "30",
       "linkdex": "75",
-      "estimated_reading_time_minutes": "6"
+      "estimated_reading_time_minutes": "6",
+      "title": "Soft Tissue Recession Around Implants – A common Complicati",
+      "og_title": "Soft Tissue Recession Around Implants – A common Complication",
+      "og_description": "Introduction One of the major concerns is soft tissue recession around implants that may appear over time (Adell et al. 1981; Grunder 2000) and this is an impor",
+      "twitter_title": "Soft Tissue Recession Around Implants – A common Complication",
+      "twitter_description": "Introduction One of the major concerns is soft tissue recession around implants that may appear over time (Adell et al. 1981; Grunder 2000) and this is an impor"
     }
   },
   {
@@ -492,7 +563,7 @@
     "featured_image": "https://periospot.com/wp-content/uploads/2016/03/Immediate-Implants-in-the-Aesthetic-zone_-Some-tips-and-tricks-that-will-help-you.png",
     "language": "en",
     "seo": {
-      "description": "Discover the revolutionary approach of immediate implants in the aesthetic zone. Learn about Schulte's groundbreaking contribution and the benefits of this technique.",
+      "description": "Discover the revolutionary approach of immediate implants in the aesthetic zone. Learn about Schulte's groundbreaking contribution and the benefits of this tec",
       "focus_keyword": "immediate implants aesthetic zone",
       "focus_keywords": [
         {
@@ -518,12 +589,13 @@
       "linkdex": "68",
       "estimated_reading_time_minutes": "11",
       "og_title": "immediate implants in the aesthetic zone. Tips and advices.",
-      "og_description": "Some important facts about immediate implants in the aesthetic zone. Some concepts about biology and prosthodontics that we should consider before treating a complex case.",
+      "og_description": "Some important facts about immediate implants in the aesthetic zone. Some concepts about biology and prosthodontics that we should consider before treating a c",
       "og_image": "https://periospot.com/wp-content/uploads/2016/03/Copy-of-Employee-of-the-Month.jpg",
       "og_image_id": "1136",
       "twitter_title": "Immediate implants in the aesthetic zone.Tips and advices.",
       "twitter_description": "What we should know to perform an immediate implant in a predictable way. Biology and protocols.",
-      "twitter_image": "https://periospot.com/wp-content/uploads/2016/03/Copy-of-Employee-of-the-Month-1.jpg"
+      "twitter_image": "https://periospot.com/wp-content/uploads/2016/03/Copy-of-Employee-of-the-Month-1.jpg",
+      "title": "Immediate Implants in the Aesthetic zone: Some tips and tri"
     }
   },
   {
@@ -568,7 +640,10 @@
       "og_image": "https://periospot.com/wp-content/uploads/2016/04/Screenshot-2016-04-07-14.43.59-1.jpg",
       "og_image_id": "750",
       "twitter_title": "How to perform a predictable immediate loading",
-      "twitter_image": "https://periospot.com/wp-content/uploads/2016/04/Screenshot-2016-04-07-14.43.59-1.jpg"
+      "twitter_image": "https://periospot.com/wp-content/uploads/2016/04/Screenshot-2016-04-07-14.43.59-1.jpg",
+      "title": "How to perform a predictable immediate loading",
+      "og_description": "Introduction Once again, before I start writing this post, I did a poll on Twitter about immediate loading: And it seems that dentists they do love immediate lo",
+      "twitter_description": "Introduction Once again, before I start writing this post, I did a poll on Twitter about immediate loading: And it seems that dentists they do love immediate lo"
     }
   },
   {
@@ -723,7 +798,8 @@
       "og_image_id": "1133",
       "twitter_title": "How Much Time I have to Wait After an Alveolar Ridge Preservation",
       "twitter_description": "Regarding some doubts about how much time we should wait after. socket preservation, here an infographic with a clear explanation of this topic.",
-      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Employee-of-the-Month-1.jpg"
+      "twitter_image": "https://periospot.com/wp-content/uploads/2015/08/Employee-of-the-Month-1.jpg",
+      "title": "How much time I have to wait after an alveolar ridge preser"
     }
   },
   {
@@ -740,7 +816,16 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "Implant Depth Demystified: Why Position Matters",
+      "description": "After three decades of placing implants, I've learned something fascinating: only about 20% of the total implant length supports almost all of the stress from l",
+      "og_title": "Implant Depth Demystified: Why Position Matters",
+      "og_description": "After three decades of placing implants, I've learned something fascinating: only about 20% of the total implant length supports almost all of the stress from l",
+      "twitter_title": "Implant Depth Demystified: Why Position Matters",
+      "twitter_description": "After three decades of placing implants, I've learned something fascinating: only about 20% of the total implant length supports almost all of the stress from l",
+      "focus_keyword": ""
+    }
   },
   {
     "id": 5140,
@@ -756,7 +841,16 @@
     ],
     "tags": [],
     "featured_image": "",
-    "language": "en"
+    "language": "en",
+    "seo": {
+      "title": "How to Build Your Dental Photography Portfolio",
+      "description": "Why Every Dentist Needs a Professional Portfolio In today's digital age, your dental photography portfolio is your visual resume. It showcases your clinical ski",
+      "og_title": "How to Build Your Dental Photography Portfolio",
+      "og_description": "Why Every Dentist Needs a Professional Portfolio In today's digital age, your dental photography portfolio is your visual resume. It showcases your clinical ski",
+      "twitter_title": "How to Build Your Dental Photography Portfolio",
+      "twitter_description": "Why Every Dentist Needs a Professional Portfolio In today's digital age, your dental photography portfolio is your visual resume. It showcases your clinical ski",
+      "focus_keyword": ""
+    }
   },
   {
     "id": 1018,
@@ -795,7 +889,8 @@
       "og_image_id": "1071",
       "twitter_title": "Socket Shield Technique. A report of a case.",
       "twitter_description": "In this article, Darcio explains the rationale behind the socket shield technique and also the step by step.",
-      "twitter_image": "https://periospot.com/wp-content/uploads/2017/07/Socket-Shield-Technique-2.png"
+      "twitter_image": "https://periospot.com/wp-content/uploads/2017/07/Socket-Shield-Technique-2.png",
+      "title": "Socket Shield Technique. Report of a case."
     }
   },
   {
@@ -823,13 +918,15 @@
       "content_score": "90",
       "linkdex": "64",
       "estimated_reading_time_minutes": "6",
-      "og_title": "Stranger Implants: The top 10 stranger implant cases seen on social media.",
+      "og_title": "Stranger Implants: The top 10 stranger implant cases seen on social m",
       "og_description": "In this post, we show some of the weirdest, strange and peculiar cases seen on social media during the last years.",
       "og_image": "https://periospot.com/wp-content/uploads/2017/12/Implant-Digital-Dentistry-3.jpg",
       "og_image_id": "1166",
-      "twitter_title": "Stranger Implants: The top 10 stranger implant cases seen on social media.",
+      "twitter_title": "Stranger Implants: The top 10 stranger implant cases seen on social m",
       "twitter_description": "In this post, we show some of the weirdest, strange and peculiar cases seen on social media during the last years.",
-      "twitter_image": "https://periospot.com/wp-content/uploads/2017/12/Implant-Digital-Dentistry-1.jpg"
+      "twitter_image": "https://periospot.com/wp-content/uploads/2017/12/Implant-Digital-Dentistry-1.jpg",
+      "title": "Stranger Implants: The Top 10 Stranger Implant Cases Seen o",
+      "description": "Introduction to Stranger&nbsp;Implants Lately, there is a lot of buzz around Stranger Things tv show. For those who were just kids growing&nbsp;during the '80s,"
     }
   },
   {
@@ -888,7 +985,14 @@
     "featured_image": "",
     "language": "es",
     "seo": {
-      "content_score": "30"
+      "content_score": "30",
+      "title": "Bienvenidos al Blog en Español",
+      "description": "Bienvenidos al Blog en Español",
+      "og_title": "Bienvenidos al Blog en Español",
+      "og_description": "Bienvenidos al Blog en Español",
+      "twitter_title": "Bienvenidos al Blog en Español",
+      "twitter_description": "Bienvenidos al Blog en Español",
+      "focus_keyword": ""
     }
   },
   {
@@ -946,10 +1050,11 @@
       "og_description": "In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
       "og_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.jpg",
       "og_image_id": "1399",
-      "twitter_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone- In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "twitter_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone- In this",
       "twitter_description": "In this article, we cover restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.png",
-      "twitter_image_id": "1808"
+      "twitter_image_id": "1808",
+      "title": "Two ways to Restore  Edentulous​ Spaces in the Aesthetic Zo"
     }
   },
   {
@@ -1005,7 +1110,8 @@
       "twitter_title": "10 trucos efectivos para mejorar una presentación para odontólogos",
       "twitter_description": "En este artículo se exponen algunos trucos de utilidad para aquellos que tengan que realizar una presentación en público.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/09/10-trucos-efectivos-para-mejorar-una-presentación-para-odontólogos.png",
-      "twitter_image_id": "3848"
+      "twitter_image_id": "3848",
+      "title": "10 trucos efectivos para mejorar una presentación para odon"
     }
   },
   {
@@ -1032,14 +1138,15 @@
       "content_score": "30",
       "linkdex": "67",
       "estimated_reading_time_minutes": "9",
-      "og_title": "How Deep Is Your Implant? Supracrestal, Crestal, and Subcrestal Implant Position Revisited.",
+      "og_title": "How Deep Is Your Implant? Supracrestal, Crestal, and Subcrestal Impla",
       "og_description": "In this article, we cover the implant position regarding the apico-coronal situation and it´s biological and biomechanical implications.",
       "og_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3.jpg",
       "og_image_id": "1535",
-      "twitter_title": "How Deep Is Your Implant? Supracrestal, Crestal, and Subcrestal Implant Position Revisited.",
+      "twitter_title": "How Deep Is Your Implant? Supracrestal, Crestal, and Subcrestal Impla",
       "twitter_description": "In this article, we cover the implant position regarding the apico-coronal situation and it´s biological and biomechanical implications.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.jpg",
-      "twitter_image_id": "1536"
+      "twitter_image_id": "1536",
+      "title": "How Deep Is Your Implant? Supracrestal, Crestal, and Subcre"
     }
   },
   {
@@ -1074,7 +1181,8 @@
       "twitter_title": "Son iguales todas las superficies de implantes?",
       "twitter_description": "En este artículo se realiza un arevisión de las superficies de implantes actuales y las ventajas clínicas que aportan.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-5-1.png",
-      "twitter_image_id": "1621"
+      "twitter_image_id": "1621",
+      "title": "¿Son iguales todas las superficies de implantes?"
     }
   },
   {
@@ -1112,7 +1220,8 @@
       "twitter_title": "12 conceptos básicos sobre edición de fotografía en odontología",
       "twitter_description": "Artículo donde se describen 12 conceptos básicos en fotografía dental de utilidad para la práctica clínica diaria.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/01/12-conceptos-básicos-sobre-edición-de-fotografía-en-odontología.png",
-      "twitter_image_id": "3845"
+      "twitter_image_id": "3845",
+      "title": "12 conceptos básicos sobre edición de fotografía en odontol"
     }
   },
   {
@@ -1188,14 +1297,15 @@
       ],
       "content_score": "30",
       "linkdex": "60",
-      "og_title": "Cómo Usar las Redes Sociales Para Potenciar Una Clínica Dental. 11 Simples Consejos.",
+      "og_title": "Cómo Usar las Redes Sociales Para Potenciar Una Clínica Dental. 11 Si",
       "og_description": "En este artículo se resumen 11 sencillos consejos para ayudar a promocionar una clínica dental en las redes sociales.",
       "og_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-6.png",
       "og_image_id": "1899",
-      "twitter_title": "Cómo Usar las Redes Sociales Para Potenciar Una Clínica Dental. 11 Simples Consejos.",
+      "twitter_title": "Cómo Usar las Redes Sociales Para Potenciar Una Clínica Dental. 11 Si",
       "twitter_description": "En este artículo se resumen 11 sencillos consejos para ayudar a promocionar una clínica dental en las redes sociales.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
-      "twitter_image_id": "1889"
+      "twitter_image_id": "1889",
+      "title": "Cómo Usar las Redes Sociales Para Potenciar una Clínica Den"
     }
   },
   {
@@ -1225,14 +1335,15 @@
       "content_score": "90",
       "linkdex": "39",
       "estimated_reading_time_minutes": "1",
-      "og_title": "12 curiosidades acerca del bundle bone, del gap y de los implantes inmediatos",
+      "og_title": "12 curiosidades acerca del bundle bone, del gap y de los implantes in",
       "og_description": "En esta infografía se exponen algunas curiosidades acerca del Bundle Bone, del Gap y de los Implantes inmediatos.",
       "og_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-11.png",
       "og_image_id": "1923",
-      "twitter_title": "12 curiosidades acerca del bundle bone, del gap y de los implantes inmediatos",
+      "twitter_title": "12 curiosidades acerca del bundle bone, del gap y de los implantes in",
       "twitter_description": "En esta infografía se exponen algunas curiosidades acerca del Bundle Bone, del Gap y de los Implantes inmediatos.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-9.png",
-      "twitter_image_id": "1922"
+      "twitter_image_id": "1922",
+      "title": "12 curiosidades acerca del Bundle Bone, del Gap y de los Im"
     }
   },
   {
@@ -1262,14 +1373,15 @@
       "content_score": "30",
       "linkdex": "67",
       "estimated_reading_time_minutes": "11",
-      "og_title": "How Dentists Value Immediate Returns And Its Relation With The Human Brain And Digital Dentistry",
+      "og_title": "How Dentists Value Immediate Returns And Its Relation With The Human",
       "og_description": "The rationale behind why some dentists feel reluctant about going into digital dentistry and the psychological explanation to this phenomenon.",
       "og_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-4.png",
       "og_image_id": "1950",
-      "twitter_title": "How Dentists Value Immediate Returns And Its Relation With The Human Brain And Digital Dentistry",
+      "twitter_title": "How Dentists Value Immediate Returns And Its Relation With The Human",
       "twitter_description": "The rationale behind why some dentists feel reluctant about going into digital dentistry and the psychological explanation to this phenomenon.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-5.png",
-      "twitter_image_id": "1951"
+      "twitter_image_id": "1951",
+      "title": "How Dentists value immediate returns and their relationship"
     }
   },
   {
@@ -1355,7 +1467,8 @@
       "twitter_title": "Platform switching ¿Un concepto biológico o un producto de marketing?",
       "twitter_description": "En este artículo se decribe de forma muy resumida el concepto biológico detrás del Platform Switching que es más que un concepto de marketing.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/04/Copy-of-Copy-of-Platform-Switching.png",
-      "twitter_image_id": "1968"
+      "twitter_image_id": "1968",
+      "title": "Platform switching ¿Un concepto biológico o un producto de"
     }
   },
   {
@@ -1387,14 +1500,15 @@
       "content_score": "30",
       "linkdex": "61",
       "estimated_reading_time_minutes": "6",
-      "og_title": "Cómo hacer ilustraciones y animaciones para mejorar las presentaciones.",
+      "og_title": "Cómo hacer ilustraciones y animaciones para mejorar las presentacione",
       "og_description": "Ene este artículo se describe el paso a paso en la creación de animaciones e ilustraciones que son de utilidad para mejorar presentaciones.",
       "og_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Cómo-hacer-ilustraciones-y-animaciones-para-mejorar-las-presentaciones.png",
       "og_image_id": "3857",
-      "twitter_title": "Cómo hacer ilustraciones y animaciones para mejorar las presentaciones.",
+      "twitter_title": "Cómo hacer ilustraciones y animaciones para mejorar las presentacione",
       "twitter_description": "Ene este artículo se describe el paso a paso en la creación de animaciones e ilustraciones que son de utilidad para mejorar presentaciones.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Cómo-hacer-ilustraciones-y-animaciones-para-mejorar-las-presentaciones.png",
-      "twitter_image_id": "3857"
+      "twitter_image_id": "3857",
+      "title": "Cómo hacer ilustraciones y animaciones para mejorar las pre"
     }
   },
   {
@@ -1423,14 +1537,15 @@
       "content_score": "30",
       "linkdex": "61",
       "estimated_reading_time_minutes": "20",
-      "og_title": "6 herramientas de marketing digital imprescindibles para aumentar la presencia online con poco presupuesto",
+      "og_title": "6 herramientas de marketing digital imprescindibles para aumentar la",
       "og_description": "En este artículo explicamos cómo conseguir una mayor presencia online de tu empresa con unas herramientas de marketing sencillas de usar.",
       "og_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
       "og_image_id": "2275",
-      "twitter_title": "6 herramientas de marketing digital imprescindibles para aumentar la presencia online con poco presupuesto",
+      "twitter_title": "6 herramientas de marketing digital imprescindibles para aumentar la",
       "twitter_description": "En este artículo explicamos cómo conseguir una mayor presencia online de tu empresa con unas herramientas de marketing sencillas de usar.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
-      "twitter_image_id": "2276"
+      "twitter_image_id": "2276",
+      "title": "6 herramientas de marketing digital  imprescindibles para a"
     }
   },
   {
@@ -1463,14 +1578,15 @@
       "content_score": "60",
       "linkdex": "69",
       "estimated_reading_time_minutes": "7",
-      "og_title": "How to create animations and illustrations to improve your presentations",
+      "og_title": "How to create animations and illustrations to improve your presentati",
       "og_description": "This is the workflow that we use on Periospot to create animations and illustrations. You can use the same tips to create your own animations library.",
       "og_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-4-1.png",
       "og_image_id": "2342",
-      "twitter_title": "How to create animations and illustrations to improve your presentations",
+      "twitter_title": "How to create animations and illustrations to improve your presentati",
       "twitter_description": "This is the workflow that we use on Periospot to create animations and illustrations. You can use the same tips to create your own animations library.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/06/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-4.png",
-      "twitter_image_id": "2341"
+      "twitter_image_id": "2341",
+      "title": "How to create Animations and Illustrations to Improve your"
     }
   },
   {
@@ -1498,14 +1614,15 @@
       ],
       "content_score": "60",
       "linkdex": "62",
-      "og_title": "6 libros imprescindibles sobre implantología y cirugía plástica periodontal",
+      "og_title": "6 libros imprescindibles sobre implantología y cirugía plástica perio",
       "og_description": "En este artículo revisamos los libros más recomendados sobre implantología y cirugía plástica periodontal. Los top 6.",
       "og_image": "https://periospot.com/wp-content/uploads/2019/07/6-Libros-imprescindibles-sobre-implantología-y-cirugía-plástica-periodontal..png",
       "og_image_id": "3165",
-      "twitter_title": "6 libros imprescindibles sobre implantología y cirugía plástica periodontal",
+      "twitter_title": "6 libros imprescindibles sobre implantología y cirugía plástica perio",
       "twitter_description": "En este artículo revisamos los libros más recomendados sobre implantología y cirugía plástica periodontal. Los top 6.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/07/6-Libros-imprescindibles-sobre-implantología-y-cirugía-plástica-periodontal..png",
-      "twitter_image_id": "3165"
+      "twitter_image_id": "3165",
+      "title": "6 Libros Imprescindibles sobre Implantología y Cirugía Plás"
     }
   },
   {
@@ -1559,7 +1676,8 @@
       "twitter_title": "The Ideal Implant Position in the Aesthetic Zone.",
       "twitter_description": "This article describes the rules regarding an optimal position of the implant in the esthetic zone.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/07/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.png",
-      "twitter_image_id": "2390"
+      "twitter_image_id": "2390",
+      "title": "The Ideal Implant Position in the Aesthetic Zone."
     }
   },
   {
@@ -1616,7 +1734,8 @@
       "twitter_title": "6 Tools to Boost Your Online​ Dental Marketing",
       "twitter_description": "6 useful tools to boost your online marketing with a low budget.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-6.png",
-      "twitter_image_id": "2405"
+      "twitter_image_id": "2405",
+      "title": "6 Tools to Boost Your Online​ Dental Marketing"
     }
   },
   {
@@ -1666,7 +1785,8 @@
       "twitter_title": "La Posición Tridimensional Ideal de Implantes en el Sector Estético.",
       "twitter_description": "En este artículo se describen las posiciones ideales tridimensionales para la colocación de un implante en el sector estético.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3-1-1024x538.png",
-      "twitter_image_id": "4965"
+      "twitter_image_id": "4965",
+      "title": "La Posición Tridimensional Ideal de Implantes en el Sector"
     }
   },
   {
@@ -1696,14 +1816,15 @@
       "content_score": "30",
       "linkdex": "61",
       "estimated_reading_time_minutes": "10",
-      "og_title": "El sondaje en implantes y los negacionistas- 4 razones por las que es importante sondar implantes",
+      "og_title": "El sondaje en implantes y los negacionistas- 4 razones por las que es",
       "og_description": "¿Por qué es importante sondar implantes?. En este artículo, Daniel Rodrigo deja claro su importancia y su relevancia clínica.",
       "og_image": "https://periospot.com/wp-content/uploads/2020/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-2.png",
       "og_image_id": "2454",
-      "twitter_title": "El sondaje en implantes y los negacionistas- 4 razones por las que es importante sondar implantes",
+      "twitter_title": "El sondaje en implantes y los negacionistas- 4 razones por las que es",
       "twitter_description": "¿Por qué es importante sondar implantes?. En este artículo, Daniel Rodrigo deja claro su importancia y su relevancia clínica.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry-3.png",
-      "twitter_image_id": "2455"
+      "twitter_image_id": "2455",
+      "title": "El sondaje en implantes y los negacionistas- 4 razones por"
     }
   },
   {
@@ -1798,14 +1919,15 @@
       "content_score": "30",
       "linkdex": "61",
       "estimated_reading_time_minutes": "26",
-      "og_title": "Webinars en tiempos de cuarentena ¿Qué plataformas son las mejores para hacer webinars?",
+      "og_title": "Webinars en tiempos de cuarentena ¿Qué plataformas son las mejores pa",
       "og_description": "En este artículo se analiza en profundidad 11 plataformas para realizar webinars y clases online. Ventajas, desventajas y precios.",
       "og_image": "https://periospot.com/wp-content/uploads/2020/03/11-mejores-plataformas-para-realizar-webinars-y-clases-online-3.png",
       "og_image_id": "3161",
-      "twitter_title": "Webinars en tiempos de cuarentena ¿Qué plataformas son las mejores para hacer webinars?",
+      "twitter_title": "Webinars en tiempos de cuarentena ¿Qué plataformas son las mejores pa",
       "twitter_description": "En este artículo se analiza en profundidad 11 plataformas para realizar webinars y clases online. Ventajas, desventajas y precios.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/03/Copy-of-Copy-of-webinars-periospot.png",
-      "twitter_image_id": "2751"
+      "twitter_image_id": "2751",
+      "title": "Webinars en tiempos de cuarentena ¿Qué plataformas son las"
     }
   },
   {
@@ -1860,7 +1982,8 @@
       "twitter_title": "Los 10 errores más comunes en gestión en odontología y cómo evitarlos",
       "twitter_description": "Los 10 errores más comunes en gestión en odontología y cómo evitarlos y crecer de forma sostenible y siempre basados en la excelencia.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/03/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-4-BOOKS-YOU-CANT-LIVE-WITHOUT-IF-YOU-LOVE-ORAL-IMPLANTOLOGY-AND-PLASTIC-PERIODONTAL-SURGERY.png",
-      "twitter_image_id": "2602"
+      "twitter_image_id": "2602",
+      "title": "10 Errores Frecuentes en la Gestión en Odontología y Cómo E"
     }
   },
   {
@@ -1887,14 +2010,15 @@
       "content_score": "90",
       "linkdex": "58",
       "estimated_reading_time_minutes": "19",
-      "og_title": "How To Use Social Networks To Boost Your Dental Clinic After Covid-19 Crisis. 11 Simple Recommendations.",
+      "og_title": "How To Use Social Networks To Boost Your Dental Clinic After Covid-19",
       "og_description": "Nobody knows what is going to happen in the upcoming months, but these recommendations will help you to create an online marketing strategy.",
       "og_image": "https://periospot.com/wp-content/uploads/2020/07/How-To-Use-Social-Networks-To-Boost-Your-Dental-Clinic-After-Covid-19-Crisis..png",
       "og_image_id": "3359",
-      "twitter_title": "How To Use Social Networks To Boost Your Dental Clinic After Covid-19 Crisis. 11 Simple Recommendations.",
+      "twitter_title": "How To Use Social Networks To Boost Your Dental Clinic After Covid-19",
       "twitter_description": "Nobody knows what is going to happen in the upcoming months, but these recommendations will help you to create an online marketing strategy.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/07/How-To-Use-Social-Networks-To-Boost-Your-Dental-Clinic-After-Covid-19-Crisis..png",
-      "twitter_image_id": "3359"
+      "twitter_image_id": "3359",
+      "title": "How To Use Social Networks To Boost Your Dental Clinic Afte"
     }
   },
   {
@@ -1948,7 +2072,8 @@
       "twitter_title": "La Expansión Ósea como Alternativa en atrofias maxilares Horizontales",
       "twitter_description": "En este artículo el Profesor daniel Robles explica el paso a paso de la técnica y cómo realizarla de forma a obtener resultados predecibles.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/04/Expansion-twitter.png",
-      "twitter_image_id": "2683"
+      "twitter_image_id": "2683",
+      "title": "La Expansión Ósea como Alternativa en atrofias maxilares Ho"
     }
   },
   {
@@ -2041,7 +2166,8 @@
       "twitter_title": "Periospot´s Bookshelf: April 2020",
       "twitter_description": "Every month we recommend books not related to dentistry but that will help you to grow in your professional career and your business.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/04/Yellow-Tea-Party-Books-Club-Morning-Facebook-Post-1.png",
-      "twitter_image_id": "2800"
+      "twitter_image_id": "2800",
+      "title": "Periospot´s Bookshelf: April 2020"
     }
   },
   {
@@ -2064,7 +2190,7 @@
     "featured_image": "https://periospot.com/wp-content/uploads/2020/05/Copy-of-Zero-bone-loss-concepts©.-A-path-to-crestal-bone-stability.png",
     "language": "en",
     "seo": {
-      "description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on the scientific research performed by Prof. Tomas Linkevičius.",
+      "description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on t",
       "focus_keyword": "bone loss",
       "keyword_synonyms": [
         ""
@@ -2072,14 +2198,15 @@
       "content_score": "30",
       "linkdex": "77",
       "estimated_reading_time_minutes": "11",
-      "og_title": "Zero bone loss conecpts by prof. Tomas Linkevičius. A path to crestal bone stability",
-      "og_description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on the scientific research performed by Prof. Tomas Linkevičius.",
+      "og_title": "Zero bone loss conecpts by prof. Tomas Linkevičius. A path to crestal",
+      "og_description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on t",
       "og_image": "https://periospot.com/wp-content/uploads/2020/05/Copy-of-Copy-of-Zero-bone-loss-concepts.-A-path-to-crestal-bone-stability-1.png",
       "og_image_id": "2854",
-      "twitter_title": "Zero bone loss conecpts by prof. Tomas Linkevičius. A path to crestal bone stability",
-      "twitter_description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on the scientific research performed by Prof. Tomas Linkevičius.",
+      "twitter_title": "Zero bone loss conecpts by prof. Tomas Linkevičius. A path to crestal",
+      "twitter_description": "Why should we accept bone loss after 1 year of implant placement? Read this article to understand why marginal bone loss happens and how to avoid it based on t",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/05/Copy-of-Zero-bone-loss-concepts.-A-path-to-crestal-bone-stability.png",
-      "twitter_image_id": "2835"
+      "twitter_image_id": "2835",
+      "title": "Zero bone loss concepts by prof. Tomas Linkevičius. A path"
     }
   },
   {
@@ -2263,14 +2390,15 @@
       "focus_keyword": "copywriting pacientes",
       "content_score": "30",
       "linkdex": "63",
-      "og_title": "Copywriting: cómo captar la atención de tus pacientes y que quieran visitarte",
+      "og_title": "Copywriting: cómo captar la atención de tus pacientes y que quieran v",
       "og_description": "Cómo captar pacientes mediante el copywriting, una innovadora forma de marketing que deberíamos dominar para mejorar nuestra presencia online.",
       "og_image": "https://periospot.com/wp-content/uploads/2020/06/Copy-of-Copywriting_-Cmo-captar-la-atencin-de-tus-pacientes-y-que-quieran-visitarte..png",
       "og_image_id": "3023",
-      "twitter_title": "Copywriting: cómo captar la atención de tus pacientes y que quieran visitarte",
+      "twitter_title": "Copywriting: cómo captar la atención de tus pacientes y que quieran v",
       "twitter_description": "Cómo captar pacientes mediante el copywriting, una innovadora forma de marketing que deberíamos dominar para mejorar nuestra presencia online.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/06/Copy-of-Copy-of-Copywriting_-Cmo-captar-la-atencin-de-tus-pacientes-y-que-quieran-visitarte..png",
-      "twitter_image_id": "3024"
+      "twitter_image_id": "3024",
+      "title": "Copywriting: cómo captar la atención de tus pacientes y que"
     }
   },
   {
@@ -2303,7 +2431,10 @@
       "og_image_id": "3097",
       "twitter_description": "En este artículo, el Profesor Jorge Alania nos enseña sus experiencias en forma de 8 reglas que deberíamos tener en cuenta en cirugía plástica periodontal.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/06/twitter-Cobertura-Radicular-Mi-primera-vez-Las-8-reglas-de-oro-en-Ciruga-Plstica-Periodontal.png",
-      "twitter_image_id": "3096"
+      "twitter_image_id": "3096",
+      "title": "Cobertura Radicular, ¡Mi Primera Vez! Las 8 Reglas de Oro e",
+      "og_title": "Cobertura Radicular, ¡Mi Primera Vez! Las 8 Reglas de Oro en Cirugía",
+      "twitter_title": "Cobertura Radicular, ¡Mi Primera Vez! Las 8 Reglas de Oro en Cirugía"
     }
   },
   {
@@ -2342,7 +2473,8 @@
       "twitter_title": "The Story Behind Platform Switching",
       "twitter_description": "What does platform switching means and what are the benefits that this concept brings from a clinical and patient's point of view.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/06/Twitter-FacebookThe-Story-Behind-Platform-Switching-.png",
-      "twitter_image_id": "3120"
+      "twitter_image_id": "3120",
+      "title": "The Story Behind Platform Switching"
     }
   },
   {
@@ -2361,7 +2493,14 @@
     "featured_image": "",
     "language": "en",
     "seo": {
-      "content_score": "90"
+      "content_score": "90",
+      "title": "Tips and Tricks to Floss and Brush your Teeth Better",
+      "description": "If you’re like most people, you brush twice a day. But if you mindlessly move your toothbrush around your mouth, your oral hygiene routine may be ineffective or",
+      "og_title": "Tips and Tricks to Floss and Brush your Teeth Better",
+      "og_description": "If you’re like most people, you brush twice a day. But if you mindlessly move your toothbrush around your mouth, your oral hygiene routine may be ineffective or",
+      "twitter_title": "Tips and Tricks to Floss and Brush your Teeth Better",
+      "twitter_description": "If you’re like most people, you brush twice a day. But if you mindlessly move your toothbrush around your mouth, your oral hygiene routine may be ineffective or",
+      "focus_keyword": ""
     }
   },
   {
@@ -2392,10 +2531,11 @@
       "og_description": "In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
       "og_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.jpg",
       "og_image_id": "1399",
-      "twitter_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone- In this article, it is covered some restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
+      "twitter_title": "Two ways to Restore Edentulous​ Spaces in the Aesthetic Zone- In this",
       "twitter_description": "In this article, we cover restorative and biological considerations to replace an edentulous space in the aesthetic zone.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2018/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Implant-Digital-Dentistry.png",
-      "twitter_image_id": "1808"
+      "twitter_image_id": "1808",
+      "title": "美学区修复缺失牙的两种方法"
     }
   },
   {
@@ -2477,14 +2617,15 @@
       "focus_keyword": "esthetic plastic periodontal surgery",
       "content_score": "30",
       "linkdex": "58",
-      "og_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "og_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic P",
       "og_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
       "og_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
       "og_image_id": "3480",
-      "twitter_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "twitter_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic P",
       "twitter_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
-      "twitter_image_id": "3480"
+      "twitter_image_id": "3480",
+      "title": "Root Coverage Procedures, My First Time! 8 Golden Rules on"
     }
   },
   {
@@ -2511,7 +2652,7 @@
     "featured_image": "https://periospot.com/wp-content/uploads/2020/07/Copy-of-Copy-of-The-Ideal-3D-position-of-the-implants-in-the-Aesthetic-Zone.png",
     "language": "es",
     "seo": {
-      "description": "¿Cúal es la mejora opción para rehabilitar un paciente con una sobredentqadura? ¿Cuántos implantes son necesários para realizar una sobredentadura? Decubre las respuestas en este artículo de Ricardo López",
+      "description": "¿Cúal es la mejora opción para rehabilitar un paciente con una sobredentqadura? ¿Cuántos implantes son necesários para realizar una sobredentadura? Decubre las",
       "focus_keyword": "sobredentaduras implantes",
       "focus_keywords": [
         {
@@ -2535,7 +2676,12 @@
       ],
       "content_score": "30",
       "linkdex": "59",
-      "estimated_reading_time_minutes": "14"
+      "estimated_reading_time_minutes": "14",
+      "title": "Sobredentaduras sobre Implantes: Qué opciones Removibles So",
+      "og_title": "Sobredentaduras sobre Implantes: Qué opciones Removibles Sobre Implan",
+      "og_description": "Recuerdo que a inicios de mi posgrado había un “boom” entre mis compañeros de generación y la generación previa con la cual compartíamos durante 1 año, de los t",
+      "twitter_title": "Sobredentaduras sobre Implantes: Qué opciones Removibles Sobre Implan",
+      "twitter_description": "Recuerdo que a inicios de mi posgrado había un “boom” entre mis compañeros de generación y la generación previa con la cual compartíamos durante 1 año, de los t"
     }
   },
   {
@@ -2629,7 +2775,12 @@
       "content_score": "30",
       "linkdex": "51",
       "og_image": "https://periospot.com/wp-content/uploads/2021/02/Copy-of-Cómo-mejorar-la-formación-online-y-los-webinars-en-4-simples-pasos-2.png",
-      "og_image_id": "4032"
+      "og_image_id": "4032",
+      "title": "Cómo mejorar la formación online y los webinars en 4 simple",
+      "og_title": "Cómo mejorar la formación online y los webinars en 4 simples pasos",
+      "og_description": "Hemos llegado a un punto que si decimos a alguien “Oye Jacinto, el próximo lunes voy a dar un webinar sobre sondaje en implantes”, lo más seguro es que Jacinto",
+      "twitter_title": "Cómo mejorar la formación online y los webinars en 4 simples pasos",
+      "twitter_description": "Hemos llegado a un punto que si decimos a alguien “Oye Jacinto, el próximo lunes voy a dar un webinar sobre sondaje en implantes”, lo más seguro es que Jacinto"
     }
   },
   {
@@ -2651,7 +2802,7 @@
     "featured_image": "https://periospot.com/wp-content/uploads/2021/02/Copy-of-Copy-of-12-conceptos-básicos-sobre-edición-de-fotografía-en-odontología.png",
     "language": "es",
     "seo": {
-      "description": "Cómo mejorar tu presencia en las redes sociales y estar en primera linea cuando un paciente busque un odontólogo por internet. Aprende de la mano de Ros Megías la magía del Copywriting",
+      "description": "Cómo mejorar tu presencia en las redes sociales y estar en primera linea cuando un paciente busque un odontólogo por internet. Aprende de la mano de Ros Megías",
       "focus_keyword": "redes sociales",
       "focus_keywords": [
         {
@@ -2669,7 +2820,12 @@
         ""
       ],
       "content_score": "30",
-      "linkdex": "67"
+      "linkdex": "67",
+      "title": "6 estrategias super efectivas para escribir tus publicacion",
+      "og_title": "6 estrategias super efectivas para escribir tus publicaciones en las",
+      "og_description": "Cada día cientos de millones de usuarios de Facebook en todo el mundo pausan sus quehaceres cotidianos durante unos minutos para publicar un comentario, una ima",
+      "twitter_title": "6 estrategias super efectivas para escribir tus publicaciones en las",
+      "twitter_description": "Cada día cientos de millones de usuarios de Facebook en todo el mundo pausan sus quehaceres cotidianos durante unos minutos para publicar un comentario, una ima"
     }
   },
   {
@@ -2711,7 +2867,12 @@
       ],
       "content_score": "30",
       "linkdex": "74",
-      "estimated_reading_time_minutes": "10"
+      "estimated_reading_time_minutes": "10",
+      "description": "Trying to perform implant dentistry without understanding bone dynamics, guided bone regeneration basic techniques, and biology is like organizing a barbecue fo",
+      "og_title": "How to Solve the Most Common Bone Defects With Guided Bone Regenerati",
+      "og_description": "Trying to perform implant dentistry without understanding bone dynamics, guided bone regeneration basic techniques, and biology is like organizing a barbecue fo",
+      "twitter_title": "How to Solve the Most Common Bone Defects With Guided Bone Regenerati",
+      "twitter_description": "Trying to perform implant dentistry without understanding bone dynamics, guided bone regeneration basic techniques, and biology is like organizing a barbecue fo"
     }
   },
   {
@@ -2752,7 +2913,12 @@
         "online class"
       ],
       "content_score": "60",
-      "linkdex": "52"
+      "linkdex": "52",
+      "title": "How to do a Webinar About Dentistry That Your Audience Will",
+      "og_title": "How to do a Webinar About Dentistry That Your Audience Will Love",
+      "og_description": "We have reached a point that if we invite a friend to a webinar about \"How to Place an Immediate Implant in a Giraffe\", our friend will most likely decline the",
+      "twitter_title": "How to do a Webinar About Dentistry That Your Audience Will Love",
+      "twitter_description": "We have reached a point that if we invite a friend to a webinar about \"How to Place an Immediate Implant in a Giraffe\", our friend will most likely decline the"
     }
   },
   {
@@ -2774,7 +2940,14 @@
       "keyword_synonyms": [
         ""
       ],
-      "content_score": "60"
+      "content_score": "60",
+      "title": "Periospot Recommended Online Classes and Webinars Toolkit",
+      "description": "Here the gadgets that we recommend to you to improve your online content and classes. Sony ZV-1 Camera for Content Creators, Vlogging and YouTube with Flip Scre",
+      "og_title": "Periospot Recommended Online Classes and Webinars Toolkit",
+      "og_description": "Here the gadgets that we recommend to you to improve your online content and classes. Sony ZV-1 Camera for Content Creators, Vlogging and YouTube with Flip Scre",
+      "twitter_title": "Periospot Recommended Online Classes and Webinars Toolkit",
+      "twitter_description": "Here the gadgets that we recommend to you to improve your online content and classes. Sony ZV-1 Camera for Content Creators, Vlogging and YouTube with Flip Scre",
+      "focus_keyword": ""
     }
   },
   {
@@ -2816,7 +2989,12 @@
         "Plasma Rich in Growing Factors"
       ],
       "content_score": "30",
-      "linkdex": "60"
+      "linkdex": "60",
+      "title": "Clinical Advantages of the Platelet Rich Fibrin in Dentistry",
+      "og_title": "Clinical Advantages of the Platelet Rich Fibrin in Dentistry",
+      "og_description": "It is often rightly said “Nature is the Best Teacher”. The best treatment modalities in Medical and Dental field are often inspired by body natural healing mech",
+      "twitter_title": "Clinical Advantages of the Platelet Rich Fibrin in Dentistry",
+      "twitter_description": "It is often rightly said “Nature is the Best Teacher”. The best treatment modalities in Medical and Dental field are often inspired by body natural healing mech"
     }
   },
   {
@@ -2839,7 +3017,7 @@
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/¿Es-la-Conexión-un-Elemento-Protético.png",
     "language": "es",
     "seo": {
-      "description": "En este artículo se explica la importacia de la conexión protética en el éxito a largo plazo de un tratamiento de implantes. Desde sus implicaciones clínicas como biológicas",
+      "description": "En este artículo se explica la importacia de la conexión protética en el éxito a largo plazo de un tratamiento de implantes. Desde sus implicaciones clínicas c",
       "focus_keyword": "conexión protética",
       "focus_keywords": [
         {
@@ -2852,7 +3030,12 @@
         "rehabilitación oral"
       ],
       "content_score": "30",
-      "linkdex": "54"
+      "linkdex": "54",
+      "title": "¿Es la Conexión un Elemento Protético?",
+      "og_title": "¿Es la Conexión un Elemento Protético?",
+      "og_description": "Soy de Madrid. Y “del Madrid”. Hoy ser de Madrid&nbsp; es un factor de riesgo epidemiológico (lo sé) pero aun así merece la pena… Después del confinamiento, lo",
+      "twitter_title": "¿Es la Conexión un Elemento Protético?",
+      "twitter_description": "Soy de Madrid. Y “del Madrid”. Hoy ser de Madrid&nbsp; es un factor de riesgo epidemiológico (lo sé) pero aun así merece la pena… Después del confinamiento, lo"
     }
   },
   {
@@ -2903,7 +3086,12 @@
         ""
       ],
       "content_score": "60",
-      "linkdex": "51"
+      "linkdex": "51",
+      "title": "Complicações em Implantologia Oral: Deiscências do tecido m",
+      "og_title": "Complicações em Implantologia Oral: Deiscências do tecido mole vestib",
+      "og_description": "Uma das situações mais dramáticas na nossa prática diária é ter pacientes que se queixam de um implante na zona estética que ficou aquém das suas expectativas.",
+      "twitter_title": "Complicações em Implantologia Oral: Deiscências do tecido mole vestib",
+      "twitter_description": "Uma das situações mais dramáticas na nossa prática diária é ter pacientes que se queixam de um implante na zona estética que ficou aquém das suas expectativas."
     }
   },
   {
@@ -2934,14 +3122,15 @@
       ],
       "content_score": "30",
       "linkdex": "64",
-      "og_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "og_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic P",
       "og_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
       "og_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
       "og_image_id": "3480",
-      "twitter_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic Plastic Periodontal Surgery.",
+      "twitter_title": "Root Coverage Procedures, My First Time! 8 Golden Rules on Esthetic P",
       "twitter_description": "In this article, Profesor Jorge Alania gives us some tips and insights that will help us to perform our first cases to solve gingival recessions around teeth.",
       "twitter_image": "https://periospot.com/wp-content/uploads/2020/07/Root-Coverage-Procedures-My-First-Time-.png",
-      "twitter_image_id": "3480"
+      "twitter_image_id": "3480",
+      "title": "Técnicas de recobrimento radicular, a minha primeira vez! 8"
     }
   },
   {
@@ -2981,7 +3170,12 @@
         "injerto tejido conectivo"
       ],
       "content_score": "30",
-      "linkdex": "52"
+      "linkdex": "52",
+      "title": "La Reconstrucción de un Maxilar Atrófico Mediante Acceso Ap",
+      "og_title": "La Reconstrucción de un Maxilar Atrófico Mediante Acceso Apical",
+      "og_description": "En los últimos años ha habido un crecimiento exponencial en el número de implantes que colocamos en nuestros pacientes. Esto unido a la alta demanda estética de",
+      "twitter_title": "La Reconstrucción de un Maxilar Atrófico Mediante Acceso Apical",
+      "twitter_description": "En los últimos años ha habido un crecimiento exponencial en el número de implantes que colocamos en nuestros pacientes. Esto unido a la alta demanda estética de"
     }
   },
   {
@@ -3011,7 +3205,12 @@
       ],
       "content_score": "30",
       "linkdex": "65",
-      "estimated_reading_time_minutes": "5"
+      "estimated_reading_time_minutes": "5",
+      "title": "5 mitos e verdades sobre o torque de inserção do implante",
+      "og_title": "5 mitos e verdades sobre o torque de inserção do implante",
+      "og_description": "O implantologista é, normalmente, um ser orgulhoso e sensível. Tão depressa se enche o peito por conseguir uma carga imediata numa reabilitação total num osso a",
+      "twitter_title": "5 mitos e verdades sobre o torque de inserção do implante",
+      "twitter_description": "O implantologista é, normalmente, um ser orgulhoso e sensível. Tão depressa se enche o peito por conseguir uma carga imediata numa reabilitação total num osso a"
     }
   },
   {
@@ -3058,7 +3257,12 @@
       ],
       "content_score": "30",
       "linkdex": "69",
-      "estimated_reading_time_minutes": "10"
+      "estimated_reading_time_minutes": "10",
+      "title": "Socket Shield ruined men. Few understand this.",
+      "og_title": "Socket Shield ruined men. Few understand this.",
+      "og_description": "Now I got you reading the article, and you are wondering why I'm dropping such a strong statement without even mention a scientific reference.&nbsp; We should s",
+      "twitter_title": "Socket Shield ruined men. Few understand this.",
+      "twitter_description": "Now I got you reading the article, and you are wondering why I'm dropping such a strong statement without even mention a scientific reference.&nbsp; We should s"
     }
   },
   {
@@ -3081,7 +3285,7 @@
     "featured_image": "https://periospot.com/wp-content/uploads/2021/03/¿Es-la-Conexión-un-Elemento-Protético.png",
     "language": "pt",
     "seo": {
-      "description": "En este artículo se explica la importacia de la conexión protética en el éxito a largo plazo de un tratamiento de implantes. Desde sus implicaciones clínicas como biológicas",
+      "description": "En este artículo se explica la importacia de la conexión protética en el éxito a largo plazo de un tratamiento de implantes. Desde sus implicaciones clínicas c",
       "focus_keyword": "conexión protética",
       "focus_keywords": [
         {
@@ -3095,7 +3299,12 @@
       ],
       "content_score": "30",
       "linkdex": "54",
-      "estimated_reading_time_minutes": "10"
+      "estimated_reading_time_minutes": "10",
+      "title": "Será a Conexão é um Elemento Protético?",
+      "og_title": "Será a Conexão é um Elemento Protético?",
+      "og_description": "Sou de Madrid e \"do Madrid\" e hoje (eu sei) que isso é um factor de risco epidemiológico mas mesmo assim vale a pena... Depois do confinamento, a primeira coisa",
+      "twitter_title": "Será a Conexão é um Elemento Protético?",
+      "twitter_description": "Sou de Madrid e \"do Madrid\" e hoje (eu sei) que isso é um factor de risco epidemiológico mas mesmo assim vale a pena... Depois do confinamento, a primeira coisa"
     }
   },
   {
@@ -3117,11 +3326,16 @@
     "featured_image": "https://periospot.com/wp-content/uploads/2023/03/Tongue-Scrapers-Your-Secret-Weapon-for-Fresh-Breath-and-help-you-have-more-chances-on-Tinder.png",
     "language": "en",
     "seo": {
-      "description": "Discover the benefits of tongue scrapers for maintaining fresh breath and how they can boost your Tinder game. Find the best tongue scrapers to improve your oral hygiene and dating success.",
+      "description": "Discover the benefits of tongue scrapers for maintaining fresh breath and how they can boost your Tinder game. Find the best tongue scrapers to improve your or",
       "focus_keyword": "Tongue scrapers and fresh breath",
       "content_score": "90",
       "linkdex": "64",
-      "estimated_reading_time_minutes": "4"
+      "estimated_reading_time_minutes": "4",
+      "title": "Tongue Scrapers: Your Secret Weapon for Fresh Breath (and h",
+      "og_title": "Tongue Scrapers: Your Secret Weapon for Fresh Breath (and help you ha",
+      "og_description": "How Tongue Scrapers Can Help You Crush It on Tinder Did you know that nearly 30% of the global population suffers from bad breath, also known as halitosis (Ayli",
+      "twitter_title": "Tongue Scrapers: Your Secret Weapon for Fresh Breath (and help you ha",
+      "twitter_description": "How Tongue Scrapers Can Help You Crush It on Tinder Did you know that nearly 30% of the global population suffers from bad breath, also known as halitosis (Ayli"
     }
   },
   {
@@ -3296,7 +3510,12 @@
       ],
       "content_score": "30",
       "linkdex": "72",
-      "estimated_reading_time_minutes": "10"
+      "estimated_reading_time_minutes": "10",
+      "title": "Socket Shield ruined men. Few understand this.",
+      "og_title": "Socket Shield ruined men. Few understand this.",
+      "og_description": "Now I got you reading the article, and you are wondering why I'm dropping such a strong statement without even mention a scientific reference.&nbsp; We should s",
+      "twitter_title": "Socket Shield ruined men. Few understand this.",
+      "twitter_description": "Now I got you reading the article, and you are wondering why I'm dropping such a strong statement without even mention a scientific reference.&nbsp; We should s"
     }
   },
   {
@@ -3348,7 +3567,8 @@
       "og_title": "Understanding the Tooth Extraction Healing Process",
       "og_description": "Explore the fascinating healing process after tooth extraction and its importance for successful implant dentistry.",
       "twitter_title": "The Tooth Extraction Healing Process: What to Expect",
-      "twitter_description": "Discover the fascinating healing process of tooth extraction and its impact on successful implant dentistry."
+      "twitter_description": "Discover the fascinating healing process of tooth extraction and its impact on successful implant dentistry.",
+      "title": "Bone Remodeling After Tooth Extraction: Understanding the H"
     }
   }
 ]
