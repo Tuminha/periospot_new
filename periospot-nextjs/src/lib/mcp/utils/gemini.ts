@@ -136,10 +136,10 @@ export async function generateDentalImage(params: GenerateImageParams): Promise<
 }> {
   const structuredPrompt = buildDentalPrompt(params);
 
-  // Use Gemini 3 Pro Image (Nano Banana Pro) for highest quality image generation
-  // Falls back to gemini-2.0-flash-exp if preview model unavailable
+  // Use Gemini 3 Pro Image (Nano Banana Pro) - best image generation model
+  // Model: gemini-3-pro-image-preview (released Nov 2025)
   const model = getGenAI().getGenerativeModel({
-    model: 'gemini-2.0-flash-exp-image-generation',
+    model: 'gemini-3-pro-image-preview',
     generationConfig: {
       temperature: 0.7,
     },
@@ -216,8 +216,9 @@ Requirements:
 
 IMPORTANT: Create a clean, professional image suitable for business/educational use.`;
 
+  // Use Gemini 3 Pro Image (Nano Banana Pro) - best image generation model
   const model = getGenAI().getGenerativeModel({
-    model: 'gemini-2.0-flash-exp-image-generation',
+    model: 'gemini-3-pro-image-preview',
     generationConfig: {
       temperature: 0.7,
     },
