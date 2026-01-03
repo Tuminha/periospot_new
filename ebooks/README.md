@@ -2,100 +2,73 @@
 
 This folder contains all ebook PDFs for the Periospot library.
 
-## Current Inventory
+## Current Inventory - All 7 Ebooks Uploaded ✅
 
-### Uploaded to Supabase Storage (2 files)
+| File | Language | Topic | Size | Status |
+|------|----------|-------|------|--------|
+| `10-tips-aesthetic-implants-en.pdf` | English | 10 Tips Aesthetic Implantology | 5.0MB | ✅ Uploaded |
+| `17-immutable-laws-en.pdf` | English | 17 Immutable Laws in Implant Dentistry | 23MB | ✅ Uploaded |
+| `17-immutable-laws-pt.pdf` | Portuguese | As 17 Leis Imutáveis | 23MB | ✅ Uploaded |
+| `connective-tissue-grafts-en.pdf` | English | CTG Harvesting Techniques | 9.7MB | ✅ Uploaded |
+| `guided-bone-regeneration-en.pdf` | English | GBR For Dummies | 9.8MB | ✅ Uploaded |
+| `guided-bone-regeneration-es.pdf` | Spanish | Regeneración Ósea Guiada | 22MB | ✅ Uploaded |
+| `guided-bone-regeneration-pt.pdf` | Portuguese | Regeneração Óssea Guiada | 9.9MB | ✅ Uploaded |
 
-| File | Language | Topic | Pages | Size | Status |
-|------|----------|-------|-------|------|--------|
-| `10-tips-aesthetic-implants-en.pdf` | English | 10 Tips Aesthetic Implantology | 18 | 5.0MB | ✅ Uploaded |
-| `guided-bone-regeneration-es.pdf` | Spanish | Regeneración Ósea Guiada | 100 | 22MB | ✅ Uploaded |
+**Total: 7 ebooks in 3 languages (EN, ES, PT)**
 
-### Too Large for Supabase Free Tier (1 file - 50MB limit)
+## Download Flow
 
-| File | Language | Topic | Pages | Size | Status |
-|------|----------|-------|-------|------|--------|
-| `guided-bone-regeneration-pt.pdf` | Portuguese | Regeneração Óssea Guiada | 103 | 165MB | ⚠️ Exceeds 50MB limit |
+### For Logged-in Users
+1. Click "Download" button
+2. Success popup with download button appears
+3. Email sent with backup download link (24h validity)
 
-### Missing PDFs (Dropbox not synced - 0 bytes)
-
-| Expected File | Language | Status |
-|---------------|----------|--------|
-| `10-tips-aesthetic-implants-es.pdf` | Spanish | ❌ Dropbox placeholder |
-| `10-tips-aesthetic-implants-pt.pdf` | Portuguese | ❌ Dropbox placeholder |
-| `17-immutable-laws-en.pdf` | English | ❌ Dropbox placeholder |
-| `17-immutable-laws-pt.pdf` | Portuguese | ❌ Dropbox placeholder |
-| `guided-bone-regeneration-en.pdf` | English | ❌ Dropbox placeholder |
-| `connective-tissue-grafts-en.pdf` | English | ❌ Dropbox placeholder |
+### For Non-Logged-in Users (Lead Generation)
+1. Click "Download" on library page
+2. Email capture dialog appears
+3. User enters email (optional marketing consent)
+4. Success popup with download button appears
+5. Email sent with download link
+6. Lead saved to `ebook_downloads` table
 
 ## Folder Structure
 
 ```
 ebooks/
-├── pdfs/           # PDF files (organized by slug)
-├── covers/         # Cover images (PNG/JPG)
-├── metadata/       # Auto-generated metadata
+├── pdfs/           # PDF files (uploaded to Supabase)
+├── covers/         # Cover images (optional)
+├── metadata/       # Additional metadata (optional)
 └── README.md       # This file
 ```
 
-## How to Upload to Supabase
+## Management Scripts
 
-1. **Run the migration first** (creates database tables):
-   ```bash
-   cd periospot-nextjs
-   npx supabase db push
-   ```
+```bash
+# List all ebooks and their status
+node scripts/upload-ebooks.cjs --list
 
-2. **Upload PDFs to Supabase Storage**:
-   ```bash
-   node scripts/upload-ebooks.js
-   ```
+# Upload new PDFs to Supabase
+node scripts/upload-ebooks.cjs
 
-3. **List current status**:
-   ```bash
-   node scripts/upload-ebooks.js --list
-   ```
+# Dry run (show what would be uploaded)
+node scripts/upload-ebooks.cjs --dry-run
+```
 
-4. **Dry run** (preview without uploading):
-   ```bash
-   node scripts/upload-ebooks.js --dry-run
-   ```
+## Adding New Ebooks
 
-## Download Flow
+1. Add PDF to `ebooks/pdfs/` folder with naming: `{topic}-{language}.pdf`
+2. Add entry to database via Supabase or migration
+3. Run `node scripts/upload-ebooks.cjs` to upload
+4. Verify at `/library` page
 
-### For Logged-in Users
-Direct download from the library page.
+## Naming Convention
 
-### For Non-Logged-in Users (Lead Generation)
-1. User clicks "Download" on library page
-2. Email capture dialog appears
-3. User enters email (optional marketing consent)
-4. Download starts immediately
-5. Lead is saved to `ebook_downloads` table
+Files should be named: `{topic}-{language}.pdf`
 
-## Cover Images
-
-Cover images should be placed in `/public/images/ebooks/`:
-- `10-tips-aesthetic.png`
-- `guided-bone-regeneration.png`
-- `17-immutable-laws.png`
-- `connective-tissue-grafts.png`
-
-## Exporting Missing English PDFs
-
-The English versions of these ebooks exist as iBooks Author files (.iba).
-To create PDF versions:
-
-1. Open the .iba file in iBooks Author (macOS only)
-2. File → Export → PDF
-3. Save to `ebooks/pdfs/` with the correct filename
-4. Run `node scripts/upload-ebooks.js` to upload
-
-### iBooks Author File Locations
-
-- **17 Immutable Laws**: `/Dropbox/Ebook The 17 immutable laws In Implant Dentistry/`
-- **GBR**: `/Dropbox/ebooks para o vitor/GBR iBook/`
-- **CTG**: `/Dropbox/MDS ONLINE ACADEMY/Ebooks as a support material for the course/`
+Examples:
+- `10-tips-aesthetic-implants-en.pdf`
+- `guided-bone-regeneration-es.pdf`
+- `17-immutable-laws-pt.pdf`
 
 ## Authors
 

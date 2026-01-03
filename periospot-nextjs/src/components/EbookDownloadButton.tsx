@@ -13,7 +13,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Download, Lock, Loader2, CheckCircle, ExternalLink } from "lucide-react"
+import { Download, Lock, Loader2, CheckCircle, ExternalLink, Mail, PartyPopper } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { PerioAnalytics } from "@/lib/analytics"
 
@@ -29,6 +29,8 @@ interface EbookDownloadButtonProps {
   className?: string
 }
 
+type DialogMode = "email" | "success" | "register"
+
 export function EbookDownloadButton({
   slug,
   title,
@@ -41,11 +43,14 @@ export function EbookDownloadButton({
   className = "",
 }: EbookDownloadButtonProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [dialogMode, setDialogMode] = useState<DialogMode>("email")
   const [email, setEmail] = useState("")
   const [marketingConsent, setMarketingConsent] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null)
+  const [downloadFilename, setDownloadFilename] = useState<string | null>(null)
 
   const supabase = createClient()
 
@@ -99,6 +104,7 @@ export function EbookDownloadButton({
 
       if (!response.ok) {
         if (data.requiresEmail) {
+          setDialogMode("email")
           setIsDialogOpen(true)
           setIsLoading(false)
           return
@@ -114,6 +120,8 @@ export function EbookDownloadButton({
         })
         // Open external link in new tab
         window.open(data.url, "_blank")
+        setIsSuccess(true)
+        setIsDialogOpen(false)
       } else if (data.type === "download") {
         PerioAnalytics.trackFileDownload({
           fileName: data.filename || slug,
@@ -121,25 +129,35 @@ export function EbookDownloadButton({
           topic,
           language,
         })
-        // Trigger download
-        const link = document.createElement("a")
-        link.href = data.url
-        link.download = data.filename
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+
+        // Store download info for success dialog
+        setDownloadUrl(data.url)
+        setDownloadFilename(data.filename)
+
+        // Show success dialog with download button
+        setDialogMode("success")
+        setIsDialogOpen(true)
+        setIsSuccess(true)
       }
 
-      setIsSuccess(true)
-      setIsDialogOpen(false)
-
-      // Reset success state after 3 seconds
-      setTimeout(() => setIsSuccess(false), 3000)
+      // Reset button success state after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000)
     } catch (err) {
       console.error("Download error:", err)
       setError(err instanceof Error ? err.message : "Download failed")
     } finally {
       setIsLoading(false)
+    }
+  }
+
+  const triggerFileDownload = () => {
+    if (downloadUrl && downloadFilename) {
+      const link = document.createElement("a")
+      link.href = downloadUrl
+      link.download = downloadFilename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
     }
   }
 
@@ -219,80 +237,135 @@ export function EbookDownloadButton({
         {getButtonContent()}
       </Button>
 
-      {/* Email Capture Dialog */}
+      {/* Download Dialog - Email Capture or Success */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Download Free eBook</DialogTitle>
-            <DialogDescription>
-              Enter your email to receive &quot;{title}&quot; directly in your inbox.
-            </DialogDescription>
-          </DialogHeader>
+          {dialogMode === "success" ? (
+            <>
+              {/* Success State */}
+              <DialogHeader className="text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+                  <PartyPopper className="h-8 w-8 text-green-600 dark:text-green-400" />
+                </div>
+                <DialogTitle className="text-xl">Your eBook is Ready!</DialogTitle>
+                <DialogDescription className="text-base">
+                  &quot;{title}&quot; is ready to download.
+                </DialogDescription>
+              </DialogHeader>
 
-          <form onSubmit={handleEmailSubmit}>
-            <div className="space-y-4 py-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email address</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={isLoading}
-                  autoFocus
-                />
+              <div className="space-y-4 py-4">
+                <Button
+                  className="w-full h-12 text-lg"
+                  onClick={() => {
+                    triggerFileDownload()
+                  }}
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download eBook Now
+                </Button>
+
+                <div className="flex items-start gap-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                  <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5 shrink-0" />
+                  <div className="text-sm">
+                    <p className="font-medium text-blue-900 dark:text-blue-100">
+                      Check your inbox!
+                    </p>
+                    <p className="text-blue-700 dark:text-blue-300 mt-1">
+                      We&apos;ve also sent a download link to your email so you can access it anytime.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="marketing"
-                  checked={marketingConsent}
-                  onCheckedChange={(checked) => setMarketingConsent(checked as boolean)}
-                  disabled={isLoading}
-                />
-                <Label htmlFor="marketing" className="text-sm text-muted-foreground">
-                  Send me updates about new educational content and resources
-                </Label>
-              </div>
+              <DialogFooter>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => {
+                    setIsDialogOpen(false)
+                    setDialogMode("email")
+                  }}
+                >
+                  Close
+                </Button>
+              </DialogFooter>
+            </>
+          ) : (
+            <>
+              {/* Email Capture State */}
+              <DialogHeader>
+                <DialogTitle>Download Free eBook</DialogTitle>
+                <DialogDescription>
+                  Enter your email to receive &quot;{title}&quot; directly in your inbox.
+                </DialogDescription>
+              </DialogHeader>
 
-              {error && (
-                <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
-              )}
-            </div>
+              <form onSubmit={handleEmailSubmit}>
+                <div className="space-y-4 py-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email address</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="you@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={isLoading}
+                      autoFocus
+                    />
+                  </div>
 
-            <DialogFooter>
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => setIsDialogOpen(false)}
-                disabled={isLoading}
-              >
-                Cancel
-              </Button>
-              <Button type="submit" disabled={isLoading}>
-                {isLoading ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Download className="mr-2 h-4 w-4" />
-                    Get eBook
-                  </>
-                )}
-              </Button>
-            </DialogFooter>
-          </form>
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="marketing"
+                      checked={marketingConsent}
+                      onCheckedChange={(checked) => setMarketingConsent(checked as boolean)}
+                      disabled={isLoading}
+                    />
+                    <Label htmlFor="marketing" className="text-sm text-muted-foreground">
+                      Send me updates about new educational content and resources
+                    </Label>
+                  </div>
 
-          <p className="text-xs text-center text-muted-foreground mt-2">
-            By downloading, you agree to our{" "}
-            <a href="/privacy" className="underline hover:text-primary">
-              Privacy Policy
-            </a>
-            . We respect your inbox.
-          </p>
+                  {error && (
+                    <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+                  )}
+                </div>
+
+                <DialogFooter>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setIsDialogOpen(false)}
+                    disabled={isLoading}
+                  >
+                    Cancel
+                  </Button>
+                  <Button type="submit" disabled={isLoading}>
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Preparing...
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Get eBook
+                      </>
+                    )}
+                  </Button>
+                </DialogFooter>
+              </form>
+
+              <p className="text-xs text-center text-muted-foreground mt-2">
+                By downloading, you agree to our{" "}
+                <a href="/privacy" className="underline hover:text-primary">
+                  Privacy Policy
+                </a>
+                . We respect your inbox.
+              </p>
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </>
