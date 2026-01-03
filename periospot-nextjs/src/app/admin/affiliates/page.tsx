@@ -433,7 +433,7 @@ export default function AffiliatesDashboard() {
             <Card>
               <CardHeader>
                 <CardTitle>Affiliate Programs</CardTitle>
-                <CardDescription>Programs you're enrolled in and recommendations</CardDescription>
+                <CardDescription>Programs you&apos;re enrolled in and recommendations</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -536,7 +536,7 @@ export default function AffiliatesDashboard() {
                       <div>
                         <h4 className="font-semibold text-yellow-600">1 Broken Link Detected</h4>
                         <p className="text-sm text-muted-foreground mt-1">
-                          "Misch Dental Implant Prosthetics" link is returning 404. Fix to recover lost conversions.
+                          &quot;Misch Dental Implant Prosthetics&quot; link is returning 404. Fix to recover lost conversions.
                         </p>
                         <Button size="sm" className="mt-2" variant="outline">Fix Now</Button>
                       </div>

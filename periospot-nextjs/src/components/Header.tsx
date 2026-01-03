@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"
 import { createBrowserClient } from "@supabase/ssr"
 import { User as SupabaseUser } from "@supabase/supabase-js"
 import { Button } from "@/components/ui/button"
+import { useCart } from "@/lib/woocommerce"
 import { GB, US, ES, PT, BR, CN } from "country-flag-icons/react/3x2"
 
 const ADMIN_EMAIL = "cisco@periospot.com"
@@ -56,6 +57,7 @@ const Header = () => {
   const [user, setUser] = useState<SupabaseUser | null>(null)
   const [isAdmin, setIsAdmin] = useState(false)
   const router = useRouter()
+  const { itemCount } = useCart()
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -301,9 +303,11 @@ const Header = () => {
                 aria-label="Cart"
               >
                 <ShoppingCart size={18} />
-                <span className="absolute -top-0.5 -right-0.5 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center bg-primary text-primary-foreground">
-                  0
-                </span>
+                {itemCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center bg-primary text-primary-foreground">
+                    {itemCount > 9 ? "9+" : itemCount}
+                  </span>
+                )}
               </Link>
             </motion.div>
           </div>
@@ -442,7 +446,7 @@ const Header = () => {
                   className="flex items-center justify-center gap-2 py-2.5 px-4 text-muted-foreground hover:text-foreground border border-border rounded-full transition-colors"
                 >
                   <ShoppingCart size={18} />
-                  <span className="text-sm">0</span>
+                  <span className="text-sm">{itemCount}</span>
                 </Link>
               </div>
             </div>

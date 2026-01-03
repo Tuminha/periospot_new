@@ -36,6 +36,7 @@ import {
   MessageSquare,
   RefreshCw
 } from "lucide-react"
+import { MarkdownRenderer, ChatMarkdownRenderer } from "@/components/MarkdownRenderer"
 
 // Admin email - only this user can access
 const ADMIN_EMAIL = "cisco@periospot.com"
@@ -535,9 +536,9 @@ export default function AdminDashboard() {
                     <Loader2 className="h-6 w-6 animate-spin text-purple-500" />
                   </div>
                 ) : (
-                  <div className="prose prose-sm dark:prose-invert max-w-none">
-                    <p className="text-sm text-muted-foreground whitespace-pre-wrap">{aiReport}</p>
-                  </div>
+                  <ScrollArea className="h-[400px] pr-4">
+                    <MarkdownRenderer content={aiReport} className="text-muted-foreground" />
+                  </ScrollArea>
                 )}
                 <Button
                   variant="outline"
@@ -602,7 +603,11 @@ export default function AdminDashboard() {
                               : "bg-secondary"
                           }`}
                         >
-                          {msg.content}
+                          {msg.role === "assistant" ? (
+                            <ChatMarkdownRenderer content={msg.content} />
+                          ) : (
+                            msg.content
+                          )}
                         </div>
                       </div>
                     ))}
