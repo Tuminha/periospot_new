@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next"
+import { Suspense } from "react"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import Script from "next/script"
 import { Toaster } from "@/components/ui/sonner"
@@ -193,7 +194,11 @@ export default function RootLayout({
             </div>
             <Toaster />
             {shouldLoadGa ? <GoogleAnalytics gaId={gaId!} /> : null}
-            {gaId ? <GaDebug gaId={gaId} /> : null}
+            {gaId ? (
+              <Suspense fallback={null}>
+                <GaDebug gaId={gaId} />
+              </Suspense>
+            ) : null}
           </CartProvider>
         </ThemeProvider>
       </body>
