@@ -33,3 +33,19 @@ Importing 7552 contacts to english audience...
   Processed: 1600/7552
   Processed: 1700/7552
   Processed: 1800/7552
+  Processed: 1900/7552
+  Processed: 2000/7552
+  Processed: 2100/7552
+  Processed: 2200/7552
+  Processed: 2300/7552
+  Processed: 2400/7552
+  Processed: 2500/7552
+  Processed: 2600/7552
+  Processed: 2700/7552
+  Processed: 2800/7552
+  Processed: 2900/7552
+  Processed: 3000/7552
+  Processed: 3100/7552
+  Processed: 3200/7552
+  Processed: 3300/7552
+  Processed: 3400/7552
