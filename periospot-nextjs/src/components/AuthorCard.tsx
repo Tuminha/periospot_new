@@ -26,29 +26,60 @@ interface AuthorData {
 // Extended author database with bios and social links
 const authorDatabase: Record<string, Partial<AuthorData>> = {
   "cisco": {
-    name: "Cisco",
-    bio: "Implant & Digital Dentistry specialist. Periospot founder and managing editor. Global Customer Success Manager Clinical at Straumann Group.",
+    name: "Francisco Teixeira Barbosa",
+    bio: "Implant & Digital Dentistry specialist. Periospot founder and managing editor. Executive Director at FOR. Global Customer Success Manager Clinical at Straumann Group.",
     role: "Founder & Editor",
-    avatar: "https://secure.gravatar.com/avatar/1e2b8d8c1c9b3d4e5f6a7b8c9d0e1f2a?s=150&d=mp",
+    avatar: "/images/team/cisco.jpg",
     social: {
-      twitter: "https://twitter.com/periospot",
-      linkedin: "https://www.linkedin.com/in/franciscoteixeirabarbosa/",
-      instagram: "https://www.instagram.com/periospot/",
-      youtube: "https://www.youtube.com/c/periospot",
+      twitter: "https://x.com/cisco_research",
+      linkedin: "https://www.linkedin.com/in/francisco-teixeira-barbosa/",
+      instagram: "https://www.instagram.com/tuminha_dds/",
+      youtube: "https://www.youtube.com/@tuminha21",
       website: "https://periospot.com"
     }
   },
   "francisco": {
     name: "Francisco Teixeira Barbosa",
-    bio: "Implant & Digital Dentistry specialist. Periospot founder and managing editor. Global Customer Success Manager Clinical at Straumann Group.",
+    bio: "Implant & Digital Dentistry specialist. Periospot founder and managing editor. Executive Director at FOR. Global Customer Success Manager Clinical at Straumann Group.",
     role: "Founder & Editor",
-    avatar: "https://secure.gravatar.com/avatar/1e2b8d8c1c9b3d4e5f6a7b8c9d0e1f2a?s=150&d=mp",
+    avatar: "/images/team/cisco.jpg",
     social: {
-      twitter: "https://twitter.com/periospot",
-      linkedin: "https://www.linkedin.com/in/franciscoteixeirabarbosa/",
-      instagram: "https://www.instagram.com/periospot/",
-      youtube: "https://www.youtube.com/c/periospot",
+      twitter: "https://x.com/cisco_research",
+      linkedin: "https://www.linkedin.com/in/francisco-teixeira-barbosa/",
+      instagram: "https://www.instagram.com/tuminha_dds/",
+      youtube: "https://www.youtube.com/@tuminha21",
       website: "https://periospot.com"
+    }
+  },
+  "francisco-teixeira-barbosa": {
+    name: "Francisco Teixeira Barbosa",
+    bio: "Implant & Digital Dentistry specialist. Periospot founder and managing editor. Executive Director at FOR. Global Customer Success Manager Clinical at Straumann Group.",
+    role: "Founder & Editor",
+    avatar: "/images/team/cisco.jpg",
+    social: {
+      twitter: "https://x.com/cisco_research",
+      linkedin: "https://www.linkedin.com/in/francisco-teixeira-barbosa/",
+      instagram: "https://www.instagram.com/tuminha_dds/",
+      youtube: "https://www.youtube.com/@tuminha21",
+      website: "https://periospot.com"
+    }
+  },
+  "daniel-robles": {
+    name: "Daniel Robles Cantero",
+    bio: "Doctor in Dental Science from UCM Madrid. Master's in Periodontics and Oral Implantology. Clinical Director at UEMC University. National and International Speaker in Oral Surgery.",
+    role: "Editor (Spanish)",
+    avatar: "/images/team/daniel.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/daniel-robles-cantero-97196519/"
+    }
+  },
+  "daniel-robles-cantero": {
+    name: "Daniel Robles Cantero",
+    bio: "Doctor in Dental Science from UCM Madrid. Master's in Periodontics and Oral Implantology. Clinical Director at UEMC University. National and International Speaker in Oral Surgery.",
+    role: "Editor (Spanish)",
+    avatar: "/images/team/daniel.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/daniel-robles-cantero-97196519/"
     }
   },
   "vitor-bras": {

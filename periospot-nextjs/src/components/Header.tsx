@@ -99,25 +99,8 @@ const Header = () => {
         { label: "中文", path: "/blog/zh", flagCode: "CN" },
       ],
     },
-    {
-      label: "Library",
-      children: [
-        { label: "English", path: "/library", flagCode: "GB,US" },
-        { label: "Español", path: "/library/es", flagCode: "ES" },
-        { label: "Português", path: "/library/pt", flagCode: "PT,BR" },
-        { label: "中文", path: "/library/zh", flagCode: "CN" },
-      ],
-    },
-    {
-      label: "Resources Center",
-      children: [
-        { label: "Cisco's Workstation", path: "/resources/workstation" },
-        { label: "Apps & Software", path: "/resources/apps" },
-        { label: "Periospot Patrons", path: "/resources/patrons" },
-        { label: "Webinars Toolkit", path: "/resources/webinars-toolkit" },
-      ],
-    },
-    // Online Learning hidden - no content yet
+    { label: "Library", path: "/library" },
+    { label: "Store", path: "/tienda" },
     { label: "Team & Contact", path: "/team" },
   ]
 

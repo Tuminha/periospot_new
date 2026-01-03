@@ -8,8 +8,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: [
           "/api/",
-          "/auth/callback",
+          "/auth/",
           "/dashboard/",
+          "/cart/",
+          "/checkout/",
+          "/search/",
           "/_next/",
           "/private/",
         ],
@@ -17,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "Googlebot",
         allow: "/",
-        disallow: ["/api/", "/auth/callback", "/dashboard/"],
+        disallow: ["/api/", "/auth/", "/dashboard/", "/cart/", "/checkout/", "/search/"],
       },
     ],
     sitemap: "https://periospot.com/sitemap.xml",

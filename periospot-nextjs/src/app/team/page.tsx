@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -11,7 +12,6 @@ import {
   Instagram,
   Youtube,
   Github,
-  Facebook,
   MapPin,
   Users,
   BookOpen,
@@ -79,16 +79,15 @@ const teamMembers = [
     nickname: "Cisco",
     role: "Founder & Editor in Chief",
     image: "/images/team/cisco.jpg",
-    bio: "Periospot founder. Editor in chief for Periospot in English and sometimes in Spanish and Portuguese. DDS since 2004. Specialized in Implant and Digital dentistry. Works for Straumann Group as Global Customer Success Manager DSO. International speaker with more than 50 published articles and 8 ebooks about implant and regenerative dentistry.",
+    bio: "Periospot founder. Editor in chief for Periospot in English and sometimes in Spanish and Portuguese. DDS since 2004. Specialized in Implant and Digital dentistry. Executive Director at Foundation for Oral Rehabilitation (FOR). Works for Straumann Group as Global Customer Success Manager DSO. International speaker with more than 50 published articles and 8 ebooks about implant and regenerative dentistry.",
     quote: "Everything I say can be biased, but is up to you to consider my advice",
     specialties: ["Implant Dentistry", "Digital Dentistry", "Regenerative Dentistry"],
     social: {
-      linkedin: "https://linkedin.com/in/franciscoteixeirabarbosa",
-      twitter: "https://x.com/periospot",
-      instagram: "https://instagram.com/periospot",
+      linkedin: "https://www.linkedin.com/in/francisco-teixeira-barbosa/",
+      twitter: "https://x.com/cisco_research",
+      instagram: "https://www.instagram.com/tuminha_dds/",
       youtube: "https://youtube.com/@tuminha21",
       github: "https://github.com/Tuminha",
-      facebook: "https://facebook.com/periospot",
     },
   },
   {
@@ -97,11 +96,11 @@ const teamMembers = [
     nickname: "Daniel",
     role: "Editor in Chief (Spanish Section)",
     image: "/images/team/daniel.jpg",
-    bio: "Doctor in Dental Science (D.D.S.) from UCM Madrid with Master's in Periodontics and Oral Implantology. Clinical Director and Co-Director of multiple university Master's programs. Professor at multiple Madrid institutions. Board member of SCOI and editor for Journal of Diagnostic and Treatment of Oral and Maxillofacial Pathology.",
+    bio: "Doctor in Dental Science (D.D.S.) from Universidad Complutense de Madrid with Master's in Periodontics and Oral Implantology from Universidad de Almería. Clinical Director at UEMC University and Co-Director of multiple university Master's programs. Professor at multiple Madrid institutions. Member of SECIB, SEPA, SEASCDO, SECUB, and ITI. National and International Speaker in Oral Surgery and Bone Grafting.",
     quote: "Happiness is key for success, but success is not key for happiness",
-    specialties: ["Periodontics", "Oral Implantology", "Academic Education"],
+    specialties: ["Periodontics", "Oral Implantology", "Oral Surgery", "Academic Education"],
     social: {
-      linkedin: "https://linkedin.com/in/danielroblescantero",
+      linkedin: "https://www.linkedin.com/in/daniel-robles-cantero-97196519/",
     },
   },
 ]
@@ -166,10 +165,20 @@ export default function TeamPage() {
             {teamMembers.map((member) => (
               <Card key={member.id} className="overflow-hidden">
                 <div className="md:flex">
-                  <div className="flex h-48 w-full items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5 md:h-auto md:w-48 md:flex-shrink-0">
-                    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary text-3xl font-bold text-primary-foreground">
-                      {member.nickname.charAt(0)}
-                    </div>
+                  <div className="relative flex h-48 w-full items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5 md:h-auto md:w-48 md:shrink-0">
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={192}
+                        height={192}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary text-3xl font-bold text-primary-foreground">
+                        {member.nickname.charAt(0)}
+                      </div>
+                    )}
                   </div>
                   <div className="flex-1">
                     <CardHeader>
@@ -241,16 +250,6 @@ export default function TeamPage() {
                             className="rounded-full p-2 hover:bg-secondary"
                           >
                             <Github className="h-4 w-4" />
-                          </a>
-                        )}
-                        {member.social.facebook && (
-                          <a
-                            href={member.social.facebook}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full p-2 hover:bg-secondary"
-                          >
-                            <Facebook className="h-4 w-4" />
                           </a>
                         )}
                       </div>
