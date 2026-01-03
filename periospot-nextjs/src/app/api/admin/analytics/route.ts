@@ -1,106 +1,205 @@
 import { NextResponse } from "next/server"
 import { createClient } from "@supabase/supabase-js"
+import { BetaAnalyticsDataClient } from "@google-analytics/data"
 
-// This route fetches analytics data from Supabase
-// In production, you would integrate with analytics services like:
-// - Vercel Analytics API
-// - Google Analytics Data API
-// - PostHog, Mixpanel, etc.
+// Initialize GA4 client with credentials
+function getGA4Client() {
+  const credentials = process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON
+
+  if (!credentials) {
+    return null
+  }
+
+  try {
+    const parsedCredentials = JSON.parse(credentials)
+    return new BetaAnalyticsDataClient({
+      credentials: parsedCredentials,
+    })
+  } catch {
+    console.error("Failed to parse GA4 credentials")
+    return null
+  }
+}
+
+async function fetchGA4Data(propertyId: string) {
+  const client = getGA4Client()
+  if (!client) return null
+
+  try {
+    const [
+      overviewReport,
+      topPagesReport,
+      countriesReport,
+    ] = await Promise.all([
+      // Overview metrics for different time periods
+      client.runReport({
+        property: `properties/${propertyId}`,
+        dateRanges: [
+          { startDate: "7daysAgo", endDate: "today" },
+          { startDate: "30daysAgo", endDate: "today" },
+        ],
+        metrics: [
+          { name: "activeUsers" },
+          { name: "newUsers" },
+          { name: "sessions" },
+          { name: "screenPageViews" },
+        ],
+      }),
+
+      // Top pages
+      client.runReport({
+        property: `properties/${propertyId}`,
+        dateRanges: [{ startDate: "30daysAgo", endDate: "today" }],
+        dimensions: [{ name: "pagePath" }],
+        metrics: [{ name: "screenPageViews" }],
+        orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
+        limit: 10,
+      }),
+
+      // Top countries
+      client.runReport({
+        property: `properties/${propertyId}`,
+        dateRanges: [{ startDate: "30daysAgo", endDate: "today" }],
+        dimensions: [{ name: "country" }],
+        metrics: [{ name: "activeUsers" }],
+        orderBys: [{ metric: { metricName: "activeUsers" }, desc: true }],
+        limit: 10,
+      }),
+    ])
+
+    // Parse overview metrics
+    const last7DaysMetrics = overviewReport[0].rows?.[0]?.metricValues || []
+    const last30DaysMetrics = overviewReport[0].rows?.[1]?.metricValues || []
+
+    // Parse top pages
+    const topPages = (topPagesReport[0].rows || []).map((row) => ({
+      page: row.dimensionValues?.[0]?.value || "",
+      views: parseInt(row.metricValues?.[0]?.value || "0"),
+    }))
+
+    // Country flags mapping
+    const countryFlags: Record<string, string> = {
+      "United States": "🇺🇸",
+      "Spain": "🇪🇸",
+      "Brazil": "🇧🇷",
+      "Mexico": "🇲🇽",
+      "Portugal": "🇵🇹",
+      "Argentina": "🇦🇷",
+      "Colombia": "🇨🇴",
+      "United Kingdom": "🇬🇧",
+      "Germany": "🇩🇪",
+      "France": "🇫🇷",
+      "Italy": "🇮🇹",
+      "Canada": "🇨🇦",
+      "India": "🇮🇳",
+      "Australia": "🇦🇺",
+      "Japan": "🇯🇵",
+      "China": "🇨🇳",
+      "Netherlands": "🇳🇱",
+      "Belgium": "🇧🇪",
+      "Switzerland": "🇨🇭",
+      "Chile": "🇨🇱",
+      "Peru": "🇵🇪",
+      "Venezuela": "🇻🇪",
+      "Ecuador": "🇪🇨",
+      "(not set)": "🌍",
+    }
+
+    // Parse countries
+    const topCountries = (countriesReport[0].rows || []).map((row) => {
+      const country = row.dimensionValues?.[0]?.value || ""
+      return {
+        country,
+        users: parseInt(row.metricValues?.[0]?.value || "0"),
+        flag: countryFlags[country] || "🌍",
+      }
+    })
+
+    return {
+      users: {
+        last7Days: parseInt(last7DaysMetrics[0]?.value || "0"),
+        last15Days: Math.round(
+          (parseInt(last7DaysMetrics[0]?.value || "0") +
+            parseInt(last30DaysMetrics[0]?.value || "0")) /
+            2
+        ),
+        last30Days: parseInt(last30DaysMetrics[0]?.value || "0"),
+        pageViews7Days: parseInt(last7DaysMetrics[3]?.value || "0"),
+        pageViews30Days: parseInt(last30DaysMetrics[3]?.value || "0"),
+        newUsers7Days: parseInt(last7DaysMetrics[1]?.value || "0"),
+        newUsers30Days: parseInt(last30DaysMetrics[1]?.value || "0"),
+      },
+      topPages,
+      topCountries,
+    }
+  } catch (error) {
+    console.error("GA4 API error:", error)
+    return null
+  }
+}
 
 export async function GET() {
-  // Verify admin access (in production, add proper auth check)
-
   try {
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     )
 
-    // Get user counts by time period
-    const now = new Date()
-    const last7Days = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
-    const last15Days = new Date(now.getTime() - 15 * 24 * 60 * 60 * 1000)
-    const last30Days = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
-    const last6Months = new Date(now.getTime() - 180 * 24 * 60 * 60 * 1000)
-    const lastYear = new Date(now.getTime() - 365 * 24 * 60 * 60 * 1000)
+    // Fetch real subscriber count from Supabase
+    const { count: subscriberCount } = await supabase
+      .from("subscribers")
+      .select("*", { count: "exact", head: true })
 
-    // Query users from auth.users (requires service role key)
-    // For now, return mock data as we don't have analytics tables set up
+    // Fetch GA4 data if configured
+    const propertyId = process.env.GA4_PROPERTY_ID
+    const ga4Data = propertyId ? await fetchGA4Data(propertyId) : null
 
+    // Build analytics data with real GA4 data where available
     const analyticsData = {
       users: {
-        last7Days: 342,
-        last15Days: 687,
-        last30Days: 1245,
-        last6Months: 4521,
-        lastYear: 8934,
-        total: 12456,
-        churned6Months: 234,
-        churnedYear: 567,
+        last7Days: ga4Data?.users.last7Days ?? 0,
+        last15Days: ga4Data?.users.last15Days ?? 0,
+        last30Days: ga4Data?.users.last30Days ?? 0,
+        last6Months: 0, // Would need separate query
+        lastYear: 0, // Would need separate query
+        total: ga4Data?.users.last30Days ?? 0, // Using 30-day as approximation
+        churned6Months: 0, // Requires user tracking
+        churnedYear: 0, // Requires user tracking
       },
       engagement: {
-        topPages: [
-          { page: "/blog/socket-shield-technique", views: 4521 },
-          { page: "/blog/immediate-implant-placement", views: 3892 },
-          { page: "/tienda/socket-shield-kit", views: 2845 },
-          { page: "/assessments/implantology-quiz", views: 2234 },
-          { page: "/blog/bone-grafting-techniques", views: 1987 },
-          { page: "/library", views: 1654 },
-          { page: "/blog/aesthetic-zone-implants", views: 1432 },
-          { page: "/team", views: 1234 },
-          { page: "/blog/periodontal-regeneration", views: 1123 },
-          { page: "/tienda", views: 987 },
-        ],
+        topPages: ga4Data?.topPages || [],
         topLinks: [
-          { url: "YouTube Channel", clicks: 2341 },
-          { url: "Instagram @periospot", clicks: 1892 },
-          { url: "Socket Shield Course", clicks: 1654 },
-          { url: "Patreon Link", clicks: 1234 },
-          { url: "Newsletter Signup", clicks: 987 },
+          // Links would need event tracking - placeholder for now
+          { url: "YouTube Channel", clicks: 0 },
+          { url: "Instagram @periospot", clicks: 0 },
         ],
         topActiveUsers: [
-          { email: "dr.martinez@clinic.com", actions: 156 },
-          { email: "dental.pro@gmail.com", actions: 134 },
-          { email: "implant.expert@mail.com", actions: 98 },
-          { email: "perio.specialist@clinic.es", actions: 87 },
-          { email: "oral.surgeon@hospital.pt", actions: 76 },
+          // Would need user-level tracking
         ],
       },
       geography: {
-        topCountries: [
-          { country: "Spain", users: 3456, flag: "🇪🇸" },
-          { country: "United States", users: 2341, flag: "🇺🇸" },
-          { country: "Brazil", users: 1987, flag: "🇧🇷" },
-          { country: "Mexico", users: 1234, flag: "🇲🇽" },
-          { country: "Portugal", users: 987, flag: "🇵🇹" },
-          { country: "Argentina", users: 765, flag: "🇦🇷" },
-          { country: "Colombia", users: 543, flag: "🇨🇴" },
-          { country: "United Kingdom", users: 432, flag: "🇬🇧" },
-          { country: "Germany", users: 321, flag: "🇩🇪" },
-          { country: "Italy", users: 234, flag: "🇮🇹" },
-        ],
+        topCountries: ga4Data?.topCountries || [],
       },
       newsletter: {
-        lastSent: {
-          subject: "The Periospot Brew #47: Socket Shield Updates",
-          date: "January 2, 2026",
-          opens: 4521,
-          clicks: 892,
-        },
-        totalSubscribers: 18934,
-        openRate: 42.3,
-        clickRate: 8.7,
+        lastSent: null, // Would need email service integration
+        totalSubscribers: subscriberCount || 0,
+        openRate: 0, // Would need email service integration
+        clickRate: 0, // Would need email service integration
       },
       recentActivity: [
-        { action: "New user signed up", user: "dr.new@clinic.com", timestamp: "2 min ago" },
-        { action: "Completed Implantology Quiz", user: "student@dental.edu", timestamp: "5 min ago" },
-        { action: "Purchased Socket Shield Kit", user: "buyer@gmail.com", timestamp: "12 min ago" },
-        { action: "Downloaded eBook", user: "reader@mail.com", timestamp: "18 min ago" },
-        { action: "Newsletter subscription", user: "subscriber@email.com", timestamp: "25 min ago" },
-        { action: "Left a comment", user: "commenter@dental.com", timestamp: "32 min ago" },
-        { action: "Viewed 5 articles", user: "learner@clinic.es", timestamp: "45 min ago" },
-        { action: "Started assessment", user: "tester@hospital.pt", timestamp: "1 hour ago" },
+        // Would need activity logging
       ],
+      // Include raw GA4 metrics for display
+      ga4: ga4Data
+        ? {
+            available: true,
+            pageViews7Days: ga4Data.users.pageViews7Days,
+            pageViews30Days: ga4Data.users.pageViews30Days,
+            newUsers7Days: ga4Data.users.newUsers7Days,
+            newUsers30Days: ga4Data.users.newUsers30Days,
+          }
+        : { available: false },
+      lastUpdated: new Date().toISOString(),
     }
 
     return NextResponse.json(analyticsData)

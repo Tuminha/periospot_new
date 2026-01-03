@@ -67,6 +67,14 @@ interface AnalyticsData {
     clickRate: number
   }
   recentActivity: { action: string; user: string; timestamp: string }[]
+  ga4?: {
+    available: boolean
+    pageViews7Days?: number
+    pageViews30Days?: number
+    newUsers7Days?: number
+    newUsers30Days?: number
+  }
+  lastUpdated?: string
 }
 
 interface ChatMessage {
@@ -224,71 +232,94 @@ export default function AdminDashboard() {
           <p className="text-muted-foreground mt-1">
             Welcome back, Cisco. Here&apos;s your Periospot overview.
           </p>
+          <div className="flex items-center gap-2 mt-2 flex-wrap">
+            {data.ga4?.available ? (
+              <Badge variant="outline" className="border-green-500 text-green-500">
+                <Activity className="mr-1 h-3 w-3" />
+                Live GA4 Data
+              </Badge>
+            ) : (
+              <Badge variant="outline" className="border-yellow-500 text-yellow-500">
+                GA4 Not Connected
+              </Badge>
+            )}
+            {data.lastUpdated && (
+              <span className="text-xs text-muted-foreground">
+                <Clock className="inline h-3 w-3 mr-1" />
+                Updated: {new Date(data.lastUpdated).toLocaleTimeString()}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Main Grid */}
         <div className="grid gap-6 lg:grid-cols-3">
           {/* Left Column - Stats & Analytics */}
           <div className="lg:col-span-2 space-y-6">
-            {/* User Stats Row */}
+            {/* GA4 Traffic Stats Row */}
             <div className="grid gap-4 md:grid-cols-4">
               <StatCard
-                title="Last 7 Days"
-                subtitle="New user signups"
+                title="Active Users (7d)"
+                subtitle="Unique visitors from GA4"
                 value={data.users.last7Days}
                 icon={Users}
-                trend={12}
                 color="blue"
+                isRealData={data.ga4?.available}
               />
               <StatCard
-                title="Last 15 Days"
-                subtitle="New user signups"
-                value={data.users.last15Days}
-                icon={UserCheck}
-                trend={8}
+                title="Page Views (7d)"
+                subtitle="Total page views from GA4"
+                value={data.ga4?.pageViews7Days || 0}
+                icon={Eye}
                 color="green"
+                isRealData={data.ga4?.available}
               />
               <StatCard
-                title="Last 30 Days"
-                subtitle="Active visitors"
+                title="Active Users (30d)"
+                subtitle="Unique visitors from GA4"
                 value={data.users.last30Days}
                 icon={Activity}
-                trend={-3}
                 color="yellow"
+                isRealData={data.ga4?.available}
               />
               <StatCard
-                title="Total Users"
-                subtitle="All registered accounts"
-                value={data.users.total}
-                icon={Globe}
+                title="Page Views (30d)"
+                subtitle="Total page views from GA4"
+                value={data.ga4?.pageViews30Days || 0}
+                icon={BarChart3}
                 color="purple"
+                isRealData={data.ga4?.available}
               />
             </div>
 
-            {/* Churn Stats */}
+            {/* New Users & Subscribers */}
             <div className="grid gap-4 md:grid-cols-2">
-              <Card className="border-orange-500/20 bg-orange-500/5">
+              <Card className="border-blue-500/20 bg-blue-500/5">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium flex items-center gap-2">
-                    <UserMinus className="h-4 w-4 text-orange-500" />
-                    Churned (6 Months)
+                    <UserCheck className="h-4 w-4 text-blue-500" />
+                    New Users (7 Days)
+                    {data.ga4?.available && (
+                      <Badge variant="outline" className="ml-auto text-[10px] border-green-500/50 text-green-500">GA4</Badge>
+                    )}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-2xl font-bold text-orange-600">{data.users.churned6Months}</p>
-                  <p className="text-xs text-muted-foreground">Users inactive for 6+ months</p>
+                  <p className="text-2xl font-bold text-blue-600">{data.ga4?.newUsers7Days || 0}</p>
+                  <p className="text-xs text-muted-foreground">First-time visitors this week</p>
                 </CardContent>
               </Card>
-              <Card className="border-red-500/20 bg-red-500/5">
+              <Card className="border-green-500/20 bg-green-500/5">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium flex items-center gap-2">
-                    <UserMinus className="h-4 w-4 text-red-500" />
-                    Churned (1 Year)
+                    <Mail className="h-4 w-4 text-green-500" />
+                    Newsletter Subscribers
+                    <Badge variant="outline" className="ml-auto text-[10px] border-green-500/50 text-green-500">Supabase</Badge>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-2xl font-bold text-red-600">{data.users.churnedYear}</p>
-                  <p className="text-xs text-muted-foreground">Users inactive for 1+ year</p>
+                  <p className="text-2xl font-bold text-green-600">{data.newsletter.totalSubscribers.toLocaleString()}</p>
+                  <p className="text-xs text-muted-foreground">Total email subscribers</p>
                 </CardContent>
               </Card>
             </div>
@@ -664,6 +695,7 @@ function StatCard({
   icon: Icon,
   trend,
   color = "blue",
+  isRealData,
 }: {
   title: string
   subtitle?: string
@@ -671,6 +703,7 @@ function StatCard({
   icon: React.ComponentType<{ className?: string }>
   trend?: number
   color?: "blue" | "green" | "yellow" | "purple" | "orange" | "red"
+  isRealData?: boolean
 }) {
   const colors = {
     blue: "text-blue-500 bg-blue-500/10",
@@ -682,12 +715,24 @@ function StatCard({
   }
 
   return (
-    <Card>
+    <Card className={isRealData ? "border-green-500/20" : ""}>
       <CardContent className="pt-6">
         <div className="flex items-center justify-between">
           <div className={`rounded-lg p-2 ${colors[color]}`}>
             <Icon className="h-5 w-5" />
           </div>
+          {isRealData !== undefined && (
+            <Badge
+              variant="outline"
+              className={`text-[9px] px-1.5 py-0 ${
+                isRealData
+                  ? "border-green-500/50 text-green-500"
+                  : "border-yellow-500/50 text-yellow-500"
+              }`}
+            >
+              {isRealData ? "Live" : "Mock"}
+            </Badge>
+          )}
           {trend !== undefined && (
             <div className={`flex items-center text-xs ${trend >= 0 ? "text-green-500" : "text-red-500"}`}>
               {trend >= 0 ? <TrendingUp className="h-3 w-3 mr-1" /> : <TrendingDown className="h-3 w-3 mr-1" />}
