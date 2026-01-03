@@ -59,8 +59,8 @@ export const postToolManifests: MCPToolManifest[] = [
         },
         status: {
           type: 'string',
-          description: 'Post status',
-          enum: ['draft', 'published'],
+          description: 'Post status. Note: MCP cannot publish directly - use submit_for_review to request admin approval.',
+          enum: ['draft', 'pending_review'],
           default: 'draft',
         },
         is_featured: {
@@ -124,8 +124,8 @@ export const postToolManifests: MCPToolManifest[] = [
         },
         status: {
           type: 'string',
-          description: 'New status',
-          enum: ['draft', 'published', 'archived'],
+          description: 'New status. Note: MCP cannot set to published - use submit_for_review to request admin approval.',
+          enum: ['draft', 'pending_review', 'archived'],
         },
         is_featured: {
           type: 'boolean',
@@ -223,18 +223,22 @@ export const postToolManifests: MCPToolManifest[] = [
     },
   },
   {
-    name: 'publish_post',
-    description: 'Publish a draft post immediately',
+    name: 'submit_for_review',
+    description: 'Submit a draft post for admin review. The post will appear in the admin dashboard pending queue. NOTE: This does NOT publish the post - only an authenticated admin can approve and publish content.',
     parameters: {
       type: 'object',
       properties: {
         post_id: {
           type: 'string',
-          description: 'The UUID of the post',
+          description: 'The UUID of the post to submit for review',
         },
         slug: {
           type: 'string',
-          description: 'The slug of the post',
+          description: 'The slug of the post to submit for review',
+        },
+        notes: {
+          type: 'string',
+          description: 'Optional notes for the admin reviewer',
         },
       },
       required: [],
@@ -256,7 +260,7 @@ interface CreatePostParams {
   featured_image_alt?: string;
   meta_title?: string;
   meta_description?: string;
-  status?: 'draft' | 'published';
+  status?: 'draft' | 'pending_review';
   is_featured?: boolean;
 }
 
@@ -272,8 +276,14 @@ interface UpdatePostParams {
   featured_image_alt?: string;
   meta_title?: string;
   meta_description?: string;
-  status?: 'draft' | 'published' | 'archived';
+  status?: 'draft' | 'pending_review' | 'archived';
   is_featured?: boolean;
+}
+
+interface SubmitForReviewParams {
+  post_id?: string;
+  slug?: string;
+  notes?: string;
 }
 
 interface GetPostsParams {
@@ -362,6 +372,10 @@ export const postTools = {
     // Categories array (using the category slug)
     const categoriesArray = category ? [category] : [];
 
+    // IMPORTANT: MCP cannot create published posts - force status to draft or pending_review
+    const allowedStatuses = ['draft', 'pending_review'];
+    const safeStatus = allowedStatuses.includes(status) ? status : 'draft';
+
     // Create the post
     const { data: post, error } = await supabase
       .from('posts')
@@ -378,10 +392,11 @@ export const postTools = {
         category_id,
         categories: categoriesArray,  // Store in array column too
         tags: tagsArray,              // Store in array column
-        status,
+        status: safeStatus,
+        source: 'mcp',  // Mark as created by MCP
         is_featured,
         reading_time_minutes,
-        published_at: status === 'published' ? new Date().toISOString() : null,
+        published_at: null,  // MCP cannot publish directly
       })
       .select()
       .single();
@@ -466,10 +481,11 @@ export const postTools = {
     if (updates.meta_description)
       updateData.meta_description = updates.meta_description;
     if (updates.status) {
-      updateData.status = updates.status;
-      if (updates.status === 'published') {
-        updateData.published_at = new Date().toISOString();
+      // IMPORTANT: MCP cannot set status to published (runtime guard for API safety)
+      if ((updates.status as string) === 'published') {
+        throw new Error('MCP cannot publish posts directly. Use submit_for_review to request admin approval.');
       }
+      updateData.status = updates.status;
     }
     if (typeof updates.is_featured === 'boolean') {
       updateData.is_featured = updates.is_featured;
@@ -689,20 +705,27 @@ export const postTools = {
     }
   },
 
-  async publish_post(
-    params: GetPostParams,
+  async submit_for_review(
+    params: SubmitForReviewParams,
     supabase: SupabaseClient
-  ): Promise<{ message: string; url: string }> {
-    const { post_id, slug } = params;
+  ): Promise<{ message: string; post_id: string; status: string; note: string }> {
+    const { post_id, slug, notes } = params;
 
     if (!post_id && !slug) {
       throw new Error('Either post_id or slug is required');
     }
 
-    let query = supabase.from('posts').update({
-      status: 'published',
-      published_at: new Date().toISOString(),
-    });
+    // Build update data
+    const updateData: Record<string, unknown> = {
+      status: 'pending_review',
+      updated_at: new Date().toISOString(),
+    };
+
+    if (notes) {
+      updateData.review_notes = notes;
+    }
+
+    let query = supabase.from('posts').update(updateData);
 
     if (post_id) {
       query = query.eq('id', post_id);
@@ -713,12 +736,28 @@ export const postTools = {
     const { data: post, error } = await query.select().single();
 
     if (error) {
-      throw new Error(`Failed to publish post: ${error.message}`);
+      throw new Error(`Failed to submit post for review: ${error.message}`);
+    }
+
+    // Log to post history
+    try {
+      await supabase.from('post_history').insert({
+        post_id: post.id,
+        action: 'submitted_for_review',
+        new_status: 'pending_review',
+        changed_by_source: 'mcp',
+        notes: notes || 'Submitted via Claude MCP',
+      });
+    } catch (historyError) {
+      // Don't fail if history logging fails
+      console.error('Failed to log post history:', historyError);
     }
 
     return {
-      message: `Post "${post.title}" published successfully`,
-      url: `https://periospot.com/blog/${post.slug}`,
+      message: `Post "${post.title}" submitted for admin review`,
+      post_id: post.id,
+      status: 'pending_review',
+      note: 'An admin will review and publish this post. You can view pending posts at /admin/posts',
     };
   },
 };

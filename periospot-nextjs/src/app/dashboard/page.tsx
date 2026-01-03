@@ -20,7 +20,8 @@ import {
   Mail,
   Calendar,
   Award,
-  TrendingUp
+  TrendingUp,
+  Home
 } from "lucide-react"
 
 export default function DashboardPage() {
@@ -81,6 +82,12 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className="flex gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/">
+                <Home className="mr-2 h-4 w-4" />
+                Home
+              </Link>
+            </Button>
             <Button variant="outline" size="sm" asChild>
               <Link href="/dashboard/settings">
                 <Settings className="mr-2 h-4 w-4" />

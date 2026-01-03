@@ -5,7 +5,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { BookOpen, FileText, Video, Download, Lock } from "lucide-react"
+import { BookOpen, FileText, Video, Download, Lock, Globe } from "lucide-react"
+import { createClient } from "@/lib/supabase/server"
+import { EbookDownloadButton } from "@/components/EbookDownloadButton"
 
 export const metadata: Metadata = {
   title: "Library | Periospot - Dental Education Resources",
@@ -28,46 +30,36 @@ export const metadata: Metadata = {
   },
 }
 
-// Mock library data (in production, this would come from a database)
-const ebooks = [
-  {
-    id: "1",
-    title: "Complete Guide to Immediate Implant Placement",
-    description:
-      "A comprehensive guide covering all aspects of immediate implant placement, from case selection to prosthetic protocols.",
-    author: "Dr. Francisco Teixeira Barbosa",
-    pages: 156,
-    format: "PDF",
-    coverImage: "/images/ebooks/immediate-implants.jpg",
-    isPremium: true,
-    category: "Implantology",
-  },
-  {
-    id: "2",
-    title: "Socket Shield Technique: Step-by-Step",
-    description:
-      "Detailed protocol for the Socket Shield technique with clinical cases and troubleshooting tips.",
-    author: "Dr. Darcio Fonseca",
-    pages: 98,
-    format: "PDF",
-    coverImage: "/images/ebooks/socket-shield.jpg",
-    isPremium: true,
-    category: "Implantology",
-  },
-  {
-    id: "3",
-    title: "Periodontal Regeneration Fundamentals",
-    description:
-      "Evidence-based approaches to periodontal regeneration including GTR and growth factors.",
-    author: "Periospot Team",
-    pages: 124,
-    format: "PDF",
-    coverImage: "/images/ebooks/perio-regen.jpg",
-    isPremium: false,
-    category: "Periodontics",
-  },
-]
+// Fetch ebooks from database
+async function getEbooks() {
+  const supabase = await createClient()
 
+  const { data: ebooks, error } = await supabase
+    .from('ebooks')
+    .select('*')
+    .eq('is_published', true)
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    console.error('Error fetching ebooks:', error)
+    return []
+  }
+
+  return ebooks || []
+}
+
+// Get total download count
+async function getDownloadStats() {
+  const supabase = await createClient()
+
+  const { count } = await supabase
+    .from('ebook_downloads')
+    .select('*', { count: 'exact', head: true })
+
+  return count || 0
+}
+
+// Mock video data (to be replaced with real data later)
 const videos = [
   {
     id: "1",
@@ -135,7 +127,51 @@ const publications = [
   },
 ]
 
-export default function LibraryPage() {
+// Map language code to flag emoji
+function getLanguageFlag(lang: string) {
+  const flags: Record<string, string> = {
+    en: "🇬🇧",
+    es: "🇪🇸",
+    pt: "🇵🇹",
+    zh: "🇨🇳",
+  }
+  return flags[lang] || "🌐"
+}
+
+// Map category to color
+function getCategoryColor(category: string | null) {
+  const colors: Record<string, string> = {
+    implantology: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
+    periodontics: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
+    aesthetics: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300",
+  }
+  return colors[category || ""] || "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300"
+}
+
+function getAnalyticsTopic(category: string | null) {
+  const normalized = (category || "").toLowerCase()
+  if (normalized.includes("implant")) return "implant_dentistry"
+  if (normalized.includes("perio")) return "periodontics"
+  if (normalized.includes("aesthetic")) return "aesthetics"
+  return "marketing"
+}
+
+function normalizeLanguage(lang?: string | null) {
+  if (!lang) return undefined
+  if (lang === "en" || lang === "es" || lang === "pt" || lang === "zh") {
+    return lang
+  }
+  return undefined
+}
+
+export default async function LibraryPage() {
+  const ebooks = await getEbooks()
+  const totalDownloads = await getDownloadStats()
+
+  // Group ebooks by language for display
+  const englishEbooks = ebooks.filter(e => e.language === 'en')
+  const otherEbooks = ebooks.filter(e => e.language !== 'en')
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -159,7 +195,7 @@ export default function LibraryPage() {
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
             <div className="rounded-lg bg-card p-4 text-center shadow-sm">
               <BookOpen className="mx-auto h-8 w-8 text-primary" />
-              <p className="mt-2 text-2xl font-bold">{ebooks.length}+</p>
+              <p className="mt-2 text-2xl font-bold">{ebooks.length}</p>
               <p className="text-sm text-muted-foreground">eBooks</p>
             </div>
             <div className="rounded-lg bg-card p-4 text-center shadow-sm">
@@ -174,7 +210,7 @@ export default function LibraryPage() {
             </div>
             <div className="rounded-lg bg-card p-4 text-center shadow-sm">
               <Download className="mx-auto h-8 w-8 text-primary" />
-              <p className="mt-2 text-2xl font-bold">500+</p>
+              <p className="mt-2 text-2xl font-bold">{totalDownloads > 0 ? totalDownloads : '500'}+</p>
               <p className="text-sm text-muted-foreground">Downloads</p>
             </div>
           </div>
@@ -202,58 +238,117 @@ export default function LibraryPage() {
 
             {/* eBooks Tab */}
             <TabsContent value="ebooks">
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {ebooks.map((ebook) => (
-                  <Card key={ebook.id} className="overflow-hidden">
-                    <div className="relative aspect-[3/4] bg-muted">
-                      <div className="flex h-full items-center justify-center">
-                        <BookOpen className="h-16 w-16 text-muted-foreground/50" />
-                      </div>
-                      {ebook.isPremium && (
-                        <Badge className="absolute right-2 top-2 gap-1">
-                          <Lock className="h-3 w-3" />
-                          Premium
-                        </Badge>
-                      )}
-                    </div>
-                    <CardHeader>
-                      <Badge variant="outline" className="mb-2 w-fit">
-                        {ebook.category}
-                      </Badge>
-                      <CardTitle className="line-clamp-2 text-lg">
-                        {ebook.title}
-                      </CardTitle>
-                      <CardDescription className="line-clamp-2">
-                        {ebook.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 text-sm text-muted-foreground">
-                        <p>By {ebook.author}</p>
-                        <p>
-                          {ebook.pages} pages | {ebook.format}
-                        </p>
-                      </div>
-                      <Button
-                        className="w-full"
-                        variant={ebook.isPremium ? "outline" : "default"}
-                      >
-                        {ebook.isPremium ? (
-                          <>
-                            <Lock className="mr-2 h-4 w-4" />
-                            Unlock
-                          </>
+              {ebooks.length === 0 ? (
+                <div className="text-center py-12">
+                  <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/50" />
+                  <h3 className="mt-4 text-lg font-semibold">Coming Soon</h3>
+                  <p className="text-muted-foreground">
+                    Our ebook collection is being prepared. Check back soon!
+                  </p>
+                </div>
+              ) : (
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {ebooks.map((ebook) => (
+                    <Card key={ebook.id} className="overflow-hidden group">
+                      <div className="relative aspect-[3/4] bg-gradient-to-br from-primary/10 to-primary/5">
+                        {ebook.cover_image ? (
+                          <Image
+                            src={ebook.cover_image}
+                            alt={ebook.title}
+                            fill
+                            className="object-cover transition-transform group-hover:scale-105"
+                          />
                         ) : (
-                          <>
-                            <Download className="mr-2 h-4 w-4" />
-                            Download
-                          </>
+                          <div className="flex h-full items-center justify-center">
+                            <BookOpen className="h-16 w-16 text-primary/30" />
+                          </div>
                         )}
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+
+                        {/* Language badge */}
+                        <div className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-white/90 dark:bg-black/70 px-2 py-1 text-xs">
+                          <span>{getLanguageFlag(ebook.language)}</span>
+                          <span className="uppercase">{ebook.language}</span>
+                        </div>
+
+                        {/* Premium/Free badge */}
+                        {!ebook.is_free ? (
+                          <Badge className="absolute right-2 top-2 gap-1">
+                            <Lock className="h-3 w-3" />
+                            Premium
+                          </Badge>
+                        ) : (
+                          <Badge variant="secondary" className="absolute right-2 top-2">
+                            Free
+                          </Badge>
+                        )}
+
+                        {/* Download count */}
+                        {ebook.download_count > 0 && (
+                          <div className="absolute bottom-2 right-2 rounded bg-black/70 px-2 py-1 text-xs text-white">
+                            {ebook.download_count} downloads
+                          </div>
+                        )}
+                      </div>
+                      <CardHeader>
+                        {ebook.category && (
+                          <Badge variant="outline" className={`mb-2 w-fit ${getCategoryColor(ebook.category)}`}>
+                            {ebook.category}
+                          </Badge>
+                        )}
+                        <CardTitle className="line-clamp-2 text-lg">
+                          {ebook.title}
+                        </CardTitle>
+                        <CardDescription className="line-clamp-2">
+                          {ebook.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <EbookDownloadButton
+                          slug={ebook.slug}
+                          title={ebook.title}
+                          isFree={ebook.is_free}
+                          hasExternalLink={!!(ebook.genius_link_url || ebook.apple_books_url)}
+                          topic={getAnalyticsTopic(ebook.category)}
+                          language={normalizeLanguage(ebook.language)}
+                        />
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
+
+              {/* Other languages section */}
+              {otherEbooks.length > 0 && englishEbooks.length > 0 && (
+                <div className="mt-12">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Globe className="h-5 w-5" />
+                    Also Available in Other Languages
+                  </h3>
+                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    {otherEbooks.map((ebook) => (
+                      <Card key={ebook.id} className="p-4">
+                        <div className="flex items-start gap-3">
+                          <span className="text-2xl">{getLanguageFlag(ebook.language)}</span>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-medium text-sm line-clamp-2">{ebook.title}</h4>
+                            <EbookDownloadButton
+                              slug={ebook.slug}
+                              title={ebook.title}
+                              isFree={ebook.is_free}
+                              hasExternalLink={!!(ebook.genius_link_url || ebook.apple_books_url)}
+                              topic={getAnalyticsTopic(ebook.category)}
+                              language={normalizeLanguage(ebook.language)}
+                              variant="ghost"
+                              size="sm"
+                              className="mt-2 h-8 text-xs"
+                            />
+                          </div>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              )}
             </TabsContent>
 
             {/* Videos Tab */}

@@ -11,14 +11,14 @@ import type { MCPToolHandler, MCPToolManifest } from '@/lib/types/mcp';
 // COMBINED TOOL HANDLERS
 // =============================================================================
 
-export const tools: Record<string, MCPToolHandler> = {
+export const tools = {
   // Post tools
   create_post: postTools.create_post,
   update_post: postTools.update_post,
   get_posts: postTools.get_posts,
   get_post: postTools.get_post,
   delete_post: postTools.delete_post,
-  publish_post: postTools.publish_post,
+  submit_for_review: postTools.submit_for_review,
 
   // Image tools
   upload_image: imageTools.upload_image,
@@ -52,7 +52,7 @@ export const tools: Record<string, MCPToolHandler> = {
   get_page_links: pageTools.get_page_links,
   get_site_structure: pageTools.get_site_structure,
   compare_post_versions: pageTools.compare_post_versions,
-};
+} as unknown as Record<string, MCPToolHandler>;
 
 // =============================================================================
 // COMBINED TOOL MANIFESTS

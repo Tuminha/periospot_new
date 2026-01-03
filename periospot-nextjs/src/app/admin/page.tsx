@@ -234,6 +234,7 @@ export default function AdminDashboard() {
             <div className="grid gap-4 md:grid-cols-4">
               <StatCard
                 title="Last 7 Days"
+                subtitle="New user signups"
                 value={data.users.last7Days}
                 icon={Users}
                 trend={12}
@@ -241,6 +242,7 @@ export default function AdminDashboard() {
               />
               <StatCard
                 title="Last 15 Days"
+                subtitle="New user signups"
                 value={data.users.last15Days}
                 icon={UserCheck}
                 trend={8}
@@ -248,6 +250,7 @@ export default function AdminDashboard() {
               />
               <StatCard
                 title="Last 30 Days"
+                subtitle="Active visitors"
                 value={data.users.last30Days}
                 icon={Activity}
                 trend={-3}
@@ -255,6 +258,7 @@ export default function AdminDashboard() {
               />
               <StatCard
                 title="Total Users"
+                subtitle="All registered accounts"
                 value={data.users.total}
                 icon={Globe}
                 color="purple"
@@ -483,20 +487,20 @@ export default function AdminDashboard() {
             </Card>
 
             {/* Quick Actions */}
-            <div className="grid gap-4 md:grid-cols-4">
-              <Button variant="outline" className="h-auto py-4" asChild>
-                <Link href="/admin/email-marketing">
+            <div className="grid gap-4 md:grid-cols-5">
+              <Button variant="outline" className="h-auto py-4 border-blue-500/30 hover:bg-blue-500/10" asChild>
+                <Link href="/admin/posts">
                   <div className="flex flex-col items-center gap-2">
-                    <Mail className="h-6 w-6" />
-                    <span>Email Marketing</span>
+                    <FileText className="h-6 w-6 text-blue-500" />
+                    <span>Posts</span>
                   </div>
                 </Link>
               </Button>
               <Button variant="outline" className="h-auto py-4" asChild>
-                <Link href="/admin/content">
+                <Link href="/admin/email-marketing">
                   <div className="flex flex-col items-center gap-2">
-                    <FileText className="h-6 w-6" />
-                    <span>Content Manager</span>
+                    <Mail className="h-6 w-6" />
+                    <span>Email</span>
                   </div>
                 </Link>
               </Button>
@@ -513,6 +517,14 @@ export default function AdminDashboard() {
                   <div className="flex flex-col items-center gap-2">
                     <Link2 className="h-6 w-6 text-green-500" />
                     <span>Affiliates</span>
+                  </div>
+                </Link>
+              </Button>
+              <Button variant="outline" className="h-auto py-4" asChild>
+                <Link href="/blog">
+                  <div className="flex flex-col items-center gap-2">
+                    <Eye className="h-6 w-6" />
+                    <span>View Blog</span>
                   </div>
                 </Link>
               </Button>
@@ -647,12 +659,14 @@ export default function AdminDashboard() {
 // Stat Card Component
 function StatCard({
   title,
+  subtitle,
   value,
   icon: Icon,
   trend,
   color = "blue",
 }: {
   title: string
+  subtitle?: string
   value: number
   icon: React.ComponentType<{ className?: string }>
   trend?: number
@@ -682,7 +696,8 @@ function StatCard({
           )}
         </div>
         <p className="text-2xl font-bold mt-3">{value.toLocaleString()}</p>
-        <p className="text-xs text-muted-foreground mt-1">{title}</p>
+        <p className="text-xs text-muted-foreground">{title}</p>
+        {subtitle && <p className="text-[10px] text-muted-foreground/70 mt-0.5">{subtitle}</p>}
       </CardContent>
     </Card>
   )

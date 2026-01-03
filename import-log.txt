@@ -1,0 +1,47 @@
+📧 Resend Subscriber Import
+
+Mode: LIVE IMPORT
+
+Reading CSV file...
+Total subscribers in CSV: 14533
+
+Subscribers by language:
+  English: 7552
+  Spanish: 4947
+  Portuguese: 1041
+  General (no group): 243
+
+🚀 Starting import...
+
+
+Importing 7552 contacts to english audience...
+  Processed: 100/7552
+  Processed: 200/7552
+  Processed: 300/7552
+  Processed: 400/7552
+  Processed: 500/7552
+  Processed: 600/7552
+  Processed: 700/7552
+  Processed: 800/7552
+  Processed: 900/7552
+  Processed: 1000/7552
+  Processed: 1100/7552
+  Processed: 1200/7552
+  Processed: 1300/7552
+  Processed: 1400/7552
+  Processed: 1500/7552
+  Processed: 1600/7552
+  Processed: 1700/7552
+  Processed: 1800/7552
+  Processed: 1900/7552
+  Processed: 2000/7552
+  Processed: 2100/7552
+  Processed: 2200/7552
+  Processed: 2300/7552
+  Processed: 2400/7552
+  Processed: 2500/7552
+  Processed: 2600/7552
+  Processed: 2700/7552
+  Processed: 2800/7552
+  Processed: 2900/7552
+  Processed: 3000/7552

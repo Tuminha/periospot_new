@@ -32,6 +32,7 @@ export default function CheckoutPage() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [step, setStep] = useState<"info" | "payment" | "success">("info")
+  const [orderId, setOrderId] = useState<string | null>(null)
 
   // Form state
   const [formData, setFormData] = useState({
@@ -68,6 +69,7 @@ export default function CheckoutPage() {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     setLoading(false)
+    setOrderId(`PS-${Date.now().toString(36).toUpperCase()}`)
     setStep("success")
   }
 
@@ -114,7 +116,7 @@ export default function CheckoutPage() {
               </p>
               <div className="mt-8 rounded-lg bg-muted p-4">
                 <p className="text-sm text-muted-foreground">Order #</p>
-                <p className="font-mono font-bold">PS-{Date.now().toString(36).toUpperCase()}</p>
+                <p className="font-mono font-bold">{orderId ?? "PS-PENDING"}</p>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild>

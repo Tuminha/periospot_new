@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Send, Loader2, CheckCircle } from "lucide-react"
 import { useState } from "react"
+import { PerioAnalytics } from "@/lib/analytics"
 
 const Newsletter = () => {
   const [email, setEmail] = useState("")
@@ -27,6 +28,7 @@ const Newsletter = () => {
         setStatus("success")
         setMessage("Welcome to The Periospot Brew! Check your inbox.")
         setEmail("")
+        PerioAnalytics.trackNewsletterSignup({ location: "footer" })
       } else {
         setStatus("error")
         setMessage(data.error || "Something went wrong. Please try again.")

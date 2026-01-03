@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 
+import type { Post } from "@/lib/content"
 import { getAllPosts, getAllCategories } from "@/lib/content"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -29,8 +30,10 @@ export default async function BlogPage() {
   const posts = await getAllPosts()
   const categories = await getAllCategories()
 
-  // Filter to only show published posts
-  const publishedPosts = posts.filter((post) => post.status === "publish")
+  // Filter to only show published posts in English (default language)
+  const publishedPosts = posts.filter(
+    (post) => post.status === "publish" && (post.language === "en" || !post.language)
+  )
 
   return (
     <div className="container py-12">
@@ -73,7 +76,7 @@ export default async function BlogPage() {
   )
 }
 
-function PostCard({ post }: { post: any }) {
+function PostCard({ post }: { post: Post }) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
       {post.featuredImage && (
@@ -106,7 +109,9 @@ function PostCard({ post }: { post: any }) {
       </CardHeader>
       <CardContent className="pt-0">
         <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>{post.author?.name || "Periospot"}</span>
+          <span>
+            {typeof post.author === "string" ? post.author : post.author?.name || "Periospot"}
+          </span>
           <time dateTime={post.date}>
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",

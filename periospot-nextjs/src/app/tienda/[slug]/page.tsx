@@ -4,10 +4,10 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getAllProducts, getProductBySlug } from "@/lib/content"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { ChevronLeft, ShoppingCart, Download, Package } from "lucide-react"
+import { ProductActions } from "@/components/ProductActions"
+import { ChevronLeft } from "lucide-react"
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>
@@ -343,33 +343,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Button size="lg" className="flex-1">
-                  <ShoppingCart className="mr-2 h-5 w-5" />
-                  Add to Cart
-                </Button>
-                {product.link && (
-                  <Button variant="outline" size="lg" asChild>
-                    <a
-                      href={product.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {isDigital ? (
-                        <>
-                          <Download className="mr-2 h-5 w-5" />
-                          Buy Now
-                        </>
-                      ) : (
-                        <>
-                          <Package className="mr-2 h-5 w-5" />
-                          View on Store
-                        </>
-                      )}
-                    </a>
-                  </Button>
-                )}
-              </div>
+              <ProductActions
+                product={{
+                  id: product.id,
+                  woocommerce_id: product.woocommerce_id ?? undefined,
+                  title: product.title,
+                  slug: product.slug,
+                  price: product.price,
+                  sale_price: product.sale_price ?? undefined,
+                  featured_image_url: product.featured_image_url,
+                  product_type: product.product_type,
+                  link: product.link,
+                }}
+              />
 
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">

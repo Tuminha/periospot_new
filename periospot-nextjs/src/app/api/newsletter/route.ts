@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
+import { createClient } from "@supabase/supabase-js"
 
 // Initialize Resend lazily to avoid build-time errors when API key is not set
 let resend: Resend | null = null
@@ -8,6 +9,14 @@ function getResend() {
     resend = new Resend(process.env.RESEND_API_KEY)
   }
   return resend
+}
+
+// Initialize Supabase client
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
 }
 
 // Audience ID for newsletter subscribers (create this in Resend dashboard)
@@ -58,6 +67,21 @@ export async function POST(request: NextRequest) {
       if (!error.message?.includes("already exists")) {
         console.error("Error adding contact:", contactError)
       }
+    }
+
+    // Also save to Supabase subscribers table
+    try {
+      const supabase = getSupabase()
+      await supabase.from("subscribers").upsert({
+        email: email.toLowerCase(),
+        name: firstName || null,
+        source: "website",
+        status: "active",
+        subscribed_at: new Date().toISOString(),
+      }, { onConflict: "email" })
+    } catch (dbError) {
+      console.error("Error saving to database:", dbError)
+      // Don't fail if database save fails
     }
 
     // Send welcome email

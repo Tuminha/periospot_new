@@ -45,5 +45,24 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
+  // Protect admin routes - require admin email
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    if (!user) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/auth/login'
+      url.searchParams.set('redirect', request.nextUrl.pathname)
+      return NextResponse.redirect(url)
+    }
+
+    // Check if user is admin (only cisco@periospot.com)
+    // Note: For production, this should check the is_admin column in profiles
+    const ADMIN_EMAIL = 'cisco@periospot.com'
+    if (user.email !== ADMIN_EMAIL) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/dashboard'
+      return NextResponse.redirect(url)
+    }
+  }
+
   return supabaseResponse
 }

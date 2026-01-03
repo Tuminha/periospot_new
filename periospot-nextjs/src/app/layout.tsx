@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
+import { CartProvider } from "@/lib/woocommerce"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -93,6 +97,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+
   return (
     <html lang="en" className="dark" suppressHydrationWarning data-theme="dark">
       <head>
@@ -166,10 +172,17 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="relative min-h-screen">
-            {children}
-          </div>
-          <Toaster />
+          <CartProvider>
+            <div className="relative min-h-screen">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+            <Toaster />
+            {process.env.NODE_ENV === "production" && gaId ? (
+              <GoogleAnalytics gaId={gaId} />
+            ) : null}
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

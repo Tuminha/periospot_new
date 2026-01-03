@@ -21,6 +21,7 @@ export interface Post {
   featuredImage: string
   featured_image?: string // Alias
   status: string
+  language?: string
 }
 
 export interface PostSeo {
@@ -109,6 +110,7 @@ type RawPost = {
   featured_image?: string
   featured_image_url?: string
   status?: string
+  language?: string
 }
 
 type RawProduct = {
@@ -193,6 +195,7 @@ const normalizePost = (raw: RawPost): Post => {
     featuredImage: featuredImg,
     featured_image: featuredImg, // Alias for backward compatibility
     status: raw.status || "publish",
+    language: raw.language || "en", // Default to English
   }
 }
 

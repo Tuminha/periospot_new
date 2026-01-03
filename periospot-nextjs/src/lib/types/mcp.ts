@@ -126,9 +126,8 @@ export interface MCPAuditLog {
   created_at?: string;
 }
 
-// Tool handler type - uses 'any' for params to allow flexible tool signatures
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// Tool handler type - accepts a flexible params object
 export type MCPToolHandler = (
-  params: any,
+  params: Record<string, unknown>,
   supabase: import('@supabase/supabase-js').SupabaseClient
 ) => Promise<unknown>;
