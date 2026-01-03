@@ -482,7 +482,7 @@ export default function AdminDashboard() {
             </Card>
 
             {/* Quick Actions */}
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-4">
               <Button variant="outline" className="h-auto py-4" asChild>
                 <Link href="/admin/email-marketing">
                   <div className="flex flex-col items-center gap-2">
@@ -504,6 +504,14 @@ export default function AdminDashboard() {
                   <div className="flex flex-col items-center gap-2">
                     <ShoppingBag className="h-6 w-6" />
                     <span>Products</span>
+                  </div>
+                </Link>
+              </Button>
+              <Button variant="outline" className="h-auto py-4 border-green-500/30 hover:bg-green-500/10" asChild>
+                <Link href="/admin/affiliates">
+                  <div className="flex flex-col items-center gap-2">
+                    <Link2 className="h-6 w-6 text-green-500" />
+                    <span>Affiliates</span>
                   </div>
                 </Link>
               </Button>

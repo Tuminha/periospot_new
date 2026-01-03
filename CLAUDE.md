@@ -9,9 +9,21 @@ Periospot is a dental education platform focused on implantology and periodontic
 
 ## Key Commands
 
+### Content & SEO
 - `/list-articles` - List all articles with optimization status
 - `/seo-optimize [slug]` - Optimize article for SEO and LLM discoverability
-- `/monetize` - Analyze monetization opportunities
+
+### Affiliate & Monetization (Affiliate Machine)
+- `/monetize` - Full monetization opportunity analysis
+- `/affiliate-lookup [product]` - Search existing links in Tana before creating new ones
+- `/affiliate-inject [slug]` - Auto-inject affiliate links into blog posts
+- `/affiliate-suggest` - Get proactive suggestions for affiliate programs and products
+
+### Natural Language Commands
+Just ask naturally:
+- "Create an affiliate link for [book name]"
+- "What affiliate links do we have for loupes?"
+- "Suggest products for the socket shield article"
 
 ## IMPORTANT: Monetization Focus
 
@@ -79,7 +91,35 @@ When optimizing content, always:
 3. Ensure affiliate disclosure is present
 4. Consider email capture opportunities
 
+## Affiliate Machine (Automated Workflow)
+
+When I create affiliate links, the system automatically:
+1. **Creates Genius Link** - Geo-targeted link via API
+2. **Saves to Tana** - With #affiliate-links supertag
+3. **Generates markdown** - Ready to paste into content
+4. **Tracks in dashboard** - View at /admin/affiliates
+
+### Quick Product Catalog (85+ products)
+```bash
+node scripts/affiliate-manager.cjs quick   # List all quick products
+```
+
+Categories: Dental Books, Business Books, Loupes, Photography, Instruments, Tech, Health, Lifestyle
+
+### Affiliate Programs Tracker
+```bash
+node scripts/affiliate-programs.cjs suggest HIGH  # High priority programs to join
+```
+
+### Admin Dashboard
+Visit `/admin/affiliates` (only cisco@periospot.com) to:
+- View all affiliate links and clicks
+- Track revenue and conversions
+- See broken links
+- Discover new opportunities
+
 ## Documentation
 
 - [Monetization Strategy](.claude/docs/MONETIZATION.md)
 - [SEO Optimization Guide](.claude/skills/seo-optimization/LLM-FIRST-SEO.md)
+- [Affiliate Commands](.claude/commands/)

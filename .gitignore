@@ -23,6 +23,8 @@ periospot/
 legacy-wordpress/media/
 legacy-wordpress/export.xml
 Google Drive
+temp-lovable-repo/
+.claude/
 
 # IDE
 .vscode/
